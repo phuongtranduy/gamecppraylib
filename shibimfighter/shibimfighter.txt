@@ -1,0 +1,1 @@
+Debug/main.cpp.o Debug/BaseSpace.cpp.o Debug/Fighter.cpp.o Debug/Enemy.cpp.o Debug/Explosion.cpp.o Debug/PowerDrug.cpp.o Debug/Bullet.cpp.o   

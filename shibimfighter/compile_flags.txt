@@ -1,0 +1,2 @@
+-ID:\phuongbk\cppwspace\cppwspace\shibimfighter
+-IC:\raylib\win64mingw64\include
