@@ -33,11 +33,13 @@ Enemy::Enemy(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, flo
 	{
 			mTargetBulletTex=LoadTexture("texture/bullet.png");
 			mFireTargetTex=LoadTexture("texture/firetarget.png");
-	        mBossTex =LoadTexture("texture/boss.png");
-			Image bossImage =GetTextureData(mBossTex);//LoadImage("texture/boss.png");
+	        //mBossTex =LoadTexture("texture/boss.png");
+			//Image bossImage =GetTextureData(mBossTex);//
+			Image bossImage = LoadImage("texture/boss.png");
 			mpBossColor = LoadImageColors(bossImage);
 							
-			Image targetImage =GetTextureData(mTargetBulletTex);//LoadImage("texture/boss.png");
+			//Image targetImage =GetTextureData(mTargetBulletTex);//LoadImage("texture/boss.png");
+			Image targetImage = LoadImage("texture/boss.png");
 			mpBulletColor = LoadImageColors(targetImage);
 			mFireTargetTex=LoadTexture("texture/firetarget.png");
 	}
@@ -73,10 +75,12 @@ void Enemy::Tick(float aDeltaTime)
 	   { //THis is Boss
 		    //Pixel checking data
 		    //std::cout << "starting checking Boss with Target " << std::endl; //Avoid load texture too many times
-		   	Image bossImage = GetTextureData(mImage);//LoadImage("texture/boss.png");
+		   	//Image bossImage = GetTextureData(mImage);//LoadImage("texture/boss.png");
+			Image bossImage = LoadImage("texture/boss.png");
 			Color *bossColor = LoadImageColors(bossImage);
 			Color *pbossColor = bossColor;
-			Image targetImage = GetTextureData(mTarget->mImage);//LoadImage("texture/boss.png");
+			//Image targetImage = GetTextureData(mTarget->mImage);//LoadImage("texture/boss.png");
+			Image targetImage = LoadImage("texture/boss.png");
 			Color *targetColor = LoadImageColors(targetImage);
 			Color *ptargetColor = targetColor;
 			
