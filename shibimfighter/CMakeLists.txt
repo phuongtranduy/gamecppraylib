@@ -38,3 +38,17 @@ add_custom_command(
         "${CMAKE_BINARY_DIR}/texture"
         COMMENT "Copying runtime data to binary directory"
 )
+
+
+include(CTest)
+enable_testing()
+add_executable(tst_basespace tst_basespace.cpp)
+add_executable(tst_enemy tst_enemy.cpp)
+add_test(NAME tst_basespace COMMAND tst_basespace)
+add_test(NAME tst_enemy COMMAND tst_enemy)
+
+# cmake -S. -Bbuild
+# cd build
+# cmake --build .
+# ctest
+## we have CMAKE_CTEST_COMMAND and CMAKE_COMMAND
