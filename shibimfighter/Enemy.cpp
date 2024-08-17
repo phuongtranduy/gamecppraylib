@@ -150,6 +150,7 @@ void Enemy::Tick(float aDeltaTime)
 							Color* backupBossPointer =pbossColor;
 							Color* backupTargetPointer= ptargetColor;
 							//Check more accurately about collision
+							//Calculate the sum of r,g,b values. If the value =0 => transparent values . If total value  is not 0 => actual collision
 							for (int i = 0; i < static_cast<int>(temp.width); i++)
 								for(int j=0; j < static_cast<int>(temp.height); j++)
 								{// std::cout << "i=" << i << " j=" << j << std::endl;
