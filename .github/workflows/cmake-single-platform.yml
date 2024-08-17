@@ -2,6 +2,7 @@
 # See: https://github.com/actions/starter-workflows/blob/main/ci/cmake-multi-platform.yml
 # see: https://github.com/miguno/helloc/actions/runs/6060240147/workflow
 #https://gist.github.com/shamiul94/a632f7ab94cf389e08efd7174335df1c
+# sanitizer: https://github.com/JzHuai0108/sanitizer_test/blob/master/CMakeLists.txt
 name: CMake on a single platform
 
 on:
