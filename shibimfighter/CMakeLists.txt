@@ -18,4 +18,23 @@ FetchContent_MakeAvailable(raylibs)
 
 add_executable(fightergame BaseSpace.cpp  Bullet.cpp  Enemy.cpp  Explosion.cpp  Fighter.cpp  main.cpp  PowerDrug.cpp)
 target_include_directories(fightergame PRIVATE .)
-target_link_libraries(fightergame  raylib GL m pthread dl rt X11)
+target_link_libraries(fightergame  raylib )
+add_custom_command(
+    TARGET fightergame
+    PRE_BUILD
+    COMMAND ${CMAKE_COMMAND}
+    ARGS -E copy_directory 
+        "${CMAKE_SOURCE_DIR}/audio"
+        "${CMAKE_BINARY_DIR}/audio"
+        COMMENT "Copying runtime data to binary directory"
+)
+
+add_custom_command(
+    TARGET fightergame
+    PRE_BUILD
+    COMMAND ${CMAKE_COMMAND}
+    ARGS -E copy_directory 
+        "${CMAKE_SOURCE_DIR}/texture"
+        "${CMAKE_BINARY_DIR}/texture"
+        COMMENT "Copying runtime data to binary directory"
+)
