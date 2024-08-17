@@ -151,6 +151,7 @@ void Enemy::Tick(float aDeltaTime)
 							Color* backupTargetPointer= ptargetColor;
 							//Check more accurately about collision
 							//Calculate the sum of r,g,b values. If the value =0 => transparent values . If total value  is not 0 => actual collision
+							//we use & operator to check values. If both sides(enemy and bullet) is not 0 => the result is not 0 and acutal parts of objects are collided
 							for (int i = 0; i < static_cast<int>(temp.width); i++)
 								for(int j=0; j < static_cast<int>(temp.height); j++)
 								{// std::cout << "i=" << i << " j=" << j << std::endl;
