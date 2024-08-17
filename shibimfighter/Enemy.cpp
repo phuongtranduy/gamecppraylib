@@ -139,6 +139,7 @@ void Enemy::Tick(float aDeltaTime)
 							Vector2 collisionRectCoor{temp.x, temp.y};
 							
 							//Get the relative starting point compared to the position of each object
+							//This subtraction is the way we convert from coordinate with the origin that is the origin of screen(top-left) to the coordinate with the origin that is position of object(top-left) 
 							Vector2 startpointBoss = Vector2Subtract(collisionRectCoor, mScreenPos);
 							Vector2 startpointTarget = Vector2Subtract(collisionRectCoor, it1->getScreenPos());
 							//Calculate color pointer for each starting point of  collision rect (thes are not coordinate) => these are position of collision rect compared to array of color image
