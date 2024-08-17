@@ -138,12 +138,15 @@ void Enemy::Tick(float aDeltaTime)
 							//std::cout << "BOSSHPP cast x=" << static_cast<int>(temp.width)<< " cast y=" << static_cast<int>(temp.height) << std::endl;
 							Vector2 collisionRectCoor{temp.x, temp.y};
 							
+							//Get the relative starting point compared to the position of each object
 							Vector2 startpointBoss = Vector2Subtract(collisionRectCoor, mScreenPos);
 							Vector2 startpointTarget = Vector2Subtract(collisionRectCoor, it1->getScreenPos());
+							//Calculate color pointer for each starting point of  collision rect (thes are not coordinate) => these are position of collision rect compared to array of color image
 							pbossColor += static_cast<int>(mWidth) * static_cast<int>(startpointBoss.y) + static_cast<int>(startpointBoss.x);
 							ptargetColor += static_cast<int>(it1->getWidth()) * static_cast<int>(startpointTarget.y) + static_cast<int>(startpointTarget.x);
 							bool hit{false};
 							int total{0};
+							//This color we get from LoadColorImage to get array of Color(RGB)
 							Color* backupBossPointer =pbossColor;
 							Color* backupTargetPointer= ptargetColor;
 							//Check more accurately about collision
