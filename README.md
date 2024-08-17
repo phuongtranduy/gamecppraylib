@@ -41,3 +41,11 @@ INPUT                  = /home/phuongtran/training/test/working/ssinew/src
 open folder html generated and open file index.html
 
 ====================================
+sudo apt install valgrind
+valgrind --leak-check=full \
+         --show-leak-kinds=all \
+         --track-origins=yes \
+         --verbose \
+         --log-file=valgrind-out.txt \
+         ./fightergame
+====================================
