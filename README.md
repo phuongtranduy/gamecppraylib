@@ -31,3 +31,13 @@ int main()
 
     //Deinitilizing
 }
+
+===============================
+Note run Doxygen
+doxygen Doxyfile
+remember edit: INPUT=???
+INPUT                  = /home/phuongtran/training/test/working/ssinew/src
+
+open folder html generated and open file index.html
+
+====================================
