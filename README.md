@@ -55,3 +55,16 @@ valgrind --leak-check=full \
 2.for runtime analysis: 
 To check mem leak and mem access error:
 we have valgrind(this is a separate tool require debug build app), address-sanitizer(we only enable compile and link flags for gccc)
+
+=========================
+https://neomutt.org/dev/analysis/asan
+
+Note: Running a program using ASAN will consume more memory and run more slowly than normal.
+
+The Address Sanitizer adds compile-time options that can detect:
+
+Memory leaks
+Buffer overflows (and underflows)
+Out-of-bounds accesses to heap, stack and globals
+Memory use after free
+Double-free, invalid free
