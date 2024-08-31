@@ -62,6 +62,33 @@ PS Z:\workspace\gamecppraylib\shibimfighter\build>
 to fix the above error:
 git config --global --add safe.directory '%(prefix)///10.0.1.1/phuongtran/workspace/gamecppraylib/shibimfighter/build/_deps/raylibs-src'
 then run again.
+
+
+To run:
+Go to your remote share directory from the machine that its installed on.
+
+Right-click on it.
+
+Select properties.
+
+Open security tab.
+
+Click advanced.
+
+Click change permissions.
+
+If you don't see your name in there, click add; if you do, then double-click on your user.
+
+Make sure, if full control and allow are not already checked, that at least the traverse, list, read attrs, read extended attrs, and read permissions are checked for your user.
+
+If you don't have permissions to check off these permissions, then you will need to gain admin access before making these adjustments, or at least gain ownership.
+
+After you have made these adjustments, delete and remap the network drive, put in the credentials that MATCH the credentials of the user account for which you just set the permissions.
+
+You will now have read permission when you share, so long as you are authenticated as that user the first time it asks you for the credentials.
+
+
+
 ===============================================================
 another way is  build ok in real folder
 
