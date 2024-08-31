@@ -59,9 +59,11 @@ Call Stack (most recent call first):
 -- Configuring incomplete, errors occurred!
 PS Z:\workspace\gamecppraylib\shibimfighter\build>
 
-
+to fix the above error:
+git config --global --add safe.directory '%(prefix)///10.0.1.1/phuongtran/workspace/gamecppraylib/shibimfighter/build/_deps/raylibs-src'
+then run again.
 ===============================================================
-but build ok in real folder
+another way is  build ok in real folder
 
 PS C:\workspace> git clone https://github.com/phuongtranduy/gamecppraylib.git
 PS C:\workspace\gamecppraylib\shibimfighter\build> cmake -G "MinGW Makefiles" .. ; cmake --build .
