@@ -1,9 +1,28 @@
 ##testing CMakeLists.txt adding existing boostlib
 ##running in window: shibimfighter\build> cmake -G "MinGW Makefiles" .. ; cmake --build .
 ##running in linux: shibimfighter\build> cmake .. ; cmake --build .
-cmake_minimum_required(VERSION 3.0)
+
+#https://gitlab.kitware.com/cmake/community/-/wikis/doc/tutorials/How-To-Write-Platform-Checks
+# Platform Variables
+# CMake sets certain variables to true depending on the current platform and toolchain in use. These always describe the target platform.  In older versions of CMake, these were the only way of detecting the current platform.
+# UNIX : is TRUE on all UNIX-like OS's, including Apple OS X and CygWin
+# WIN32 : is TRUE on Windows. Prior to 2.8.4 this included CygWin
+# APPLE : is TRUE on Apple systems. Note this does not imply the
+# system is Mac OS X, only that APPLE is #defined in C/C++
+# header files.
+# MINGW : is TRUE when using the MinGW compiler in Windows
+# MSYS : is TRUE when using the MSYS developer environment in Windows
+# CYGWIN : is TRUE on Windows when using the CygWin version of cmake
+
+cmake_minimum_required(VERSION 3.0) ## Compatibility with CMake < 3.5 will be removed from a future version of CMake.
 project(fightergame)
 
+if(WIN32)
+    ##Hide console
+    set(CMAKE_CXX_FLAGS "-mwindows") ##hide console open when openning game
+    set(CMAKE_CXX_FLAGS_DEBUG "-mwindows") ##Add -mwindows to the compile flags.
+    set(CMAKE_CXX_FLAGS_RELEASE "-mwindows")
+endif()
 
 include(FetchContent) # once in the project to include the module
 #just download and add one folder
@@ -22,6 +41,8 @@ FetchContent_MakeAvailable(raylibs)
 add_executable(fightergame BaseSpace.cpp  Bullet.cpp  Enemy.cpp  Explosion.cpp  Fighter.cpp  main.cpp  PowerDrug.cpp)
 target_include_directories(fightergame PRIVATE .)
 target_link_libraries(fightergame  raylib )
+#target_compile_definitions(Fightergame PRIVATE "-mwindows")
+#add_compile_options("-mwindows")
 add_custom_command(
     TARGET fightergame
     PRE_BUILD
