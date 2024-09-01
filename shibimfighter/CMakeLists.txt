@@ -1,4 +1,6 @@
-##tsting CMakeLists.txt adding existing boostlib
+##testing CMakeLists.txt adding existing boostlib
+##running in window: shibimfighter\build> cmake -G "MinGW Makefiles" .. ; cmake --build .
+##running in linux: shibimfighter\build> cmake .. ; cmake --build .
 cmake_minimum_required(VERSION 3.0)
 project(fightergame)
 
@@ -11,6 +13,7 @@ FetchContent_Declare(raylibs
                      #GIT_TAG master
                      #GIT_TAG 4.6-dev ##ok
                      GIT_TAG 5.0
+                     GIT_PROGRESS TRUE ##enable GIT PROGRESS
                      #SOURCE_SUBDIR  mathlib
                      #GIT_TAG        703bd9caab50b139428cea1aaff9974ebee5742e # release-1.10.0
                      )
