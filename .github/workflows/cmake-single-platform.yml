@@ -100,10 +100,10 @@ jobs:
       run: ctest -C ${{env.BUILD_TYPE}}
 
     - name: Create artifact (optional)
-        run: |
-          mkdir -p artifact-output
-          echo "Generated Artifact" > artifact-output/artifact.txt
-          echo "HERE PHUONG $(pwd)"
+      run: |
+        mkdir -p artifact-output
+        echo "Generated Artifact" > artifact-output/artifact.txt
+        echo "HERE PHUONG $(pwd)"
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
