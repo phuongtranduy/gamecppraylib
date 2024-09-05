@@ -99,3 +99,15 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
+    - name: Create artifact (optional)
+        run: |
+          mkdir -p artifact-output
+          echo "Generated Artifact" > artifact-output/artifact.txt
+          echo "HERE PHUONG $(pwd)"
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: artifact-output/
+
