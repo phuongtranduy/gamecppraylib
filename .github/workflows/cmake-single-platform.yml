@@ -99,13 +99,18 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
-    - name: Create artifact (optional)
+    - name: Create artifact (optional-windows)
+      if: matrix.os == 'windows-latest'
       run: |
         mkdir -p artifact-output
         echo "Generated Artifact" > artifact-output/artifact.txt
         echo "HERE PHUONG $(pwd)"
+        cp ${{github.workspace}}/build/*.exe artifact-output
+        cp -r ${{github.workspace}}/build/audio artifact-output
+        cp -r ${{github.workspace}}/build/texture artifact-output
 
-    - name: Upload Artifact
+    - name: Upload Artifact(windows)
+      if: matrix.os == 'windows-latest'
       uses: actions/upload-artifact@v3
       with:
         name: my-artifact
