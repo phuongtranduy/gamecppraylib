@@ -105,6 +105,7 @@ jobs:
         mkdir -p artifact-output
         echo "Generated Artifact" > artifact-output/artifact.txt
         echo "HERE PHUONG $(pwd)"
+        tree ${{github.workspace}}/build
         cp ${{github.workspace}}/build/*.exe artifact-output
         cp -r ${{github.workspace}}/build/audio artifact-output
         cp -r ${{github.workspace}}/build/texture artifact-output
