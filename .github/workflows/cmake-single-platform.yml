@@ -59,7 +59,10 @@ jobs:
       run: |
         choco install mingw --version=8.1.0 -y
         echo "C:\\tools\\mingw64\\bin" >> $GITHUB_PATH
-        g++ --version
+        g++ --version 
+
+    ## if use mingw by installing using choco => g++.exe (x86_64-posix-seh-rev2, Built by MinGW-W64 project) 12.2.0 =>https://github.com/phuongtranduy/gamecppraylib/actions/runs/10712840898/job/29703902674
+    ## if use gcc but not using choco like above => cl is still used: cl : command line  warning D9002: ignoring unknown option '-mwindows' => https://github.com/phuongtranduy/gamecppraylib/actions/runs/10712505630/job/29703014015
     ##echo "::add-path::C:\\tools\\mingw64\\bin" ## add-path is disable in github because of security
 
     - name: Configure CMake(Ubuntu)
