@@ -55,3 +55,12 @@ valgrind --leak-check=full \
 2.for runtime analysis: 
 To check mem leak and mem access error:
 we have valgrind(this is a separate tool require debug build app), address-sanitizer(we only enable compile and link flags for gccc)
+
+
+=======================================
+Run Doxygen
+doxygen Doxyfile
+remember edit: INPUT=???
+INPUT                  = /home/phuongtran/training/test/working/ssinew/src
+
+open folder html generated and open file index.html
