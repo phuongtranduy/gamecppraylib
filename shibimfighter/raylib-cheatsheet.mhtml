@@ -1,0 +1,2991 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: https://www.raylib.com/cheatsheet/cheatsheet.html
+Subject: raylib - cheatsheet
+Date: Thu, 18 Dec 2025 17:01:40 +0700
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--05HyIzrtu3vJ4PVfBLujf0MYLePcLLGYSLjTBkxkwt----"
+
+
+------MultipartBoundary--05HyIzrtu3vJ4PVfBLujf0MYLePcLLGYSLjTBkxkwt----
+Content-Type: text/html
+Content-ID: <frame-88F0A1BD8614A211306FD17C4924E7D0@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://www.raylib.com/cheatsheet/cheatsheet.html
+
+<!DOCTYPE html><html><head><meta http-equiv=3D"Content-Type" content=3D"tex=
+t/html; charset=3DUTF-8"><link rel=3D"stylesheet" type=3D"text/css" href=3D=
+"cid:css-774bf4ca-370b-43ac-b8fe-c378916e3d47@mhtml.blink" />
+       =20
+        <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge,chrome=3D=
+1">
+
+        <title>raylib - cheatsheet</title>
+       =20
+
+        <meta name=3D"title" content=3D"raylib - cheatsheet">
+        <meta name=3D"description" content=3D"raylib is a simple and easy-t=
+o-use library to enjoy videogames programming. Don't miss latest functions =
+added to raylib... check raylib cheatsheet">
+        <meta name=3D"keywords" content=3D"raylib, videogames, programming,=
+ C, C++, library, learn, study, simple, easy, free, open source, raysan">
+        <meta name=3D"viewport" content=3D"width=3Ddevice-width">
+
+        <!-- Open Graph metatags for sharing -->
+        <meta property=3D"og:title" content=3D"raylib - cheatsheet">
+        <meta property=3D"og:image" content=3D"https://www.raylib.com/commo=
+n/img/raylib_logo_card.png">
+        <meta property=3D"og:url" content=3D"https://www.raylib.com">
+        <meta property=3D"og:site_name" content=3D"raylib">
+        <meta property=3D"og:description" content=3D"Don't miss latest func=
+tions added to raylib... check raylib cheatsheet">
+
+        <!-- hightlight.js - Syntax highlighting for the Web -->
+        <link rel=3D"stylesheet" href=3D"https://cdnjs.cloudflare.com/ajax/=
+libs/highlight.js/8.1/styles/docco.min.css">
+       =20
+
+       =20
+
+       =20
+    </head>
+
+    <body>
+        <div id=3D"header">
+            <a id=3D"logo" href=3D"https://www.raylib.com/index.html"></a>
+            <p id=3D"title">A simple and easy-to-use library to enjoy video=
+games programming</p>
+            <p id=3D"plinks">[<a href=3D"https://discord.gg/raylib">raylib =
+Discord server</a>][<a href=3D"https://github.com/raysan5/raylib">github.co=
+m/raysan5/raylib</a>][<a href=3D"https://github.com/raysan5/raylib/blob/mas=
+ter/src/raylib.h">raylib.h</a>]</p>
+            <p></p>
+            <p id=3D"version">v5.5 quick reference card  [<a id=3D"downpdf"=
+ href=3D"https://www.raylib.com/cheatsheet/raylib_cheatsheet_v5.5.pdf">down=
+load as PDF</a>]</p>
+        </div>
+        <br>
+        <p>Chinese Translation: <a href=3D"https://www.raylib.com/cheatshee=
+t/cheatsheet_zh.html">=E4=BB=A5=E4=B8=8B=E4=B8=BAraylib=E6=89=80=E6=9C=89AP=
+I=E6=8E=A5=E5=8F=A3=E4=B8=AD=E6=96=87=E9=87=8A=E4=B9=89</a></p>
+        <div id=3D"fulldata">
+            <p id=3D"pcore">module: rcore <a href=3D"https://www.raylib.com=
+/cheatsheet/cheatsheet.html#pcore">=E2=86=92</a></p>
+            <div id=3D"core"><pre><code class=3D"cpp hljs ">
+    <span class=3D"hljs-comment">// Window-related functions</span>
+    <span class=3D"hljs-keyword">void</span> InitWindow(<span class=3D"hljs=
+-keyword">int</span> width, <span class=3D"hljs-keyword">int</span> height,=
+ <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">cha=
+r</span> *title);  <span class=3D"hljs-comment">// Initialize window and Op=
+enGL context</span>
+    <span class=3D"hljs-keyword">void</span> CloseWindow(<span class=3D"hlj=
+s-keyword">void</span>);                                     <span class=3D=
+"hljs-comment">// Close window and unload OpenGL context</span>
+    <span class=3D"hljs-keyword">bool</span> WindowShouldClose(<span class=
+=3D"hljs-keyword">void</span>);                               <span class=
+=3D"hljs-comment">// Check if application should close (KEY_ESCAPE pressed =
+or windows close icon clicked)</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowReady(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// Check if window has been initialized successfully</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowFullscreen(<span class=
+=3D"hljs-keyword">void</span>);                              <span class=3D=
+"hljs-comment">// Check if window is currently fullscreen</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowHidden(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Check if window is currently hidden</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowMinimized(<span class=
+=3D"hljs-keyword">void</span>);                               <span class=
+=3D"hljs-comment">// Check if window is currently minimized</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowMaximized(<span class=
+=3D"hljs-keyword">void</span>);                               <span class=
+=3D"hljs-comment">// Check if window is currently maximized</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowFocused(<span class=3D=
+"hljs-keyword">void</span>);                                 <span class=3D=
+"hljs-comment">// Check if window is currently focused</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowResized(<span class=3D=
+"hljs-keyword">void</span>);                                 <span class=3D=
+"hljs-comment">// Check if window has been resized last frame</span>
+    <span class=3D"hljs-keyword">bool</span> IsWindowState(<span class=3D"h=
+ljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> flag);=
+                      <span class=3D"hljs-comment">// Check if one specific=
+ window flag is enabled</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowState(<span class=3D"=
+hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> flags=
+);                    <span class=3D"hljs-comment">// Set window configurat=
+ion state using flags</span>
+    <span class=3D"hljs-keyword">void</span> ClearWindowState(<span class=
+=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> f=
+lags);                  <span class=3D"hljs-comment">// Clear window config=
+uration state flags</span>
+    <span class=3D"hljs-keyword">void</span> ToggleFullscreen(<span class=
+=3D"hljs-keyword">void</span>);                                <span class=
+=3D"hljs-comment">// Toggle window state: fullscreen/windowed, resizes moni=
+tor to match window resolution</span>
+    <span class=3D"hljs-keyword">void</span> ToggleBorderlessWindowed(<span=
+ class=3D"hljs-keyword">void</span>);                        <span class=3D=
+"hljs-comment">// Toggle window state: borderless windowed, resizes window =
+to match monitor resolution</span>
+    <span class=3D"hljs-keyword">void</span> MaximizeWindow(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Set window state: maximized, if resizable</span>
+    <span class=3D"hljs-keyword">void</span> MinimizeWindow(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Set window state: minimized, if resizable</span>
+    <span class=3D"hljs-keyword">void</span> RestoreWindow(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// Set window state: not minimized/maximized</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowIcon(Image image);   =
+                         <span class=3D"hljs-comment">// Set icon for windo=
+w (single image, RGBA 32bit)</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowIcons(Image *images, =
+<span class=3D"hljs-keyword">int</span> count);              <span class=3D=
+"hljs-comment">// Set icon for window (multiple images, RGBA 32bit)</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowTitle(<span class=3D"=
+hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *title)=
+;                     <span class=3D"hljs-comment">// Set title for window<=
+/span>
+    <span class=3D"hljs-keyword">void</span> SetWindowPosition(<span class=
+=3D"hljs-keyword">int</span> x, <span class=3D"hljs-keyword">int</span> y);=
+                       <span class=3D"hljs-comment">// Set window position =
+on screen</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowMonitor(<span class=
+=3D"hljs-keyword">int</span> monitor);                         <span class=
+=3D"hljs-comment">// Set monitor for the current window</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowMinSize(<span class=
+=3D"hljs-keyword">int</span> width, <span class=3D"hljs-keyword">int</span>=
+ height);               <span class=3D"hljs-comment">// Set window minimum =
+dimensions (for FLAG_WINDOW_RESIZABLE)</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowMaxSize(<span class=
+=3D"hljs-keyword">int</span> width, <span class=3D"hljs-keyword">int</span>=
+ height);               <span class=3D"hljs-comment">// Set window maximum =
+dimensions (for FLAG_WINDOW_RESIZABLE)</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowSize(<span class=3D"h=
+ljs-keyword">int</span> width, <span class=3D"hljs-keyword">int</span> heig=
+ht);                  <span class=3D"hljs-comment">// Set window dimensions=
+</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowOpacity(<span class=
+=3D"hljs-keyword">float</span> opacity);                       <span class=
+=3D"hljs-comment">// Set window opacity [0.0f..1.0f]</span>
+    <span class=3D"hljs-keyword">void</span> SetWindowFocused(<span class=
+=3D"hljs-keyword">void</span>);                                <span class=
+=3D"hljs-comment">// Set window focused</span>
+    <span class=3D"hljs-keyword">void</span> *GetWindowHandle(<span class=
+=3D"hljs-keyword">void</span>);                                <span class=
+=3D"hljs-comment">// Get native window handle</span>
+    <span class=3D"hljs-keyword">int</span> GetScreenWidth(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// Get current screen width</span>
+    <span class=3D"hljs-keyword">int</span> GetScreenHeight(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Get current screen height</span>
+    <span class=3D"hljs-keyword">int</span> GetRenderWidth(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// Get current render width (it considers HiDPI)</span>
+    <span class=3D"hljs-keyword">int</span> GetRenderHeight(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Get current render height (it considers HiDPI)</span>
+    <span class=3D"hljs-keyword">int</span> GetMonitorCount(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Get number of connected monitors</span>
+    <span class=3D"hljs-keyword">int</span> GetCurrentMonitor(<span class=
+=3D"hljs-keyword">void</span>);                                <span class=
+=3D"hljs-comment">// Get current monitor where window is placed</span>
+    Vector2 GetMonitorPosition(<span class=3D"hljs-keyword">int</span> moni=
+tor);                    <span class=3D"hljs-comment">// Get specified moni=
+tor position</span>
+    <span class=3D"hljs-keyword">int</span> GetMonitorWidth(<span class=3D"=
+hljs-keyword">int</span> monitor);                           <span class=3D=
+"hljs-comment">// Get specified monitor width (current video mode used by m=
+onitor)</span>
+    <span class=3D"hljs-keyword">int</span> GetMonitorHeight(<span class=3D=
+"hljs-keyword">int</span> monitor);                          <span class=3D=
+"hljs-comment">// Get specified monitor height (current video mode used by =
+monitor)</span>
+    <span class=3D"hljs-keyword">int</span> GetMonitorPhysicalWidth(<span c=
+lass=3D"hljs-keyword">int</span> monitor);                   <span class=3D=
+"hljs-comment">// Get specified monitor physical width in millimetres</span=
+>
+    <span class=3D"hljs-keyword">int</span> GetMonitorPhysicalHeight(<span =
+class=3D"hljs-keyword">int</span> monitor);                  <span class=3D=
+"hljs-comment">// Get specified monitor physical height in millimetres</spa=
+n>
+    <span class=3D"hljs-keyword">int</span> GetMonitorRefreshRate(<span cla=
+ss=3D"hljs-keyword">int</span> monitor);                     <span class=3D=
+"hljs-comment">// Get specified monitor refresh rate</span>
+    Vector2 GetWindowPosition(<span class=3D"hljs-keyword">void</span>);   =
+                         <span class=3D"hljs-comment">// Get window positio=
+n XY on monitor</span>
+    Vector2 GetWindowScaleDPI(<span class=3D"hljs-keyword">void</span>);   =
+                         <span class=3D"hljs-comment">// Get window scale D=
+PI factor</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetMonitorName(<span class=3D"hljs-keyword">int</span> monitor=
+);                    <span class=3D"hljs-comment">// Get the human-readabl=
+e, UTF-8 encoded name of the specified monitor</span>
+    <span class=3D"hljs-keyword">void</span> SetClipboardText(<span class=
+=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *te=
+xt);                    <span class=3D"hljs-comment">// Set clipboard text =
+content</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetClipboardText(<span class=3D"hljs-keyword">void</span>);   =
+                      <span class=3D"hljs-comment">// Get clipboard text co=
+ntent</span>
+    Image GetClipboardImage(<span class=3D"hljs-keyword">void</span>);     =
+                         <span class=3D"hljs-comment">// Get clipboard imag=
+e</span>
+    <span class=3D"hljs-keyword">void</span> EnableEventWaiting(<span class=
+=3D"hljs-keyword">void</span>);                              <span class=3D=
+"hljs-comment">// Enable waiting for events on EndDrawing(), no automatic e=
+vent polling</span>
+    <span class=3D"hljs-keyword">void</span> DisableEventWaiting(<span clas=
+s=3D"hljs-keyword">void</span>);                             <span class=3D=
+"hljs-comment">// Disable waiting for events on EndDrawing(), automatic eve=
+nts polling</span>
+
+    <span class=3D"hljs-comment">// Cursor-related functions</span>
+    <span class=3D"hljs-keyword">void</span> ShowCursor(<span class=3D"hljs=
+-keyword">void</span>);                                      <span class=3D=
+"hljs-comment">// Shows cursor</span>
+    <span class=3D"hljs-keyword">void</span> HideCursor(<span class=3D"hljs=
+-keyword">void</span>);                                      <span class=3D=
+"hljs-comment">// Hides cursor</span>
+    <span class=3D"hljs-keyword">bool</span> IsCursorHidden(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Check if cursor is not visible</span>
+    <span class=3D"hljs-keyword">void</span> EnableCursor(<span class=3D"hl=
+js-keyword">void</span>);                                    <span class=3D=
+"hljs-comment">// Enables cursor (unlock cursor)</span>
+    <span class=3D"hljs-keyword">void</span> DisableCursor(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// Disables cursor (lock cursor)</span>
+    <span class=3D"hljs-keyword">bool</span> IsCursorOnScreen(<span class=
+=3D"hljs-keyword">void</span>);                                <span class=
+=3D"hljs-comment">// Check if cursor is on the screen</span>
+
+    <span class=3D"hljs-comment">// Drawing-related functions</span>
+    <span class=3D"hljs-keyword">void</span> ClearBackground(Color color); =
+                         <span class=3D"hljs-comment">// Set background col=
+or (framebuffer clear color)</span>
+    <span class=3D"hljs-keyword">void</span> BeginDrawing(<span class=3D"hl=
+js-keyword">void</span>);                                    <span class=3D=
+"hljs-comment">// Setup canvas (framebuffer) to start drawing</span>
+    <span class=3D"hljs-keyword">void</span> EndDrawing(<span class=3D"hljs=
+-keyword">void</span>);                                      <span class=3D=
+"hljs-comment">// End canvas drawing and swap buffers (double buffering)</s=
+pan>
+    <span class=3D"hljs-keyword">void</span> BeginMode2D(Camera2D camera); =
+                         <span class=3D"hljs-comment">// Begin 2D mode with=
+ custom camera (2D)</span>
+    <span class=3D"hljs-keyword">void</span> EndMode2D(<span class=3D"hljs-=
+keyword">void</span>);                                       <span class=3D=
+"hljs-comment">// Ends 2D mode with custom camera</span>
+    <span class=3D"hljs-keyword">void</span> BeginMode3D(Camera3D camera); =
+                         <span class=3D"hljs-comment">// Begin 3D mode with=
+ custom camera (3D)</span>
+    <span class=3D"hljs-keyword">void</span> EndMode3D(<span class=3D"hljs-=
+keyword">void</span>);                                       <span class=3D=
+"hljs-comment">// Ends 3D mode and returns to default 2D orthographic mode<=
+/span>
+    <span class=3D"hljs-keyword">void</span> BeginTextureMode(RenderTexture=
+2D target);              <span class=3D"hljs-comment">// Begin drawing to r=
+ender texture</span>
+    <span class=3D"hljs-keyword">void</span> EndTextureMode(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// Ends drawing to render texture</span>
+    <span class=3D"hljs-keyword">void</span> BeginShaderMode(Shader shader)=
+;                        <span class=3D"hljs-comment">// Begin custom shade=
+r drawing</span>
+    <span class=3D"hljs-keyword">void</span> EndShaderMode(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// End custom shader drawing (use default shader)</span>
+    <span class=3D"hljs-keyword">void</span> BeginBlendMode(<span class=3D"=
+hljs-keyword">int</span> mode);                              <span class=3D=
+"hljs-comment">// Begin blending mode (alpha, additive, multiplied, subtrac=
+t, custom)</span>
+    <span class=3D"hljs-keyword">void</span> EndBlendMode(<span class=3D"hl=
+js-keyword">void</span>);                                    <span class=3D=
+"hljs-comment">// End blending mode (reset to default: alpha blending)</spa=
+n>
+    <span class=3D"hljs-keyword">void</span> BeginScissorMode(<span class=
+=3D"hljs-keyword">int</span> x, <span class=3D"hljs-keyword">int</span> y, =
+<span class=3D"hljs-keyword">int</span> width, <span class=3D"hljs-keyword"=
+>int</span> height); <span class=3D"hljs-comment">// Begin scissor mode (de=
+fine screen area for following drawing)</span>
+    <span class=3D"hljs-keyword">void</span> EndScissorMode(<span class=3D"=
+hljs-keyword">void</span>);                                  <span class=3D=
+"hljs-comment">// End scissor mode</span>
+    <span class=3D"hljs-keyword">void</span> BeginVrStereoMode(VrStereoConf=
+ig config);              <span class=3D"hljs-comment">// Begin stereo rende=
+ring (requires VR simulator)</span>
+    <span class=3D"hljs-keyword">void</span> EndVrStereoMode(<span class=3D=
+"hljs-keyword">void</span>);                                 <span class=3D=
+"hljs-comment">// End stereo rendering (requires VR simulator)</span>
+
+    <span class=3D"hljs-comment">// VR stereo config functions for VR simul=
+ator</span>
+    VrStereoConfig LoadVrStereoConfig(VrDeviceInfo device);     <span class=
+=3D"hljs-comment">// Load VR stereo config for VR simulator device paramete=
+rs</span>
+    <span class=3D"hljs-keyword">void</span> UnloadVrStereoConfig(VrStereoC=
+onfig config);           <span class=3D"hljs-comment">// Unload VR stereo c=
+onfig</span>
+
+    <span class=3D"hljs-comment">// Shader management functions</span>
+    <span class=3D"hljs-comment">// NOTE: Shader functionality is not avail=
+able on OpenGL 1.1</span>
+    Shader LoadShader(<span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">char</span> *vsFileName, <span class=3D"hljs-keyword">con=
+st</span> <span class=3D"hljs-keyword">char</span> *fsFileName);   <span cl=
+ass=3D"hljs-comment">// Load shader from files and bind default locations</=
+span>
+    Shader LoadShaderFromMemory(<span class=3D"hljs-keyword">const</span> <=
+span class=3D"hljs-keyword">char</span> *vsCode, <span class=3D"hljs-keywor=
+d">const</span> <span class=3D"hljs-keyword">char</span> *fsCode); <span cl=
+ass=3D"hljs-comment">// Load shader from code strings and bind default loca=
+tions</span>
+    <span class=3D"hljs-keyword">bool</span> IsShaderValid(Shader shader); =
+                                  <span class=3D"hljs-comment">// Check if =
+a shader is valid (loaded on GPU)</span>
+    <span class=3D"hljs-keyword">int</span> GetShaderLocation(Shader shader=
+, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">ch=
+ar</span> *uniformName);       <span class=3D"hljs-comment">// Get shader u=
+niform location</span>
+    <span class=3D"hljs-keyword">int</span> GetShaderLocationAttrib(Shader =
+shader, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keywo=
+rd">char</span> *attribName);  <span class=3D"hljs-comment">// Get shader a=
+ttribute location</span>
+    <span class=3D"hljs-keyword">void</span> SetShaderValue(Shader shader, =
+<span class=3D"hljs-keyword">int</span> locIndex, <span class=3D"hljs-keywo=
+rd">const</span> <span class=3D"hljs-keyword">void</span> *value, <span cla=
+ss=3D"hljs-keyword">int</span> uniformType);               <span class=3D"h=
+ljs-comment">// Set shader uniform value</span>
+    <span class=3D"hljs-keyword">void</span> SetShaderValueV(Shader shader,=
+ <span class=3D"hljs-keyword">int</span> locIndex, <span class=3D"hljs-keyw=
+ord">const</span> <span class=3D"hljs-keyword">void</span> *value, <span cl=
+ass=3D"hljs-keyword">int</span> uniformType, <span class=3D"hljs-keyword">i=
+nt</span> count);   <span class=3D"hljs-comment">// Set shader uniform valu=
+e vector</span>
+    <span class=3D"hljs-keyword">void</span> SetShaderValueMatrix(Shader sh=
+ader, <span class=3D"hljs-keyword">int</span> locIndex, Matrix mat);       =
+  <span class=3D"hljs-comment">// Set shader uniform value (matrix 4x4)</sp=
+an>
+    <span class=3D"hljs-keyword">void</span> SetShaderValueTexture(Shader s=
+hader, <span class=3D"hljs-keyword">int</span> locIndex, Texture2D texture)=
+; <span class=3D"hljs-comment">// Set shader uniform value for texture (sam=
+pler2d)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadShader(Shader shader);  =
+                                  <span class=3D"hljs-comment">// Unload sh=
+ader from GPU memory (VRAM)</span>
+
+    <span class=3D"hljs-comment">// Screen-space-related functions</span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> GetMouseRay GetScreenToWorldRay     <span class=3D"hljs-comment">// =
+Compatibility hack for previous raylib versions</span></span>
+    Ray GetScreenToWorldRay(Vector2 position, Camera camera);         <span=
+ class=3D"hljs-comment">// Get a ray trace from screen position (i.e mouse)=
+</span>
+    Ray GetScreenToWorldRayEx(Vector2 position, Camera camera, <span class=
+=3D"hljs-keyword">int</span> width, <span class=3D"hljs-keyword">int</span>=
+ height); <span class=3D"hljs-comment">// Get a ray trace from screen posit=
+ion (i.e mouse) in a viewport</span>
+    Vector2 GetWorldToScreen(Vector3 position, Camera camera);        <span=
+ class=3D"hljs-comment">// Get the screen space position for a 3d world spa=
+ce position</span>
+    Vector2 GetWorldToScreenEx(Vector3 position, Camera camera, <span class=
+=3D"hljs-keyword">int</span> width, <span class=3D"hljs-keyword">int</span>=
+ height); <span class=3D"hljs-comment">// Get size position for a 3d world =
+space position</span>
+    Vector2 GetWorldToScreen2D(Vector2 position, Camera2D camera);    <span=
+ class=3D"hljs-comment">// Get the screen space position for a 2d camera wo=
+rld space position</span>
+    Vector2 GetScreenToWorld2D(Vector2 position, Camera2D camera);    <span=
+ class=3D"hljs-comment">// Get the world space position for a 2d camera scr=
+een space position</span>
+    Matrix GetCameraMatrix(Camera camera);                            <span=
+ class=3D"hljs-comment">// Get camera transform matrix (view matrix)</span>
+    Matrix GetCameraMatrix2D(Camera2D camera);                        <span=
+ class=3D"hljs-comment">// Get camera 2d transform matrix</span>
+
+    <span class=3D"hljs-comment">// Timing-related functions</span>
+    <span class=3D"hljs-keyword">void</span> SetTargetFPS(<span class=3D"hl=
+js-keyword">int</span> fps);                                 <span class=3D=
+"hljs-comment">// Set target FPS (maximum)</span>
+    <span class=3D"hljs-keyword">float</span> GetFrameTime(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// Get time in seconds for last frame drawn (delta time)</sp=
+an>
+    <span class=3D"hljs-keyword">double</span> GetTime(<span class=3D"hljs-=
+keyword">void</span>);                                       <span class=3D=
+"hljs-comment">// Get elapsed time in seconds since InitWindow()</span>
+    <span class=3D"hljs-keyword">int</span> GetFPS(<span class=3D"hljs-keyw=
+ord">void</span>);                                           <span class=3D=
+"hljs-comment">// Get current FPS</span>
+
+    <span class=3D"hljs-comment">// Custom frame control functions</span>
+    <span class=3D"hljs-comment">// NOTE: Those functions are intended for =
+advanced users that want full control over the frame processing</span>
+    <span class=3D"hljs-comment">// By default EndDrawing() does this job: =
+draws everything + SwapScreenBuffer() + manage frame timing + PollInputEven=
+ts()</span>
+    <span class=3D"hljs-comment">// To avoid that behaviour and control fra=
+me processes manually, enable in config.h: SUPPORT_CUSTOM_FRAME_CONTROL</sp=
+an>
+    <span class=3D"hljs-keyword">void</span> SwapScreenBuffer(<span class=
+=3D"hljs-keyword">void</span>);                                <span class=
+=3D"hljs-comment">// Swap back buffer with front buffer (screen drawing)</s=
+pan>
+    <span class=3D"hljs-keyword">void</span> PollInputEvents(<span class=3D=
+"hljs-keyword">void</span>);                                 <span class=3D=
+"hljs-comment">// Register all input events</span>
+    <span class=3D"hljs-keyword">void</span> WaitTime(<span class=3D"hljs-k=
+eyword">double</span> seconds);                              <span class=3D=
+"hljs-comment">// Wait for some time (halt program execution)</span>
+
+    <span class=3D"hljs-comment">// Random values generation functions</spa=
+n>
+    <span class=3D"hljs-keyword">void</span> SetRandomSeed(<span class=3D"h=
+ljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> seed);=
+                      <span class=3D"hljs-comment">// Set the seed for the =
+random number generator</span>
+    <span class=3D"hljs-keyword">int</span> GetRandomValue(<span class=3D"h=
+ljs-keyword">int</span> min, <span class=3D"hljs-keyword">int</span> max); =
+                      <span class=3D"hljs-comment">// Get a random value be=
+tween min and max (both included)</span>
+    <span class=3D"hljs-keyword">int</span> *LoadRandomSequence(<span class=
+=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> c=
+ount, <span class=3D"hljs-keyword">int</span> min, <span class=3D"hljs-keyw=
+ord">int</span> max); <span class=3D"hljs-comment">// Load random values se=
+quence, no values repeated</span>
+    <span class=3D"hljs-keyword">void</span> UnloadRandomSequence(<span cla=
+ss=3D"hljs-keyword">int</span> *sequence);                   <span class=3D=
+"hljs-comment">// Unload random values sequence</span>
+
+    <span class=3D"hljs-comment">// Misc. functions</span>
+    <span class=3D"hljs-keyword">void</span> TakeScreenshot(<span class=3D"=
+hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileNa=
+me);                  <span class=3D"hljs-comment">// Takes a screenshot of=
+ current screen (filename extension defines format)</span>
+    <span class=3D"hljs-keyword">void</span> SetConfigFlags(<span class=3D"=
+hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> flags=
+);                    <span class=3D"hljs-comment">// Setup init configurat=
+ion flags (view FLAGS)</span>
+    <span class=3D"hljs-keyword">void</span> OpenURL(<span class=3D"hljs-ke=
+yword">const</span> <span class=3D"hljs-keyword">char</span> *url);        =
+                      <span class=3D"hljs-comment">// Open URL with default=
+ system browser (if available)</span>
+
+    <span class=3D"hljs-comment">// NOTE: Following functions implemented i=
+n module [utils]</span>
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------</span>
+    <span class=3D"hljs-keyword">void</span> TraceLog(<span class=3D"hljs-k=
+eyword">int</span> logLevel, <span class=3D"hljs-keyword">const</span> <spa=
+n class=3D"hljs-keyword">char</span> *text, ...);         <span class=3D"hl=
+js-comment">// Show trace log messages (LOG_DEBUG, LOG_INFO, LOG_WARNING, L=
+OG_ERROR...)</span>
+    <span class=3D"hljs-keyword">void</span> SetTraceLogLevel(<span class=
+=3D"hljs-keyword">int</span> logLevel);                        <span class=
+=3D"hljs-comment">// Set the current threshold (minimum) log level</span>
+    <span class=3D"hljs-keyword">void</span> *MemAlloc(<span class=3D"hljs-=
+keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> size);    =
+                      <span class=3D"hljs-comment">// Internal memory alloc=
+ator</span>
+    <span class=3D"hljs-keyword">void</span> *MemRealloc(<span class=3D"hlj=
+s-keyword">void</span> *ptr, <span class=3D"hljs-keyword">unsigned</span> <=
+span class=3D"hljs-keyword">int</span> size);             <span class=3D"hl=
+js-comment">// Internal memory reallocator</span>
+    <span class=3D"hljs-keyword">void</span> MemFree(<span class=3D"hljs-ke=
+yword">void</span> *ptr);                                    <span class=3D=
+"hljs-comment">// Internal memory free</span>
+
+    <span class=3D"hljs-comment">// Set custom callbacks</span>
+    <span class=3D"hljs-comment">// WARNING: Callbacks setup is intended fo=
+r advanced users</span>
+    <span class=3D"hljs-keyword">void</span> SetTraceLogCallback(TraceLogCa=
+llback callback);         <span class=3D"hljs-comment">// Set custom trace =
+log</span>
+    <span class=3D"hljs-keyword">void</span> SetLoadFileDataCallback(LoadFi=
+leDataCallback callback); <span class=3D"hljs-comment">// Set custom file b=
+inary data loader</span>
+    <span class=3D"hljs-keyword">void</span> SetSaveFileDataCallback(SaveFi=
+leDataCallback callback); <span class=3D"hljs-comment">// Set custom file b=
+inary data saver</span>
+    <span class=3D"hljs-keyword">void</span> SetLoadFileTextCallback(LoadFi=
+leTextCallback callback); <span class=3D"hljs-comment">// Set custom file t=
+ext data loader</span>
+    <span class=3D"hljs-keyword">void</span> SetSaveFileTextCallback(SaveFi=
+leTextCallback callback); <span class=3D"hljs-comment">// Set custom file t=
+ext data saver</span>
+
+    <span class=3D"hljs-comment">// Files management functions</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">char</span> *LoadFileData(<span class=3D"hljs-keyword">const</span> <spa=
+n class=3D"hljs-keyword">char</span> *fileName, <span class=3D"hljs-keyword=
+">int</span> *dataSize); <span class=3D"hljs-comment">// Load file data as =
+byte array (read)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadFileData(<span class=3D"=
+hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">char</span> *dat=
+a);                   <span class=3D"hljs-comment">// Unload file data allo=
+cated by LoadFileData()</span>
+    <span class=3D"hljs-keyword">bool</span> SaveFileData(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileName=
+, <span class=3D"hljs-keyword">void</span> *data, <span class=3D"hljs-keywo=
+rd">int</span> dataSize); <span class=3D"hljs-comment">// Save data to file=
+ from byte array (write), returns true on success</span>
+    <span class=3D"hljs-keyword">bool</span> ExportDataAsCode(<span class=
+=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">unsigned</span>=
+ <span class=3D"hljs-keyword">char</span> *data, <span class=3D"hljs-keywor=
+d">int</span> dataSize, <span class=3D"hljs-keyword">const</span> <span cla=
+ss=3D"hljs-keyword">char</span> *fileName); <span class=3D"hljs-comment">//=
+ Export data to code (.h), returns true on success</span>
+    <span class=3D"hljs-keyword">char</span> *LoadFileText(<span class=3D"h=
+ljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileNam=
+e);                   <span class=3D"hljs-comment">// Load text data from f=
+ile (read), returns a '\0' terminated string</span>
+    <span class=3D"hljs-keyword">void</span> UnloadFileText(<span class=3D"=
+hljs-keyword">char</span> *text);                            <span class=3D=
+"hljs-comment">// Unload file text data allocated by LoadFileText()</span>
+    <span class=3D"hljs-keyword">bool</span> SaveFileText(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileName=
+, <span class=3D"hljs-keyword">char</span> *text);        <span class=3D"hl=
+js-comment">// Save text data to file (write), string must be '\0' terminat=
+ed, returns true on success</span>
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------</span>
+
+    <span class=3D"hljs-comment">// File system functions</span>
+    <span class=3D"hljs-keyword">bool</span> FileExists(<span class=3D"hljs=
+-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileName);=
+                      <span class=3D"hljs-comment">// Check if file exists<=
+/span>
+    <span class=3D"hljs-keyword">bool</span> DirectoryExists(<span class=3D=
+"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *dirPa=
+th);                  <span class=3D"hljs-comment">// Check if a directory =
+path exists</span>
+    <span class=3D"hljs-keyword">bool</span> IsFileExtension(<span class=3D=
+"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileN=
+ame, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword"=
+>char</span> *ext); <span class=3D"hljs-comment">// Check file extension (i=
+ncluding point: .png, .wav)</span>
+    <span class=3D"hljs-keyword">int</span> GetFileLength(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileName=
+);                    <span class=3D"hljs-comment">// Get file length in by=
+tes (NOTE: GetFileSize() conflicts with windows.h)</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetFileExtension(<span class=3D"hljs-keyword">const</span> <sp=
+an class=3D"hljs-keyword">char</span> *fileName);         <span class=3D"hl=
+js-comment">// Get pointer to extension for a filename string (includes dot=
+: '.png')</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetFileName(<span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *filePath);              <span class=3D"hl=
+js-comment">// Get pointer to filename for a path string</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetFileNameWithoutExt(<span class=3D"hljs-keyword">const</span=
+> <span class=3D"hljs-keyword">char</span> *filePath);    <span class=3D"hl=
+js-comment">// Get filename string without extension (uses static string)</=
+span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetDirectoryPath(<span class=3D"hljs-keyword">const</span> <sp=
+an class=3D"hljs-keyword">char</span> *filePath);         <span class=3D"hl=
+js-comment">// Get full path for a given fileName with path (uses static st=
+ring)</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetPrevDirectoryPath(<span class=3D"hljs-keyword">const</span>=
+ <span class=3D"hljs-keyword">char</span> *dirPath);      <span class=3D"hl=
+js-comment">// Get previous directory path for a given path (uses static st=
+ring)</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetWorkingDirectory(<span class=3D"hljs-keyword">void</span>);=
+                      <span class=3D"hljs-comment">// Get current working d=
+irectory (uses static string)</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetApplicationDirectory(<span class=3D"hljs-keyword">void</spa=
+n>);                  <span class=3D"hljs-comment">// Get the directory of =
+the running application (uses static string)</span>
+    <span class=3D"hljs-keyword">int</span> MakeDirectory(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *dirPath)=
+;                     <span class=3D"hljs-comment">// Create directories (i=
+ncluding full path requested), returns 0 on success</span>
+    <span class=3D"hljs-keyword">bool</span> ChangeDirectory(<span class=3D=
+"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *dir);=
+                      <span class=3D"hljs-comment">// Change working direct=
+ory, return true on success</span>
+    <span class=3D"hljs-keyword">bool</span> IsPathFile(<span class=3D"hljs=
+-keyword">const</span> <span class=3D"hljs-keyword">char</span> *path);    =
+                      <span class=3D"hljs-comment">// Check if a given path=
+ is a file or a directory</span>
+    <span class=3D"hljs-keyword">bool</span> IsFileNameValid(<span class=3D=
+"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileN=
+ame);                 <span class=3D"hljs-comment">// Check if fileName is =
+valid for the platform/OS</span>
+    FilePathList LoadDirectoryFiles(<span class=3D"hljs-keyword">const</spa=
+n> <span class=3D"hljs-keyword">char</span> *dirPath);       <span class=3D=
+"hljs-comment">// Load directory filepaths</span>
+    FilePathList LoadDirectoryFilesEx(<span class=3D"hljs-keyword">const</s=
+pan> <span class=3D"hljs-keyword">char</span> *basePath, <span class=3D"hlj=
+s-keyword">const</span> <span class=3D"hljs-keyword">char</span> *filter, <=
+span class=3D"hljs-keyword">bool</span> scanSubdirs); <span class=3D"hljs-c=
+omment">// Load directory filepaths with extension filtering and recursive =
+directory scan. Use 'DIR' in the filter string to include directories in th=
+e result</span>
+    <span class=3D"hljs-keyword">void</span> UnloadDirectoryFiles(FilePathL=
+ist files);              <span class=3D"hljs-comment">// Unload filepaths</=
+span>
+    <span class=3D"hljs-keyword">bool</span> IsFileDropped(<span class=3D"h=
+ljs-keyword">void</span>);                                   <span class=3D=
+"hljs-comment">// Check if a file has been dropped into window</span>
+    FilePathList LoadDroppedFiles(<span class=3D"hljs-keyword">void</span>)=
+;                        <span class=3D"hljs-comment">// Load dropped filep=
+aths</span>
+    <span class=3D"hljs-keyword">void</span> UnloadDroppedFiles(FilePathLis=
+t files);                <span class=3D"hljs-comment">// Unload dropped fil=
+epaths</span>
+    <span class=3D"hljs-keyword">long</span> GetFileModTime(<span class=3D"=
+hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileNa=
+me);                  <span class=3D"hljs-comment">// Get file modification=
+ time (last write time)</span>
+
+    <span class=3D"hljs-comment">// Compression/Encoding functionality</spa=
+n>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">char</span> *CompressData(<span class=3D"hljs-keyword">const</span> <spa=
+n class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">char<=
+/span> *data, <span class=3D"hljs-keyword">int</span> dataSize, <span class=
+=3D"hljs-keyword">int</span> *compDataSize);        <span class=3D"hljs-com=
+ment">// Compress data (DEFLATE algorithm), memory must be MemFree()</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">char</span> *DecompressData(<span class=3D"hljs-keyword">const</span> <s=
+pan class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">cha=
+r</span> *compData, <span class=3D"hljs-keyword">int</span> compDataSize, <=
+span class=3D"hljs-keyword">int</span> *dataSize);  <span class=3D"hljs-com=
+ment">// Decompress data (DEFLATE algorithm), memory must be MemFree()</spa=
+n>
+    <span class=3D"hljs-keyword">char</span> *EncodeDataBase64(<span class=
+=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">unsigned</span>=
+ <span class=3D"hljs-keyword">char</span> *data, <span class=3D"hljs-keywor=
+d">int</span> dataSize, <span class=3D"hljs-keyword">int</span> *outputSize=
+);               <span class=3D"hljs-comment">// Encode data to Base64 stri=
+ng, memory must be MemFree()</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">char</span> *DecodeDataBase64(<span class=3D"hljs-keyword">const</span> =
+<span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">c=
+har</span> *data, <span class=3D"hljs-keyword">int</span> *outputSize);    =
+                <span class=3D"hljs-comment">// Decode Base64 string data, =
+memory must be MemFree()</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">int</span> ComputeCRC32(<span class=3D"hljs-keyword">unsigned</span> <sp=
+an class=3D"hljs-keyword">char</span> *data, <span class=3D"hljs-keyword">i=
+nt</span> dataSize);     <span class=3D"hljs-comment">// Compute CRC32 hash=
+ code</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">int</span> *ComputeMD5(<span class=3D"hljs-keyword">unsigned</span> <spa=
+n class=3D"hljs-keyword">char</span> *data, <span class=3D"hljs-keyword">in=
+t</span> dataSize);      <span class=3D"hljs-comment">// Compute MD5 hash c=
+ode, returns static int[4] (16 bytes)</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">int</span> *ComputeSHA1(<span class=3D"hljs-keyword">unsigned</span> <sp=
+an class=3D"hljs-keyword">char</span> *data, <span class=3D"hljs-keyword">i=
+nt</span> dataSize);      <span class=3D"hljs-comment">// Compute SHA1 hash=
+ code, returns static int[5] (20 bytes)</span>
+
+
+    <span class=3D"hljs-comment">// Automation events functionality</span>
+    AutomationEventList LoadAutomationEventList(<span class=3D"hljs-keyword=
+">const</span> <span class=3D"hljs-keyword">char</span> *fileName);        =
+        <span class=3D"hljs-comment">// Load automation events list from fi=
+le, NULL for empty list, capacity =3D MAX_AUTOMATION_EVENTS</span>
+    <span class=3D"hljs-keyword">void</span> UnloadAutomationEventList(Auto=
+mationEventList <span class=3D"hljs-built_in">list</span>);                =
+         <span class=3D"hljs-comment">// Unload automation events list from=
+ file</span>
+    <span class=3D"hljs-keyword">bool</span> ExportAutomationEventList(Auto=
+mationEventList <span class=3D"hljs-built_in">list</span>, <span class=3D"h=
+ljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *fileNam=
+e);   <span class=3D"hljs-comment">// Export automation events list as text=
+ file</span>
+    <span class=3D"hljs-keyword">void</span> SetAutomationEventList(Automat=
+ionEventList *<span class=3D"hljs-built_in">list</span>);                  =
+         <span class=3D"hljs-comment">// Set automation event list to recor=
+d to</span>
+    <span class=3D"hljs-keyword">void</span> SetAutomationEventBaseFrame(<s=
+pan class=3D"hljs-keyword">int</span> frame);                              =
+        <span class=3D"hljs-comment">// Set automation event internal base =
+frame to start recording</span>
+    <span class=3D"hljs-keyword">void</span> StartAutomationEventRecording(=
+<span class=3D"hljs-keyword">void</span>);                                 =
+        <span class=3D"hljs-comment">// Start recording automation events (=
+AutomationEventList must be set)</span>
+    <span class=3D"hljs-keyword">void</span> StopAutomationEventRecording(<=
+span class=3D"hljs-keyword">void</span>);                                  =
+        <span class=3D"hljs-comment">// Stop recording automation events</s=
+pan>
+    <span class=3D"hljs-keyword">void</span> PlayAutomationEvent(Automation=
+Event event);                                  <span class=3D"hljs-comment"=
+>// Play a recorded automation event</span>
+
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+    <span class=3D"hljs-comment">// Input Handling Functions (Module: core)=
+</span>
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+
+    <span class=3D"hljs-comment">// Input-related functions: keyboard</span=
+>
+    <span class=3D"hljs-keyword">bool</span> IsKeyPressed(<span class=3D"hl=
+js-keyword">int</span> key);                             <span class=3D"hlj=
+s-comment">// Check if a key has been pressed once</span>
+    <span class=3D"hljs-keyword">bool</span> IsKeyPressedRepeat(<span class=
+=3D"hljs-keyword">int</span> key);                       <span class=3D"hlj=
+s-comment">// Check if a key has been pressed again</span>
+    <span class=3D"hljs-keyword">bool</span> IsKeyDown(<span class=3D"hljs-=
+keyword">int</span> key);                                <span class=3D"hlj=
+s-comment">// Check if a key is being pressed</span>
+    <span class=3D"hljs-keyword">bool</span> IsKeyReleased(<span class=3D"h=
+ljs-keyword">int</span> key);                            <span class=3D"hlj=
+s-comment">// Check if a key has been released once</span>
+    <span class=3D"hljs-keyword">bool</span> IsKeyUp(<span class=3D"hljs-ke=
+yword">int</span> key);                                  <span class=3D"hlj=
+s-comment">// Check if a key is NOT being pressed</span>
+    <span class=3D"hljs-keyword">int</span> GetKeyPressed(<span class=3D"hl=
+js-keyword">void</span>);                                <span class=3D"hlj=
+s-comment">// Get key pressed (keycode), call it multiple times for keys qu=
+eued, returns 0 when the queue is empty</span>
+    <span class=3D"hljs-keyword">int</span> GetCharPressed(<span class=3D"h=
+ljs-keyword">void</span>);                               <span class=3D"hlj=
+s-comment">// Get char pressed (unicode), call it multiple times for chars =
+queued, returns 0 when the queue is empty</span>
+    <span class=3D"hljs-keyword">void</span> SetExitKey(<span class=3D"hljs=
+-keyword">int</span> key);                               <span class=3D"hlj=
+s-comment">// Set a custom key to exit program (default is ESC)</span>
+
+    <span class=3D"hljs-comment">// Input-related functions: gamepads</span=
+>
+    <span class=3D"hljs-keyword">bool</span> IsGamepadAvailable(<span class=
+=3D"hljs-keyword">int</span> gamepad);                                     =
+   <span class=3D"hljs-comment">// Check if a gamepad is available</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *GetGamepadName(<span class=3D"hljs-keyword">int</span> gamepad=
+);                                     <span class=3D"hljs-comment">// Get =
+gamepad internal name id</span>
+    <span class=3D"hljs-keyword">bool</span> IsGamepadButtonPressed(<span c=
+lass=3D"hljs-keyword">int</span> gamepad, <span class=3D"hljs-keyword">int<=
+/span> button);                        <span class=3D"hljs-comment">// Chec=
+k if a gamepad button has been pressed once</span>
+    <span class=3D"hljs-keyword">bool</span> IsGamepadButtonDown(<span clas=
+s=3D"hljs-keyword">int</span> gamepad, <span class=3D"hljs-keyword">int</sp=
+an> button);                           <span class=3D"hljs-comment">// Chec=
+k if a gamepad button is being pressed</span>
+    <span class=3D"hljs-keyword">bool</span> IsGamepadButtonReleased(<span =
+class=3D"hljs-keyword">int</span> gamepad, <span class=3D"hljs-keyword">int=
+</span> button);                       <span class=3D"hljs-comment">// Chec=
+k if a gamepad button has been released once</span>
+    <span class=3D"hljs-keyword">bool</span> IsGamepadButtonUp(<span class=
+=3D"hljs-keyword">int</span> gamepad, <span class=3D"hljs-keyword">int</spa=
+n> button);                             <span class=3D"hljs-comment">// Che=
+ck if a gamepad button is NOT being pressed</span>
+    <span class=3D"hljs-keyword">int</span> GetGamepadButtonPressed(<span c=
+lass=3D"hljs-keyword">void</span>);                                        =
+   <span class=3D"hljs-comment">// Get the last gamepad button pressed</spa=
+n>
+    <span class=3D"hljs-keyword">int</span> GetGamepadAxisCount(<span class=
+=3D"hljs-keyword">int</span> gamepad);                                     =
+   <span class=3D"hljs-comment">// Get gamepad axis count for a gamepad</sp=
+an>
+    <span class=3D"hljs-keyword">float</span> GetGamepadAxisMovement(<span =
+class=3D"hljs-keyword">int</span> gamepad, <span class=3D"hljs-keyword">int=
+</span> axis);                         <span class=3D"hljs-comment">// Get =
+axis movement value for a gamepad axis</span>
+    <span class=3D"hljs-keyword">int</span> SetGamepadMappings(<span class=
+=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *ma=
+ppings);                                <span class=3D"hljs-comment">// Set=
+ internal gamepad mappings (SDL_GameControllerDB)</span>
+    <span class=3D"hljs-keyword">void</span> SetGamepadVibration(<span clas=
+s=3D"hljs-keyword">int</span> gamepad, <span class=3D"hljs-keyword">float</=
+span> leftMotor, <span class=3D"hljs-keyword">float</span> rightMotor, <spa=
+n class=3D"hljs-keyword">float</span> duration); <span class=3D"hljs-commen=
+t">// Set gamepad vibration for both motors (duration in seconds)</span>
+
+    <span class=3D"hljs-comment">// Input-related functions: mouse</span>
+    <span class=3D"hljs-keyword">bool</span> IsMouseButtonPressed(<span cla=
+ss=3D"hljs-keyword">int</span> button);                  <span class=3D"hlj=
+s-comment">// Check if a mouse button has been pressed once</span>
+    <span class=3D"hljs-keyword">bool</span> IsMouseButtonDown(<span class=
+=3D"hljs-keyword">int</span> button);                     <span class=3D"hl=
+js-comment">// Check if a mouse button is being pressed</span>
+    <span class=3D"hljs-keyword">bool</span> IsMouseButtonReleased(<span cl=
+ass=3D"hljs-keyword">int</span> button);                 <span class=3D"hlj=
+s-comment">// Check if a mouse button has been released once</span>
+    <span class=3D"hljs-keyword">bool</span> IsMouseButtonUp(<span class=3D=
+"hljs-keyword">int</span> button);                       <span class=3D"hlj=
+s-comment">// Check if a mouse button is NOT being pressed</span>
+    <span class=3D"hljs-keyword">int</span> GetMouseX(<span class=3D"hljs-k=
+eyword">void</span>);                                    <span class=3D"hlj=
+s-comment">// Get mouse position X</span>
+    <span class=3D"hljs-keyword">int</span> GetMouseY(<span class=3D"hljs-k=
+eyword">void</span>);                                    <span class=3D"hlj=
+s-comment">// Get mouse position Y</span>
+    Vector2 GetMousePosition(<span class=3D"hljs-keyword">void</span>);    =
+                     <span class=3D"hljs-comment">// Get mouse position XY<=
+/span>
+    Vector2 GetMouseDelta(<span class=3D"hljs-keyword">void</span>);       =
+                     <span class=3D"hljs-comment">// Get mouse delta betwee=
+n frames</span>
+    <span class=3D"hljs-keyword">void</span> SetMousePosition(<span class=
+=3D"hljs-keyword">int</span> x, <span class=3D"hljs-keyword">int</span> y);=
+                    <span class=3D"hljs-comment">// Set mouse position XY</=
+span>
+    <span class=3D"hljs-keyword">void</span> SetMouseOffset(<span class=3D"=
+hljs-keyword">int</span> offsetX, <span class=3D"hljs-keyword">int</span> o=
+ffsetY);          <span class=3D"hljs-comment">// Set mouse offset</span>
+    <span class=3D"hljs-keyword">void</span> SetMouseScale(<span class=3D"h=
+ljs-keyword">float</span> scaleX, <span class=3D"hljs-keyword">float</span>=
+ scaleY);         <span class=3D"hljs-comment">// Set mouse scaling</span>
+    <span class=3D"hljs-keyword">float</span> GetMouseWheelMove(<span class=
+=3D"hljs-keyword">void</span>);                          <span class=3D"hlj=
+s-comment">// Get mouse wheel movement for X or Y, whichever is larger</spa=
+n>
+    Vector2 GetMouseWheelMoveV(<span class=3D"hljs-keyword">void</span>);  =
+                     <span class=3D"hljs-comment">// Get mouse wheel moveme=
+nt for both X and Y</span>
+    <span class=3D"hljs-keyword">void</span> SetMouseCursor(<span class=3D"=
+hljs-keyword">int</span> cursor);                        <span class=3D"hlj=
+s-comment">// Set mouse cursor</span>
+
+    <span class=3D"hljs-comment">// Input-related functions: touch</span>
+    <span class=3D"hljs-keyword">int</span> GetTouchX(<span class=3D"hljs-k=
+eyword">void</span>);                                    <span class=3D"hlj=
+s-comment">// Get touch position X for touch point 0 (relative to screen si=
+ze)</span>
+    <span class=3D"hljs-keyword">int</span> GetTouchY(<span class=3D"hljs-k=
+eyword">void</span>);                                    <span class=3D"hlj=
+s-comment">// Get touch position Y for touch point 0 (relative to screen si=
+ze)</span>
+    Vector2 GetTouchPosition(<span class=3D"hljs-keyword">int</span> index)=
+;                    <span class=3D"hljs-comment">// Get touch position XY =
+for a touch point index (relative to screen size)</span>
+    <span class=3D"hljs-keyword">int</span> GetTouchPointId(<span class=3D"=
+hljs-keyword">int</span> index);                         <span class=3D"hlj=
+s-comment">// Get touch point identifier for given index</span>
+    <span class=3D"hljs-keyword">int</span> GetTouchPointCount(<span class=
+=3D"hljs-keyword">void</span>);                           <span class=3D"hl=
+js-comment">// Get number of touch points</span>
+
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+    <span class=3D"hljs-comment">// Gestures and Touch Handling Functions (=
+Module: rgestures)</span>
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+    <span class=3D"hljs-keyword">void</span> SetGesturesEnabled(<span class=
+=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> f=
+lags);      <span class=3D"hljs-comment">// Enable a set of gestures using =
+flags</span>
+    <span class=3D"hljs-keyword">bool</span> IsGestureDetected(<span class=
+=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">int</span> g=
+esture);     <span class=3D"hljs-comment">// Check if a gesture have been d=
+etected</span>
+    <span class=3D"hljs-keyword">int</span> GetGestureDetected(<span class=
+=3D"hljs-keyword">void</span>);                     <span class=3D"hljs-com=
+ment">// Get latest detected gesture</span>
+    <span class=3D"hljs-keyword">float</span> GetGestureHoldDuration(<span =
+class=3D"hljs-keyword">void</span>);               <span class=3D"hljs-comm=
+ent">// Get gesture hold time in seconds</span>
+    Vector2 GetGestureDragVector(<span class=3D"hljs-keyword">void</span>);=
+               <span class=3D"hljs-comment">// Get gesture drag vector</spa=
+n>
+    <span class=3D"hljs-keyword">float</span> GetGestureDragAngle(<span cla=
+ss=3D"hljs-keyword">void</span>);                  <span class=3D"hljs-comm=
+ent">// Get gesture drag angle</span>
+    Vector2 GetGesturePinchVector(<span class=3D"hljs-keyword">void</span>)=
+;              <span class=3D"hljs-comment">// Get gesture pinch delta</spa=
+n>
+    <span class=3D"hljs-keyword">float</span> GetGesturePinchAngle(<span cl=
+ass=3D"hljs-keyword">void</span>);                 <span class=3D"hljs-comm=
+ent">// Get gesture pinch angle</span>
+
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+    <span class=3D"hljs-comment">// Camera System Functions (Module: rcamer=
+a)</span>
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+    <span class=3D"hljs-keyword">void</span> UpdateCamera(Camera *camera, <=
+span class=3D"hljs-keyword">int</span> mode);      <span class=3D"hljs-comm=
+ent">// Update camera position for selected mode</span>
+    <span class=3D"hljs-keyword">void</span> UpdateCameraPro(Camera *camera=
+, Vector3 movement, Vector3 rotation, <span class=3D"hljs-keyword">float</s=
+pan> zoom); <span class=3D"hljs-comment">// Update camera movement/rotation=
+</span>
+
+</code></pre></div>
+            <p id=3D"pshapes">module: rshapes <a href=3D"https://www.raylib=
+.com/cheatsheet/cheatsheet.html#pshapes">=E2=86=92</a></p>
+            <div id=3D"shapes"><pre><code class=3D"cpp hljs ">
+    <span class=3D"hljs-comment">// Set texture and rectangle to be used on=
+ shapes drawing</span>
+    <span class=3D"hljs-comment">// NOTE: It can be useful when using basic=
+ shapes and one single font,</span>
+    <span class=3D"hljs-comment">// defining a font char white rectangle wo=
+uld allow drawing everything in a single draw call</span>
+    <span class=3D"hljs-keyword">void</span> SetShapesTexture(Texture2D tex=
+ture, Rectangle source);       <span class=3D"hljs-comment">// Set texture =
+and rectangle to be used on shapes drawing</span>
+    Texture2D GetShapesTexture(<span class=3D"hljs-keyword">void</span>);  =
+                               <span class=3D"hljs-comment">// Get texture =
+that is used for shapes drawing</span>
+    Rectangle GetShapesTextureRectangle(<span class=3D"hljs-keyword">void</=
+span>);                        <span class=3D"hljs-comment">// Get texture =
+source rectangle that is used for shapes drawing</span>
+
+    <span class=3D"hljs-comment">// Basic shapes drawing functions</span>
+    <span class=3D"hljs-keyword">void</span> DrawPixel(<span class=3D"hljs-=
+keyword">int</span> posX, <span class=3D"hljs-keyword">int</span> posY, Col=
+or color);                                                   <span class=3D=
+"hljs-comment">// Draw a pixel using geometry [Can be slow, use with care]<=
+/span>
+    <span class=3D"hljs-keyword">void</span> DrawPixelV(Vector2 position, C=
+olor color);                                                    <span class=
+=3D"hljs-comment">// Draw a pixel using geometry (Vector version) [Can be s=
+low, use with care]</span>
+    <span class=3D"hljs-keyword">void</span> DrawLine(<span class=3D"hljs-k=
+eyword">int</span> startPosX, <span class=3D"hljs-keyword">int</span> start=
+PosY, <span class=3D"hljs-keyword">int</span> endPosX, <span class=3D"hljs-=
+keyword">int</span> endPosY, Color color);                <span class=3D"hl=
+js-comment">// Draw a line</span>
+    <span class=3D"hljs-keyword">void</span> DrawLineV(Vector2 startPos, Ve=
+ctor2 endPos, Color color);                                     <span class=
+=3D"hljs-comment">// Draw a line (using gl lines)</span>
+    <span class=3D"hljs-keyword">void</span> DrawLineEx(Vector2 startPos, V=
+ector2 endPos, <span class=3D"hljs-keyword">float</span> thick, Color color=
+);                       <span class=3D"hljs-comment">// Draw a line (using=
+ triangles/quads)</span>
+    <span class=3D"hljs-keyword">void</span> DrawLineStrip(<span class=3D"h=
+ljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-keyword">int=
+</span> pointCount, Color color);                            <span class=3D=
+"hljs-comment">// Draw lines sequence (using gl lines)</span>
+    <span class=3D"hljs-keyword">void</span> DrawLineBezier(Vector2 startPo=
+s, Vector2 endPos, <span class=3D"hljs-keyword">float</span> thick, Color c=
+olor);                   <span class=3D"hljs-comment">// Draw line segment =
+cubic-bezier in-out interpolation</span>
+    <span class=3D"hljs-keyword">void</span> DrawCircle(<span class=3D"hljs=
+-keyword">int</span> centerX, <span class=3D"hljs-keyword">int</span> cente=
+rY, <span class=3D"hljs-keyword">float</span> radius, Color color);        =
+                      <span class=3D"hljs-comment">// Draw a color-filled c=
+ircle</span>
+    <span class=3D"hljs-keyword">void</span> DrawCircleSector(Vector2 cente=
+r, <span class=3D"hljs-keyword">float</span> radius, <span class=3D"hljs-ke=
+yword">float</span> startAngle, <span class=3D"hljs-keyword">float</span> e=
+ndAngle, <span class=3D"hljs-keyword">int</span> segments, Color color);   =
+   <span class=3D"hljs-comment">// Draw a piece of a circle</span>
+    <span class=3D"hljs-keyword">void</span> DrawCircleSectorLines(Vector2 =
+center, <span class=3D"hljs-keyword">float</span> radius, <span class=3D"hl=
+js-keyword">float</span> startAngle, <span class=3D"hljs-keyword">float</sp=
+an> endAngle, <span class=3D"hljs-keyword">int</span> segments, Color color=
+); <span class=3D"hljs-comment">// Draw circle sector outline</span>
+    <span class=3D"hljs-keyword">void</span> DrawCircleGradient(<span class=
+=3D"hljs-keyword">int</span> centerX, <span class=3D"hljs-keyword">int</spa=
+n> centerY, <span class=3D"hljs-keyword">float</span> radius, Color inner, =
+Color outer);         <span class=3D"hljs-comment">// Draw a gradient-fille=
+d circle</span>
+    <span class=3D"hljs-keyword">void</span> DrawCircleV(Vector2 center, <s=
+pan class=3D"hljs-keyword">float</span> radius, Color color);              =
+                         <span class=3D"hljs-comment">// Draw a color-fille=
+d circle (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> DrawCircleLines(<span class=3D=
+"hljs-keyword">int</span> centerX, <span class=3D"hljs-keyword">int</span> =
+centerY, <span class=3D"hljs-keyword">float</span> radius, Color color);   =
+                      <span class=3D"hljs-comment">// Draw circle outline</=
+span>
+    <span class=3D"hljs-keyword">void</span> DrawCircleLinesV(Vector2 cente=
+r, <span class=3D"hljs-keyword">float</span> radius, Color color);         =
+                         <span class=3D"hljs-comment">// Draw circle outlin=
+e (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> DrawEllipse(<span class=3D"hlj=
+s-keyword">int</span> centerX, <span class=3D"hljs-keyword">int</span> cent=
+erY, <span class=3D"hljs-keyword">float</span> radiusH, <span class=3D"hljs=
+-keyword">float</span> radiusV, Color color);             <span class=3D"hl=
+js-comment">// Draw ellipse</span>
+    <span class=3D"hljs-keyword">void</span> DrawEllipseLines(<span class=
+=3D"hljs-keyword">int</span> centerX, <span class=3D"hljs-keyword">int</spa=
+n> centerY, <span class=3D"hljs-keyword">float</span> radiusH, <span class=
+=3D"hljs-keyword">float</span> radiusV, Color color);        <span class=3D=
+"hljs-comment">// Draw ellipse outline</span>
+    <span class=3D"hljs-keyword">void</span> DrawRing(Vector2 center, <span=
+ class=3D"hljs-keyword">float</span> innerRadius, <span class=3D"hljs-keywo=
+rd">float</span> outerRadius, <span class=3D"hljs-keyword">float</span> sta=
+rtAngle, <span class=3D"hljs-keyword">float</span> endAngle, <span class=3D=
+"hljs-keyword">int</span> segments, Color color); <span class=3D"hljs-comme=
+nt">// Draw ring</span>
+    <span class=3D"hljs-keyword">void</span> DrawRingLines(Vector2 center, =
+<span class=3D"hljs-keyword">float</span> innerRadius, <span class=3D"hljs-=
+keyword">float</span> outerRadius, <span class=3D"hljs-keyword">float</span=
+> startAngle, <span class=3D"hljs-keyword">float</span> endAngle, <span cla=
+ss=3D"hljs-keyword">int</span> segments, Color color);    <span class=3D"hl=
+js-comment">// Draw ring outline</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangle(<span class=3D"h=
+ljs-keyword">int</span> posX, <span class=3D"hljs-keyword">int</span> posY,=
+ <span class=3D"hljs-keyword">int</span> width, <span class=3D"hljs-keyword=
+">int</span> height, Color color);                        <span class=3D"hl=
+js-comment">// Draw a color-filled rectangle</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleV(Vector2 positio=
+n, Vector2 size, Color color);                                  <span class=
+=3D"hljs-comment">// Draw a color-filled rectangle (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleRec(Rectangle rec=
+, Color color);                                                 <span class=
+=3D"hljs-comment">// Draw a color-filled rectangle</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectanglePro(Rectangle rec=
+, Vector2 origin, <span class=3D"hljs-keyword">float</span> rotation, Color=
+ color);                 <span class=3D"hljs-comment">// Draw a color-fille=
+d rectangle with pro parameters</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleGradientV(<span c=
+lass=3D"hljs-keyword">int</span> posX, <span class=3D"hljs-keyword">int</sp=
+an> posY, <span class=3D"hljs-keyword">int</span> width, <span class=3D"hlj=
+s-keyword">int</span> height, Color top, Color bottom);   <span class=3D"hl=
+js-comment">// Draw a vertical-gradient-filled rectangle</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleGradientH(<span c=
+lass=3D"hljs-keyword">int</span> posX, <span class=3D"hljs-keyword">int</sp=
+an> posY, <span class=3D"hljs-keyword">int</span> width, <span class=3D"hlj=
+s-keyword">int</span> height, Color left, Color right);   <span class=3D"hl=
+js-comment">// Draw a horizontal-gradient-filled rectangle</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleGradientEx(Rectan=
+gle rec, Color topLeft, Color bottomLeft, Color topRight, Color bottomRight=
+); <span class=3D"hljs-comment">// Draw a gradient-filled rectangle with cu=
+stom vertex colors</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleLines(<span class=
+=3D"hljs-keyword">int</span> posX, <span class=3D"hljs-keyword">int</span> =
+posY, <span class=3D"hljs-keyword">int</span> width, <span class=3D"hljs-ke=
+yword">int</span> height, Color color);                   <span class=3D"hl=
+js-comment">// Draw rectangle outline</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleLinesEx(Rectangle=
+ rec, <span class=3D"hljs-keyword">float</span> lineThick, Color color);   =
+                         <span class=3D"hljs-comment">// Draw rectangle out=
+line with extended parameters</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleRounded(Rectangle=
+ rec, <span class=3D"hljs-keyword">float</span> roundness, <span class=3D"h=
+ljs-keyword">int</span> segments, Color color);              <span class=3D=
+"hljs-comment">// Draw rectangle with rounded edges</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleRoundedLines(Rect=
+angle rec, <span class=3D"hljs-keyword">float</span> roundness, <span class=
+=3D"hljs-keyword">int</span> segments, Color color);         <span class=3D=
+"hljs-comment">// Draw rectangle lines with rounded edges</span>
+    <span class=3D"hljs-keyword">void</span> DrawRectangleRoundedLinesEx(Re=
+ctangle rec, <span class=3D"hljs-keyword">float</span> roundness, <span cla=
+ss=3D"hljs-keyword">int</span> segments, <span class=3D"hljs-keyword">float=
+</span> lineThick, Color color); <span class=3D"hljs-comment">// Draw recta=
+ngle with rounded edges outline</span>
+    <span class=3D"hljs-keyword">void</span> DrawTriangle(Vector2 v1, Vecto=
+r2 v2, Vector2 v3, Color color);                                <span class=
+=3D"hljs-comment">// Draw a color-filled triangle (vertex in counter-clockw=
+ise order!)</span>
+    <span class=3D"hljs-keyword">void</span> DrawTriangleLines(Vector2 v1, =
+Vector2 v2, Vector2 v3, Color color);                           <span class=
+=3D"hljs-comment">// Draw triangle outline (vertex in counter-clockwise ord=
+er!)</span>
+    <span class=3D"hljs-keyword">void</span> DrawTriangleFan(<span class=3D=
+"hljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-keyword">i=
+nt</span> pointCount, Color color);                          <span class=3D=
+"hljs-comment">// Draw a triangle fan defined by points (first vertex is th=
+e center)</span>
+    <span class=3D"hljs-keyword">void</span> DrawTriangleStrip(<span class=
+=3D"hljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-keyword=
+">int</span> pointCount, Color color);                        <span class=
+=3D"hljs-comment">// Draw a triangle strip defined by points</span>
+    <span class=3D"hljs-keyword">void</span> DrawPoly(Vector2 center, <span=
+ class=3D"hljs-keyword">int</span> sides, <span class=3D"hljs-keyword">floa=
+t</span> radius, <span class=3D"hljs-keyword">float</span> rotation, Color =
+color);               <span class=3D"hljs-comment">// Draw a regular polygo=
+n (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> DrawPolyLines(Vector2 center, =
+<span class=3D"hljs-keyword">int</span> sides, <span class=3D"hljs-keyword"=
+>float</span> radius, <span class=3D"hljs-keyword">float</span> rotation, C=
+olor color);          <span class=3D"hljs-comment">// Draw a polygon outlin=
+e of n sides</span>
+    <span class=3D"hljs-keyword">void</span> DrawPolyLinesEx(Vector2 center=
+, <span class=3D"hljs-keyword">int</span> sides, <span class=3D"hljs-keywor=
+d">float</span> radius, <span class=3D"hljs-keyword">float</span> rotation,=
+ <span class=3D"hljs-keyword">float</span> lineThick, Color color); <span c=
+lass=3D"hljs-comment">// Draw a polygon outline of n sides with extended pa=
+rameters</span>
+
+    <span class=3D"hljs-comment">// Splines drawing functions</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineLinear(<span class=
+=3D"hljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-keyword=
+">int</span> pointCount, <span class=3D"hljs-keyword">float</span> thick, C=
+olor color);                  <span class=3D"hljs-comment">// Draw spline: =
+Linear, minimum 2 points</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineBasis(<span class=3D=
+"hljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-keyword">i=
+nt</span> pointCount, <span class=3D"hljs-keyword">float</span> thick, Colo=
+r color);                   <span class=3D"hljs-comment">// Draw spline: B-=
+Spline, minimum 4 points</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineCatmullRom(<span cla=
+ss=3D"hljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-keywo=
+rd">int</span> pointCount, <span class=3D"hljs-keyword">float</span> thick,=
+ Color color);              <span class=3D"hljs-comment">// Draw spline: Ca=
+tmull-Rom, minimum 4 points</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineBezierQuadratic(<spa=
+n class=3D"hljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-=
+keyword">int</span> pointCount, <span class=3D"hljs-keyword">float</span> t=
+hick, Color color);         <span class=3D"hljs-comment">// Draw spline: Qu=
+adratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]</sp=
+an>
+    <span class=3D"hljs-keyword">void</span> DrawSplineBezierCubic(<span cl=
+ass=3D"hljs-keyword">const</span> Vector2 *points, <span class=3D"hljs-keyw=
+ord">int</span> pointCount, <span class=3D"hljs-keyword">float</span> thick=
+, Color color);             <span class=3D"hljs-comment">// Draw spline: Cu=
+bic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...=
+]</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineSegmentLinear(Vector=
+2 p1, Vector2 p2, <span class=3D"hljs-keyword">float</span> thick, Color co=
+lor);                    <span class=3D"hljs-comment">// Draw spline segmen=
+t: Linear, 2 points</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineSegmentBasis(Vector2=
+ p1, Vector2 p2, Vector2 p3, Vector2 p4, <span class=3D"hljs-keyword">float=
+</span> thick, Color color); <span class=3D"hljs-comment">// Draw spline se=
+gment: B-Spline, 4 points</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineSegmentCatmullRom(Ve=
+ctor2 p1, Vector2 p2, Vector2 p3, Vector2 p4, <span class=3D"hljs-keyword">=
+float</span> thick, Color color); <span class=3D"hljs-comment">// Draw spli=
+ne segment: Catmull-Rom, 4 points</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineSegmentBezierQuadrat=
+ic(Vector2 p1, Vector2 c2, Vector2 p3, <span class=3D"hljs-keyword">float</=
+span> thick, Color color); <span class=3D"hljs-comment">// Draw spline segm=
+ent: Quadratic Bezier, 2 points, 1 control point</span>
+    <span class=3D"hljs-keyword">void</span> DrawSplineSegmentBezierCubic(V=
+ector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, <span class=3D"hljs-keyword"=
+>float</span> thick, Color color); <span class=3D"hljs-comment">// Draw spl=
+ine segment: Cubic Bezier, 2 points, 2 control points</span>
+
+    <span class=3D"hljs-comment">// Spline segment point evaluation functio=
+ns, for a given t [0.0f .. 1.0f]</span>
+    Vector2 GetSplinePointLinear(Vector2 startPos, Vector2 endPos, <span cl=
+ass=3D"hljs-keyword">float</span> t);                           <span class=
+=3D"hljs-comment">// Get (evaluate) spline point: Linear</span>
+    Vector2 GetSplinePointBasis(Vector2 p1, Vector2 p2, Vector2 p3, Vector2=
+ p4, <span class=3D"hljs-keyword">float</span> t);              <span class=
+=3D"hljs-comment">// Get (evaluate) spline point: B-Spline</span>
+    Vector2 GetSplinePointCatmullRom(Vector2 p1, Vector2 p2, Vector2 p3, Ve=
+ctor2 p4, <span class=3D"hljs-keyword">float</span> t);         <span class=
+=3D"hljs-comment">// Get (evaluate) spline point: Catmull-Rom</span>
+    Vector2 GetSplinePointBezierQuad(Vector2 p1, Vector2 c2, Vector2 p3, <s=
+pan class=3D"hljs-keyword">float</span> t);                     <span class=
+=3D"hljs-comment">// Get (evaluate) spline point: Quadratic Bezier</span>
+    Vector2 GetSplinePointBezierCubic(Vector2 p1, Vector2 c2, Vector2 c3, V=
+ector2 p4, <span class=3D"hljs-keyword">float</span> t);        <span class=
+=3D"hljs-comment">// Get (evaluate) spline point: Cubic Bezier</span>
+
+    <span class=3D"hljs-comment">// Basic shapes collision detection functi=
+ons</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionRecs(Rectangle r=
+ec1, Rectangle rec2);                                           <span class=
+=3D"hljs-comment">// Check collision between two rectangles</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionCircles(Vector2 =
+center1, <span class=3D"hljs-keyword">float</span> radius1, Vector2 center2=
+, <span class=3D"hljs-keyword">float</span> radius2);        <span class=3D=
+"hljs-comment">// Check collision between two circles</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionCircleRec(Vector=
+2 center, <span class=3D"hljs-keyword">float</span> radius, Rectangle rec);=
+                         <span class=3D"hljs-comment">// Check collision be=
+tween circle and rectangle</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionCircleLine(Vecto=
+r2 center, <span class=3D"hljs-keyword">float</span> radius, Vector2 p1, Ve=
+ctor2 p2);               <span class=3D"hljs-comment">// Check if circle co=
+llides with a line created betweeen two points [p1] and [p2]</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionPointRec(Vector2=
+ point, Rectangle rec);                                         <span class=
+=3D"hljs-comment">// Check if point is inside rectangle</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionPointCircle(Vect=
+or2 point, Vector2 center, <span class=3D"hljs-keyword">float</span> radius=
+);                       <span class=3D"hljs-comment">// Check if point is =
+inside circle</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionPointTriangle(Ve=
+ctor2 point, Vector2 p1, Vector2 p2, Vector2 p3);               <span class=
+=3D"hljs-comment">// Check if point is inside a triangle</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionPointLine(Vector=
+2 point, Vector2 p1, Vector2 p2, <span class=3D"hljs-keyword">int</span> th=
+reshold);                <span class=3D"hljs-comment">// Check if point bel=
+ongs to line created between two points [p1] and [p2] with defined margin i=
+n pixels [threshold]</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionPointPoly(Vector=
+2 point, <span class=3D"hljs-keyword">const</span> Vector2 *points, <span c=
+lass=3D"hljs-keyword">int</span> pointCount);                <span class=3D=
+"hljs-comment">// Check if point is within a polygon described by array of =
+vertices</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionLines(Vector2 st=
+artPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 *coll=
+isionPoint); <span class=3D"hljs-comment">// Check the collision between tw=
+o lines defined by two points each, returns collision point by reference</s=
+pan>
+    Rectangle GetCollisionRec(Rectangle rec1, Rectangle rec2);             =
+                            <span class=3D"hljs-comment">// Get collision r=
+ectangle for two rectangles collision</span>
+
+</code></pre></div>
+            <p id=3D"ptextures">module: rtextures <a href=3D"https://www.ra=
+ylib.com/cheatsheet/cheatsheet.html#ptextures">=E2=86=92</a></p>
+            <div id=3D"textures"><pre><code class=3D"cpp hljs ">
+    <span class=3D"hljs-comment">// Image loading functions</span>
+    <span class=3D"hljs-comment">// NOTE: These functions do not require GP=
+U access</span>
+    Image LoadImage(<span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">char</span> *fileName);                                  =
+                           <span class=3D"hljs-comment">// Load image from =
+file into CPU memory (RAM)</span>
+    Image LoadImageRaw(<span class=3D"hljs-keyword">const</span> <span clas=
+s=3D"hljs-keyword">char</span> *fileName, <span class=3D"hljs-keyword">int<=
+/span> width, <span class=3D"hljs-keyword">int</span> height, <span class=
+=3D"hljs-keyword">int</span> format, <span class=3D"hljs-keyword">int</span=
+> headerSize);       <span class=3D"hljs-comment">// Load image from RAW fi=
+le data</span>
+    Image LoadImageAnim(<span class=3D"hljs-keyword">const</span> <span cla=
+ss=3D"hljs-keyword">char</span> *fileName, <span class=3D"hljs-keyword">int=
+</span> *frames);                                            <span class=3D=
+"hljs-comment">// Load image sequence from file (frames appended to image.d=
+ata)</span>
+    Image LoadImageAnimFromMemory(<span class=3D"hljs-keyword">const</span>=
+ <span class=3D"hljs-keyword">char</span> *fileType, <span class=3D"hljs-ke=
+yword">const</span> <span class=3D"hljs-keyword">unsigned</span> <span clas=
+s=3D"hljs-keyword">char</span> *fileData, <span class=3D"hljs-keyword">int<=
+/span> dataSize, <span class=3D"hljs-keyword">int</span> *frames); <span cl=
+ass=3D"hljs-comment">// Load image sequence from memory buffer</span>
+    Image LoadImageFromMemory(<span class=3D"hljs-keyword">const</span> <sp=
+an class=3D"hljs-keyword">char</span> *fileType, <span class=3D"hljs-keywor=
+d">const</span> <span class=3D"hljs-keyword">unsigned</span> <span class=3D=
+"hljs-keyword">char</span> *fileData, <span class=3D"hljs-keyword">int</spa=
+n> dataSize);      <span class=3D"hljs-comment">// Load image from memory b=
+uffer, fileType refers to extension: i.e. '.png'</span>
+    Image LoadImageFromTexture(Texture2D texture);                         =
+                            <span class=3D"hljs-comment">// Load image from=
+ GPU texture data</span>
+    Image LoadImageFromScreen(<span class=3D"hljs-keyword">void</span>);   =
+                                                                <span class=
+=3D"hljs-comment">// Load image from screen buffer and (screenshot)</span>
+    <span class=3D"hljs-keyword">bool</span> IsImageValid(Image image);    =
+                                                                <span class=
+=3D"hljs-comment">// Check if an image is valid (data and parameters)</span=
+>
+    <span class=3D"hljs-keyword">void</span> UnloadImage(Image image);     =
+                                                                <span class=
+=3D"hljs-comment">// Unload image from CPU memory (RAM)</span>
+    <span class=3D"hljs-keyword">bool</span> ExportImage(Image image, <span=
+ class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</spa=
+n> *fileName);                                               <span class=3D=
+"hljs-comment">// Export image data to file, returns true on success</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">char</span> *ExportImageToMemory(Image image, <span class=3D"hljs-keywor=
+d">const</span> <span class=3D"hljs-keyword">char</span> *fileType, <span c=
+lass=3D"hljs-keyword">int</span> *fileSize);              <span class=3D"hl=
+js-comment">// Export image to memory buffer</span>
+    <span class=3D"hljs-keyword">bool</span> ExportImageAsCode(Image image,=
+ <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">cha=
+r</span> *fileName);                                         <span class=3D=
+"hljs-comment">// Export image as code file defining an array of bytes, ret=
+urns true on success</span>
+
+    <span class=3D"hljs-comment">// Image generation functions</span>
+    Image GenImageColor(<span class=3D"hljs-keyword">int</span> width, <spa=
+n class=3D"hljs-keyword">int</span> height, Color color);                  =
+                         <span class=3D"hljs-comment">// Generate image: pl=
+ain color</span>
+    Image GenImageGradientLinear(<span class=3D"hljs-keyword">int</span> wi=
+dth, <span class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-ke=
+yword">int</span> direction, Color start, Color end);        <span class=3D=
+"hljs-comment">// Generate image: linear gradient, direction in degrees [0.=
+.360], 0=3DVertical gradient</span>
+    Image GenImageGradientRadial(<span class=3D"hljs-keyword">int</span> wi=
+dth, <span class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-ke=
+yword">float</span> density, Color inner, Color outer);      <span class=3D=
+"hljs-comment">// Generate image: radial gradient</span>
+    Image GenImageGradientSquare(<span class=3D"hljs-keyword">int</span> wi=
+dth, <span class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-ke=
+yword">float</span> density, Color inner, Color outer);      <span class=3D=
+"hljs-comment">// Generate image: square gradient</span>
+    Image GenImageChecked(<span class=3D"hljs-keyword">int</span> width, <s=
+pan class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-keyword">=
+int</span> checksX, <span class=3D"hljs-keyword">int</span> checksY, Color =
+col1, Color col2);    <span class=3D"hljs-comment">// Generate image: check=
+ed</span>
+    Image GenImageWhiteNoise(<span class=3D"hljs-keyword">int</span> width,=
+ <span class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-keywor=
+d">float</span> factor);                                     <span class=3D=
+"hljs-comment">// Generate image: white noise</span>
+    Image GenImagePerlinNoise(<span class=3D"hljs-keyword">int</span> width=
+, <span class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-keywo=
+rd">int</span> offsetX, <span class=3D"hljs-keyword">int</span> offsetY, <s=
+pan class=3D"hljs-keyword">float</span> scale);           <span class=3D"hl=
+js-comment">// Generate image: perlin noise</span>
+    Image GenImageCellular(<span class=3D"hljs-keyword">int</span> width, <=
+span class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-keyword"=
+>int</span> tileSize);                                       <span class=3D=
+"hljs-comment">// Generate image: cellular algorithm, bigger tileSize means=
+ bigger cells</span>
+    Image GenImageText(<span class=3D"hljs-keyword">int</span> width, <span=
+ class=3D"hljs-keyword">int</span> height, <span class=3D"hljs-keyword">con=
+st</span> <span class=3D"hljs-keyword">char</span> *text);                 =
+                      <span class=3D"hljs-comment">// Generate image: grays=
+cale image from text data</span>
+
+    <span class=3D"hljs-comment">// Image manipulation functions</span>
+    Image ImageCopy(Image image);                                          =
+                            <span class=3D"hljs-comment">// Create an image=
+ duplicate (useful for transformations)</span>
+    Image ImageFromImage(Image image, Rectangle rec);                      =
+                            <span class=3D"hljs-comment">// Create an image=
+ from another image piece</span>
+    Image ImageFromChannel(Image image, <span class=3D"hljs-keyword">int</s=
+pan> selectedChannel);                                          <span class=
+=3D"hljs-comment">// Create an image from a selected channel of another ima=
+ge (GRAYSCALE)</span>
+    Image ImageText(<span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">char</span> *text, <span class=3D"hljs-keyword">int</span=
+> fontSize, Color color);                                      <span class=
+=3D"hljs-comment">// Create an image from text (default font)</span>
+    Image ImageTextEx(Font font, <span class=3D"hljs-keyword">const</span> =
+<span class=3D"hljs-keyword">char</span> *text, <span class=3D"hljs-keyword=
+">float</span> fontSize, <span class=3D"hljs-keyword">float</span> spacing,=
+ Color tint);         <span class=3D"hljs-comment">// Create an image from =
+text (custom sprite font)</span>
+    <span class=3D"hljs-keyword">void</span> ImageFormat(Image *image, <spa=
+n class=3D"hljs-keyword">int</span> newFormat);                            =
+                         <span class=3D"hljs-comment">// Convert image data=
+ to desired format</span>
+    <span class=3D"hljs-keyword">void</span> ImageToPOT(Image *image, Color=
+ fill);                                                         <span class=
+=3D"hljs-comment">// Convert image to POT (power-of-two)</span>
+    <span class=3D"hljs-keyword">void</span> ImageCrop(Image *image, Rectan=
+gle crop);                                                      <span class=
+=3D"hljs-comment">// Crop an image to a defined rectangle</span>
+    <span class=3D"hljs-keyword">void</span> ImageAlphaCrop(Image *image, <=
+span class=3D"hljs-keyword">float</span> threshold);                       =
+                         <span class=3D"hljs-comment">// Crop image dependi=
+ng on alpha value</span>
+    <span class=3D"hljs-keyword">void</span> ImageAlphaClear(Image *image, =
+Color color, <span class=3D"hljs-keyword">float</span> threshold);         =
+                         <span class=3D"hljs-comment">// Clear alpha channe=
+l to desired color</span>
+    <span class=3D"hljs-keyword">void</span> ImageAlphaMask(Image *image, I=
+mage alphaMask);                                                <span class=
+=3D"hljs-comment">// Apply alpha mask to image</span>
+    <span class=3D"hljs-keyword">void</span> ImageAlphaPremultiply(Image *i=
+mage);                                                          <span class=
+=3D"hljs-comment">// Premultiply alpha channel</span>
+    <span class=3D"hljs-keyword">void</span> ImageBlurGaussian(Image *image=
+, <span class=3D"hljs-keyword">int</span> blurSize);                       =
+                         <span class=3D"hljs-comment">// Apply Gaussian blu=
+r using a box blur approximation</span>
+    <span class=3D"hljs-keyword">void</span> ImageKernelConvolution(Image *=
+image, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keywor=
+d">float</span> *kernel, <span class=3D"hljs-keyword">int</span> kernelSize=
+);                    <span class=3D"hljs-comment">// Apply custom square c=
+onvolution kernel to image</span>
+    <span class=3D"hljs-keyword">void</span> ImageResize(Image *image, <spa=
+n class=3D"hljs-keyword">int</span> newWidth, <span class=3D"hljs-keyword">=
+int</span> newHeight);                                       <span class=3D=
+"hljs-comment">// Resize image (Bicubic scaling algorithm)</span>
+    <span class=3D"hljs-keyword">void</span> ImageResizeNN(Image *image, <s=
+pan class=3D"hljs-keyword">int</span> newWidth,<span class=3D"hljs-keyword"=
+>int</span> newHeight);                                      <span class=3D=
+"hljs-comment">// Resize image (Nearest-Neighbor scaling algorithm)</span>
+    <span class=3D"hljs-keyword">void</span> ImageResizeCanvas(Image *image=
+, <span class=3D"hljs-keyword">int</span> newWidth, <span class=3D"hljs-key=
+word">int</span> newHeight, <span class=3D"hljs-keyword">int</span> offsetX=
+, <span class=3D"hljs-keyword">int</span> offsetY, Color fill); <span class=
+=3D"hljs-comment">// Resize canvas and fill with color</span>
+    <span class=3D"hljs-keyword">void</span> ImageMipmaps(Image *image);   =
+                                                                <span class=
+=3D"hljs-comment">// Compute all mipmap levels for a provided image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDither(Image *image, <spa=
+n class=3D"hljs-keyword">int</span> rBpp, <span class=3D"hljs-keyword">int<=
+/span> gBpp, <span class=3D"hljs-keyword">int</span> bBpp, <span class=3D"h=
+ljs-keyword">int</span> aBpp);                            <span class=3D"hl=
+js-comment">// Dither image data to 16bpp or lower (Floyd-Steinberg ditheri=
+ng)</span>
+    <span class=3D"hljs-keyword">void</span> ImageFlipVertical(Image *image=
+);                                                              <span class=
+=3D"hljs-comment">// Flip image vertically</span>
+    <span class=3D"hljs-keyword">void</span> ImageFlipHorizontal(Image *ima=
+ge);                                                            <span class=
+=3D"hljs-comment">// Flip image horizontally</span>
+    <span class=3D"hljs-keyword">void</span> ImageRotate(Image *image, <spa=
+n class=3D"hljs-keyword">int</span> degrees);                              =
+                         <span class=3D"hljs-comment">// Rotate image by in=
+put angle in degrees (-359 to 359)</span>
+    <span class=3D"hljs-keyword">void</span> ImageRotateCW(Image *image);  =
+                                                                <span class=
+=3D"hljs-comment">// Rotate image clockwise 90deg</span>
+    <span class=3D"hljs-keyword">void</span> ImageRotateCCW(Image *image); =
+                                                                <span class=
+=3D"hljs-comment">// Rotate image counter-clockwise 90deg</span>
+    <span class=3D"hljs-keyword">void</span> ImageColorTint(Image *image, C=
+olor color);                                                    <span class=
+=3D"hljs-comment">// Modify image color: tint</span>
+    <span class=3D"hljs-keyword">void</span> ImageColorInvert(Image *image)=
+;                                                               <span class=
+=3D"hljs-comment">// Modify image color: invert</span>
+    <span class=3D"hljs-keyword">void</span> ImageColorGrayscale(Image *ima=
+ge);                                                            <span class=
+=3D"hljs-comment">// Modify image color: grayscale</span>
+    <span class=3D"hljs-keyword">void</span> ImageColorContrast(Image *imag=
+e, <span class=3D"hljs-keyword">float</span> contrast);                    =
+                         <span class=3D"hljs-comment">// Modify image color=
+: contrast (-100 to 100)</span>
+    <span class=3D"hljs-keyword">void</span> ImageColorBrightness(Image *im=
+age, <span class=3D"hljs-keyword">int</span> brightness);                  =
+                         <span class=3D"hljs-comment">// Modify image color=
+: brightness (-255 to 255)</span>
+    <span class=3D"hljs-keyword">void</span> ImageColorReplace(Image *image=
+, Color color, Color replace);                                  <span class=
+=3D"hljs-comment">// Modify image color: replace color</span>
+    Color *LoadImageColors(Image image);                                   =
+                            <span class=3D"hljs-comment">// Load color data=
+ from image as a Color array (RGBA - 32bit)</span>
+    Color *LoadImagePalette(Image image, <span class=3D"hljs-keyword">int</=
+span> maxPaletteSize, <span class=3D"hljs-keyword">int</span> *colorCount);=
+                         <span class=3D"hljs-comment">// Load colors palett=
+e from image as a Color array (RGBA - 32bit)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadImageColors(Color *color=
+s);                                                             <span class=
+=3D"hljs-comment">// Unload color data loaded with LoadImageColors()</span>
+    <span class=3D"hljs-keyword">void</span> UnloadImagePalette(Color *colo=
+rs);                                                            <span class=
+=3D"hljs-comment">// Unload colors palette loaded with LoadImagePalette()</=
+span>
+    Rectangle GetImageAlphaBorder(Image image, <span class=3D"hljs-keyword"=
+>float</span> threshold);                                       <span class=
+=3D"hljs-comment">// Get image alpha border rectangle</span>
+    Color GetImageColor(Image image, <span class=3D"hljs-keyword">int</span=
+> x, <span class=3D"hljs-keyword">int</span> y);                           =
+                         <span class=3D"hljs-comment">// Get image pixel co=
+lor at (x, y) position</span>
+
+    <span class=3D"hljs-comment">// Image drawing functions</span>
+    <span class=3D"hljs-comment">// NOTE: Image software-rendering function=
+s (CPU)</span>
+    <span class=3D"hljs-keyword">void</span> ImageClearBackground(Image *ds=
+t, Color color);                                                <span class=
+=3D"hljs-comment">// Clear image background with given color</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawPixel(Image *dst, <sp=
+an class=3D"hljs-keyword">int</span> posX, <span class=3D"hljs-keyword">int=
+</span> posY, Color color);                                  <span class=3D=
+"hljs-comment">// Draw pixel within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawPixelV(Image *dst, Ve=
+ctor2 position, Color color);                                   <span class=
+=3D"hljs-comment">// Draw pixel within an image (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawLine(Image *dst, <spa=
+n class=3D"hljs-keyword">int</span> startPosX, <span class=3D"hljs-keyword"=
+>int</span> startPosY, <span class=3D"hljs-keyword">int</span> endPosX, <sp=
+an class=3D"hljs-keyword">int</span> endPosY, Color color); <span class=3D"=
+hljs-comment">// Draw line within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawLineV(Image *dst, Vec=
+tor2 start, Vector2 end, Color color);                          <span class=
+=3D"hljs-comment">// Draw line within an image (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawLineEx(Image *dst, Ve=
+ctor2 start, Vector2 end, <span class=3D"hljs-keyword">int</span> thick, Co=
+lor color);              <span class=3D"hljs-comment">// Draw a line defini=
+ng thickness within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawCircle(Image *dst, <s=
+pan class=3D"hljs-keyword">int</span> centerX, <span class=3D"hljs-keyword"=
+>int</span> centerY, <span class=3D"hljs-keyword">int</span> radius, Color =
+color);               <span class=3D"hljs-comment">// Draw a filled circle =
+within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawCircleV(Image *dst, V=
+ector2 center, <span class=3D"hljs-keyword">int</span> radius, Color color)=
+;                        <span class=3D"hljs-comment">// Draw a filled circ=
+le within an image (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawCircleLines(Image *ds=
+t, <span class=3D"hljs-keyword">int</span> centerX, <span class=3D"hljs-key=
+word">int</span> centerY, <span class=3D"hljs-keyword">int</span> radius, C=
+olor color);          <span class=3D"hljs-comment">// Draw circle outline w=
+ithin an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawCircleLinesV(Image *d=
+st, Vector2 center, <span class=3D"hljs-keyword">int</span> radius, Color c=
+olor);                   <span class=3D"hljs-comment">// Draw circle outlin=
+e within an image (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawRectangle(Image *dst,=
+ <span class=3D"hljs-keyword">int</span> posX, <span class=3D"hljs-keyword"=
+>int</span> posY, <span class=3D"hljs-keyword">int</span> width, <span clas=
+s=3D"hljs-keyword">int</span> height, Color color);       <span class=3D"hl=
+js-comment">// Draw rectangle within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawRectangleV(Image *dst=
+, Vector2 position, Vector2 size, Color color);                 <span class=
+=3D"hljs-comment">// Draw rectangle within an image (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawRectangleRec(Image *d=
+st, Rectangle rec, Color color);                                <span class=
+=3D"hljs-comment">// Draw rectangle within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawRectangleLines(Image =
+*dst, Rectangle rec, <span class=3D"hljs-keyword">int</span> thick, Color c=
+olor);                   <span class=3D"hljs-comment">// Draw rectangle lin=
+es within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawTriangle(Image *dst, =
+Vector2 v1, Vector2 v2, Vector2 v3, Color color);               <span class=
+=3D"hljs-comment">// Draw triangle within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawTriangleEx(Image *dst=
+, Vector2 v1, Vector2 v2, Vector2 v3, Color c1, Color c2, Color c3); <span =
+class=3D"hljs-comment">// Draw triangle with interpolated colors within an =
+image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawTriangleLines(Image *=
+dst, Vector2 v1, Vector2 v2, Vector2 v3, Color color);          <span class=
+=3D"hljs-comment">// Draw triangle outline within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawTriangleFan(Image *ds=
+t, Vector2 *points, <span class=3D"hljs-keyword">int</span> pointCount, Col=
+or color);               <span class=3D"hljs-comment">// Draw a triangle fa=
+n defined by points within an image (first vertex is the center)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawTriangleStrip(Image *=
+dst, Vector2 *points, <span class=3D"hljs-keyword">int</span> pointCount, C=
+olor color);             <span class=3D"hljs-comment">// Draw a triangle st=
+rip defined by points within an image</span>
+    <span class=3D"hljs-keyword">void</span> ImageDraw(Image *dst, Image sr=
+c, Rectangle srcRec, Rectangle dstRec, Color tint);             <span class=
+=3D"hljs-comment">// Draw a source image within a destination image (tint a=
+pplied to source)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawText(Image *dst, <spa=
+n class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</sp=
+an> *text, <span class=3D"hljs-keyword">int</span> posX, <span class=3D"hlj=
+s-keyword">int</span> posY, <span class=3D"hljs-keyword">int</span> fontSiz=
+e, Color color);   <span class=3D"hljs-comment">// Draw text (using default=
+ font) within an image (destination)</span>
+    <span class=3D"hljs-keyword">void</span> ImageDrawTextEx(Image *dst, Fo=
+nt font, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyw=
+ord">char</span> *text, Vector2 position, <span class=3D"hljs-keyword">floa=
+t</span> fontSize, <span class=3D"hljs-keyword">float</span> spacing, Color=
+ tint); <span class=3D"hljs-comment">// Draw text (custom sprite font) with=
+in an image (destination)</span>
+
+    <span class=3D"hljs-comment">// Texture loading functions</span>
+    <span class=3D"hljs-comment">// NOTE: These functions require GPU acces=
+s</span>
+    Texture2D LoadTexture(<span class=3D"hljs-keyword">const</span> <span c=
+lass=3D"hljs-keyword">char</span> *fileName);                              =
+                         <span class=3D"hljs-comment">// Load texture from =
+file into GPU memory (VRAM)</span>
+    Texture2D LoadTextureFromImage(Image image);                           =
+                            <span class=3D"hljs-comment">// Load texture fr=
+om image data</span>
+    TextureCubemap LoadTextureCubemap(Image image, <span class=3D"hljs-keyw=
+ord">int</span> layout);                                        <span class=
+=3D"hljs-comment">// Load cubemap from image, multiple image cubemap layout=
+s supported</span>
+    RenderTexture2D LoadRenderTexture(<span class=3D"hljs-keyword">int</spa=
+n> width, <span class=3D"hljs-keyword">int</span> height);                 =
+                         <span class=3D"hljs-comment">// Load texture for r=
+endering (framebuffer)</span>
+    <span class=3D"hljs-keyword">bool</span> IsTextureValid(Texture2D textu=
+re);                                                            <span class=
+=3D"hljs-comment">// Check if a texture is valid (loaded in GPU)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadTexture(Texture2D textur=
+e);                                                             <span class=
+=3D"hljs-comment">// Unload texture from GPU memory (VRAM)</span>
+    <span class=3D"hljs-keyword">bool</span> IsRenderTextureValid(RenderTex=
+ture2D target);                                                 <span class=
+=3D"hljs-comment">// Check if a render texture is valid (loaded in GPU)</sp=
+an>
+    <span class=3D"hljs-keyword">void</span> UnloadRenderTexture(RenderText=
+ure2D target);                                                  <span class=
+=3D"hljs-comment">// Unload render texture from GPU memory (VRAM)</span>
+    <span class=3D"hljs-keyword">void</span> UpdateTexture(Texture2D textur=
+e, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">v=
+oid</span> *pixels);                                         <span class=3D=
+"hljs-comment">// Update GPU texture with new data</span>
+    <span class=3D"hljs-keyword">void</span> UpdateTextureRec(Texture2D tex=
+ture, Rectangle rec, <span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">void</span> *pixels);                       <span class=
+=3D"hljs-comment">// Update GPU texture rectangle with new data</span>
+
+    <span class=3D"hljs-comment">// Texture configuration functions</span>
+    <span class=3D"hljs-keyword">void</span> GenTextureMipmaps(Texture2D *t=
+exture);                                                        <span class=
+=3D"hljs-comment">// Generate GPU mipmaps for a texture</span>
+    <span class=3D"hljs-keyword">void</span> SetTextureFilter(Texture2D tex=
+ture, <span class=3D"hljs-keyword">int</span> filter);                     =
+                         <span class=3D"hljs-comment">// Set texture scalin=
+g filter mode</span>
+    <span class=3D"hljs-keyword">void</span> SetTextureWrap(Texture2D textu=
+re, <span class=3D"hljs-keyword">int</span> wrap);                         =
+                         <span class=3D"hljs-comment">// Set texture wrappi=
+ng mode</span>
+
+    <span class=3D"hljs-comment">// Texture drawing functions</span>
+    <span class=3D"hljs-keyword">void</span> DrawTexture(Texture2D texture,=
+ <span class=3D"hljs-keyword">int</span> posX, <span class=3D"hljs-keyword"=
+>int</span> posY, Color tint);                               <span class=3D=
+"hljs-comment">// Draw a Texture2D</span>
+    <span class=3D"hljs-keyword">void</span> DrawTextureV(Texture2D texture=
+, Vector2 position, Color tint);                                <span class=
+=3D"hljs-comment">// Draw a Texture2D with position defined as Vector2</spa=
+n>
+    <span class=3D"hljs-keyword">void</span> DrawTextureEx(Texture2D textur=
+e, Vector2 position, <span class=3D"hljs-keyword">float</span> rotation, <s=
+pan class=3D"hljs-keyword">float</span> scale, Color tint);  <span class=3D=
+"hljs-comment">// Draw a Texture2D with extended parameters</span>
+    <span class=3D"hljs-keyword">void</span> DrawTextureRec(Texture2D textu=
+re, Rectangle source, Vector2 position, Color tint);            <span class=
+=3D"hljs-comment">// Draw a part of a texture defined by a rectangle</span>
+    <span class=3D"hljs-keyword">void</span> DrawTexturePro(Texture2D textu=
+re, Rectangle source, Rectangle dest, Vector2 origin, <span class=3D"hljs-k=
+eyword">float</span> rotation, Color tint); <span class=3D"hljs-comment">//=
+ Draw a part of a texture defined by a rectangle with 'pro' parameters</spa=
+n>
+    <span class=3D"hljs-keyword">void</span> DrawTextureNPatch(Texture2D te=
+xture, NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, <span class=
+=3D"hljs-keyword">float</span> rotation, Color tint); <span class=3D"hljs-c=
+omment">// Draws a texture (or part of it) that stretches or shrinks nicely=
+</span>
+
+    <span class=3D"hljs-comment">// Color/pixel related functions</span>
+    <span class=3D"hljs-keyword">bool</span> ColorIsEqual(Color col1, Color=
+ col2);                            <span class=3D"hljs-comment">// Check if=
+ two colors are equal</span>
+    Color Fade(Color color, <span class=3D"hljs-keyword">float</span> alpha=
+);                                 <span class=3D"hljs-comment">// Get colo=
+r with alpha applied, alpha goes from 0.0f to 1.0f</span>
+    <span class=3D"hljs-keyword">int</span> ColorToInt(Color color);       =
+                                   <span class=3D"hljs-comment">// Get hexa=
+decimal value for a Color (0xRRGGBBAA)</span>
+    Vector4 ColorNormalize(Color color);                                  <=
+span class=3D"hljs-comment">// Get Color normalized as float [0..1]</span>
+    Color ColorFromNormalized(Vector4 normalized);                        <=
+span class=3D"hljs-comment">// Get Color from normalized values [0..1]</spa=
+n>
+    Vector3 ColorToHSV(Color color);                                      <=
+span class=3D"hljs-comment">// Get HSV values for a Color, hue [0..360], sa=
+turation/value [0..1]</span>
+    Color ColorFromHSV(<span class=3D"hljs-keyword">float</span> hue, <span=
+ class=3D"hljs-keyword">float</span> saturation, <span class=3D"hljs-keywor=
+d">float</span> value);         <span class=3D"hljs-comment">// Get a Color=
+ from HSV values, hue [0..360], saturation/value [0..1]</span>
+    Color ColorTint(Color color, Color tint);                             <=
+span class=3D"hljs-comment">// Get color multiplied with another color</spa=
+n>
+    Color ColorBrightness(Color color, <span class=3D"hljs-keyword">float</=
+span> factor);                     <span class=3D"hljs-comment">// Get colo=
+r with brightness correction, brightness factor goes from -1.0f to 1.0f</sp=
+an>
+    Color ColorContrast(Color color, <span class=3D"hljs-keyword">float</sp=
+an> contrast);                     <span class=3D"hljs-comment">// Get colo=
+r with contrast correction, contrast values between -1.0f and 1.0f</span>
+    Color ColorAlpha(Color color, <span class=3D"hljs-keyword">float</span>=
+ alpha);                           <span class=3D"hljs-comment">// Get colo=
+r with alpha applied, alpha goes from 0.0f to 1.0f</span>
+    Color ColorAlphaBlend(Color dst, Color src, Color tint);              <=
+span class=3D"hljs-comment">// Get src alpha-blended into dst color with ti=
+nt</span>
+    Color ColorLerp(Color color1, Color color2, <span class=3D"hljs-keyword=
+">float</span> factor);            <span class=3D"hljs-comment">// Get colo=
+r lerp interpolation between two colors, factor [0.0f..1.0f]</span>
+    Color GetColor(<span class=3D"hljs-keyword">unsigned</span> <span class=
+=3D"hljs-keyword">int</span> hexValue);                                <spa=
+n class=3D"hljs-comment">// Get Color structure from hexadecimal value</spa=
+n>
+    Color GetPixelColor(<span class=3D"hljs-keyword">void</span> *srcPtr, <=
+span class=3D"hljs-keyword">int</span> format);                        <spa=
+n class=3D"hljs-comment">// Get Color from a source pixel pointer of certai=
+n format</span>
+    <span class=3D"hljs-keyword">void</span> SetPixelColor(<span class=3D"h=
+ljs-keyword">void</span> *dstPtr, Color color, <span class=3D"hljs-keyword"=
+>int</span> format);            <span class=3D"hljs-comment">// Set color f=
+ormatted into destination pixel pointer</span>
+    <span class=3D"hljs-keyword">int</span> GetPixelDataSize(<span class=3D=
+"hljs-keyword">int</span> width, <span class=3D"hljs-keyword">int</span> he=
+ight, <span class=3D"hljs-keyword">int</span> format);              <span c=
+lass=3D"hljs-comment">// Get pixel data size in bytes for certain format</s=
+pan>
+
+</code></pre></div>
+            <p id=3D"ptext">module: rtext <a href=3D"https://www.raylib.com=
+/cheatsheet/cheatsheet.html#ptext">=E2=86=92</a></p>
+            <div id=3D"text"><pre><code class=3D"cpp hljs ">
+    <span class=3D"hljs-comment">// Font loading/unloading functions</span>
+    Font GetFontDefault(<span class=3D"hljs-keyword">void</span>);         =
+                                                   <span class=3D"hljs-comm=
+ent">// Get the default Font</span>
+    Font LoadFont(<span class=3D"hljs-keyword">const</span> <span class=3D"=
+hljs-keyword">char</span> *fileName);                                      =
+            <span class=3D"hljs-comment">// Load font from file into GPU me=
+mory (VRAM)</span>
+    Font LoadFontEx(<span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">char</span> *fileName, <span class=3D"hljs-keyword">int</=
+span> fontSize, <span class=3D"hljs-keyword">int</span> *codepoints, <span =
+class=3D"hljs-keyword">int</span> codepointCount); <span class=3D"hljs-comm=
+ent">// Load font from file with extended parameters, use NULL for codepoin=
+ts and 0 for codepointCount to load the default character set, font size is=
+ provided in pixels height</span>
+    Font LoadFontFromImage(Image image, Color key, <span class=3D"hljs-keyw=
+ord">int</span> firstChar);                        <span class=3D"hljs-comm=
+ent">// Load font from Image (XNA style)</span>
+    Font LoadFontFromMemory(<span class=3D"hljs-keyword">const</span> <span=
+ class=3D"hljs-keyword">char</span> *fileType, <span class=3D"hljs-keyword"=
+>const</span> <span class=3D"hljs-keyword">unsigned</span> <span class=3D"h=
+ljs-keyword">char</span> *fileData, <span class=3D"hljs-keyword">int</span>=
+ dataSize, <span class=3D"hljs-keyword">int</span> fontSize, <span class=3D=
+"hljs-keyword">int</span> *codepoints, <span class=3D"hljs-keyword">int</sp=
+an> codepointCount); <span class=3D"hljs-comment">// Load font from memory =
+buffer, fileType refers to extension: i.e. '.ttf'</span>
+    <span class=3D"hljs-keyword">bool</span> IsFontValid(Font font);       =
+                                                   <span class=3D"hljs-comm=
+ent">// Check if a font is valid (font data loaded, WARNING: GPU texture no=
+t checked)</span>
+    GlyphInfo *LoadFontData(<span class=3D"hljs-keyword">const</span> <span=
+ class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">char</=
+span> *fileData, <span class=3D"hljs-keyword">int</span> dataSize, <span cl=
+ass=3D"hljs-keyword">int</span> fontSize, <span class=3D"hljs-keyword">int<=
+/span> *codepoints, <span class=3D"hljs-keyword">int</span> codepointCount,=
+ <span class=3D"hljs-keyword">int</span> type); <span class=3D"hljs-comment=
+">// Load font data for further use</span>
+    Image GenImageFontAtlas(<span class=3D"hljs-keyword">const</span> Glyph=
+Info *glyphs, Rectangle **glyphRecs, <span class=3D"hljs-keyword">int</span=
+> glyphCount, <span class=3D"hljs-keyword">int</span> fontSize, <span class=
+=3D"hljs-keyword">int</span> padding, <span class=3D"hljs-keyword">int</spa=
+n> packMethod); <span class=3D"hljs-comment">// Generate image font atlas u=
+sing chars info</span>
+    <span class=3D"hljs-keyword">void</span> UnloadFontData(GlyphInfo *glyp=
+hs, <span class=3D"hljs-keyword">int</span> glyphCount);                   =
+            <span class=3D"hljs-comment">// Unload font chars info data (RA=
+M)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadFont(Font font);        =
+                                                   <span class=3D"hljs-comm=
+ent">// Unload font from GPU memory (VRAM)</span>
+    <span class=3D"hljs-keyword">bool</span> ExportFontAsCode(Font font, <s=
+pan class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</=
+span> *fileName);                               <span class=3D"hljs-comment=
+">// Export font as code file, returns true on success</span>
+
+    <span class=3D"hljs-comment">// Text drawing functions</span>
+    <span class=3D"hljs-keyword">void</span> DrawFPS(<span class=3D"hljs-ke=
+yword">int</span> posX, <span class=3D"hljs-keyword">int</span> posY);     =
+                                                <span class=3D"hljs-comment=
+">// Draw current FPS</span>
+    <span class=3D"hljs-keyword">void</span> DrawText(<span class=3D"hljs-k=
+eyword">const</span> <span class=3D"hljs-keyword">char</span> *text, <span =
+class=3D"hljs-keyword">int</span> posX, <span class=3D"hljs-keyword">int</s=
+pan> posY, <span class=3D"hljs-keyword">int</span> fontSize, Color color); =
+      <span class=3D"hljs-comment">// Draw text (using default font)</span>
+    <span class=3D"hljs-keyword">void</span> DrawTextEx(Font font, <span cl=
+ass=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> =
+*text, Vector2 position, <span class=3D"hljs-keyword">float</span> fontSize=
+, <span class=3D"hljs-keyword">float</span> spacing, Color tint); <span cla=
+ss=3D"hljs-comment">// Draw text using font and additional parameters</span=
+>
+    <span class=3D"hljs-keyword">void</span> DrawTextPro(Font font, <span c=
+lass=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span>=
+ *text, Vector2 position, Vector2 origin, <span class=3D"hljs-keyword">floa=
+t</span> rotation, <span class=3D"hljs-keyword">float</span> fontSize, <spa=
+n class=3D"hljs-keyword">float</span> spacing, Color tint); <span class=3D"=
+hljs-comment">// Draw text using Font and pro parameters (rotation)</span>
+    <span class=3D"hljs-keyword">void</span> DrawTextCodepoint(Font font, <=
+span class=3D"hljs-keyword">int</span> codepoint, Vector2 position, <span c=
+lass=3D"hljs-keyword">float</span> fontSize, Color tint); <span class=3D"hl=
+js-comment">// Draw one character (codepoint)</span>
+    <span class=3D"hljs-keyword">void</span> DrawTextCodepoints(Font font, =
+<span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">int<=
+/span> *codepoints, <span class=3D"hljs-keyword">int</span> codepointCount,=
+ Vector2 position, <span class=3D"hljs-keyword">float</span> fontSize, <spa=
+n class=3D"hljs-keyword">float</span> spacing, Color tint); <span class=3D"=
+hljs-comment">// Draw multiple character (codepoint)</span>
+
+    <span class=3D"hljs-comment">// Text font info functions</span>
+    <span class=3D"hljs-keyword">void</span> SetTextLineSpacing(<span class=
+=3D"hljs-keyword">int</span> spacing);                                     =
+            <span class=3D"hljs-comment">// Set vertical line spacing when =
+drawing with line-breaks</span>
+    <span class=3D"hljs-keyword">int</span> MeasureText(<span class=3D"hljs=
+-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text, <spa=
+n class=3D"hljs-keyword">int</span> fontSize);                             =
+         <span class=3D"hljs-comment">// Measure string width for default f=
+ont</span>
+    Vector2 MeasureTextEx(Font font, <span class=3D"hljs-keyword">const</sp=
+an> <span class=3D"hljs-keyword">char</span> *text, <span class=3D"hljs-key=
+word">float</span> fontSize, <span class=3D"hljs-keyword">float</span> spac=
+ing);    <span class=3D"hljs-comment">// Measure string size for Font</span=
+>
+    <span class=3D"hljs-keyword">int</span> GetGlyphIndex(Font font, <span =
+class=3D"hljs-keyword">int</span> codepoint);                              =
+            <span class=3D"hljs-comment">// Get glyph index position in fon=
+t for a codepoint (unicode character), fallback to '?' if not found</span>
+    GlyphInfo GetGlyphInfo(Font font, <span class=3D"hljs-keyword">int</spa=
+n> codepoint);                                     <span class=3D"hljs-comm=
+ent">// Get glyph font info data for a codepoint (unicode character), fallb=
+ack to '?' if not found</span>
+    Rectangle GetGlyphAtlasRec(Font font, <span class=3D"hljs-keyword">int<=
+/span> codepoint);                                 <span class=3D"hljs-comm=
+ent">// Get glyph rectangle in font atlas for a codepoint (unicode characte=
+r), fallback to '?' if not found</span>
+
+    <span class=3D"hljs-comment">// Text codepoints management functions (u=
+nicode characters)</span>
+    <span class=3D"hljs-keyword">char</span> *LoadUTF8(<span class=3D"hljs-=
+keyword">const</span> <span class=3D"hljs-keyword">int</span> *codepoints, =
+<span class=3D"hljs-keyword">int</span> length);                <span class=
+=3D"hljs-comment">// Load UTF-8 text encoded from codepoints array</span>
+    <span class=3D"hljs-keyword">void</span> UnloadUTF8(<span class=3D"hljs=
+-keyword">char</span> *text);                                      <span cl=
+ass=3D"hljs-comment">// Unload UTF-8 text encoded from codepoints array</sp=
+an>
+    <span class=3D"hljs-keyword">int</span> *LoadCodepoints(<span class=3D"=
+hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text, =
+<span class=3D"hljs-keyword">int</span> *count);                <span class=
+=3D"hljs-comment">// Load all codepoints from a UTF-8 text string, codepoin=
+ts count returned by parameter</span>
+    <span class=3D"hljs-keyword">void</span> UnloadCodepoints(<span class=
+=3D"hljs-keyword">int</span> *codepoints);                           <span =
+class=3D"hljs-comment">// Unload codepoints data from memory</span>
+    <span class=3D"hljs-keyword">int</span> GetCodepointCount(<span class=
+=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *te=
+xt);                          <span class=3D"hljs-comment">// Get total num=
+ber of codepoints in a UTF-8 encoded string</span>
+    <span class=3D"hljs-keyword">int</span> GetCodepoint(<span class=3D"hlj=
+s-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text, <sp=
+an class=3D"hljs-keyword">int</span> *codepointSize);           <span class=
+=3D"hljs-comment">// Get next codepoint in a UTF-8 encoded string, 0x3f('?'=
+) is returned on failure</span>
+    <span class=3D"hljs-keyword">int</span> GetCodepointNext(<span class=3D=
+"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text,=
+ <span class=3D"hljs-keyword">int</span> *codepointSize);       <span class=
+=3D"hljs-comment">// Get next codepoint in a UTF-8 encoded string, 0x3f('?'=
+) is returned on failure</span>
+    <span class=3D"hljs-keyword">int</span> GetCodepointPrevious(<span clas=
+s=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> *t=
+ext, <span class=3D"hljs-keyword">int</span> *codepointSize);   <span class=
+=3D"hljs-comment">// Get previous codepoint in a UTF-8 encoded string, 0x3f=
+('?') is returned on failure</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *CodepointToUTF8(<span class=3D"hljs-keyword">int</span> codepo=
+int, <span class=3D"hljs-keyword">int</span> *utf8Size);        <span class=
+=3D"hljs-comment">// Encode one codepoint into UTF-8 byte array (array leng=
+th returned as parameter)</span>
+
+    <span class=3D"hljs-comment">// Text strings management functions (no U=
+TF-8 strings, only byte chars)</span>
+    <span class=3D"hljs-comment">// NOTE: Some strings allocate memory inte=
+rnally for returned strings, just be careful!</span>
+    <span class=3D"hljs-keyword">int</span> TextCopy(<span class=3D"hljs-ke=
+yword">char</span> *dst, <span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *src);                                    =
+         <span class=3D"hljs-comment">// Copy one string to another, return=
+s bytes copied</span>
+    <span class=3D"hljs-keyword">bool</span> TextIsEqual(<span class=3D"hlj=
+s-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text1, <s=
+pan class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</=
+span> *text2);                               <span class=3D"hljs-comment">/=
+/ Check if two text string are equal</span>
+    <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keywor=
+d">int</span> TextLength(<span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *text);                                   =
+         <span class=3D"hljs-comment">// Get text length, checks for '\0' e=
+nding</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextFormat(<span class=3D"hljs-keyword">const</span> <span cla=
+ss=3D"hljs-keyword">char</span> *text, ...);                               =
+         <span class=3D"hljs-comment">// Text formatting with variables (sp=
+rintf() style)</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextSubtext(<span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *text, <span class=3D"hljs-keyword">int</s=
+pan> position, <span class=3D"hljs-keyword">int</span> length);            =
+      <span class=3D"hljs-comment">// Get a piece of a text string</span>
+    <span class=3D"hljs-keyword">char</span> *TextReplace(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text, <s=
+pan class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</=
+span> *replace, <span class=3D"hljs-keyword">const</span> <span class=3D"hl=
+js-keyword">char</span> *by);             <span class=3D"hljs-comment">// R=
+eplace text string (WARNING: memory must be freed!)</span>
+    <span class=3D"hljs-keyword">char</span> *TextInsert(<span class=3D"hlj=
+s-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text, <sp=
+an class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</s=
+pan> *insert, <span class=3D"hljs-keyword">int</span> position);           =
+      <span class=3D"hljs-comment">// Insert text in a position (WARNING: m=
+emory must be freed!)</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextJoin(<span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">char</span> **textList, <span class=3D"hljs-keyword">int<=
+/span> count, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs=
+-keyword">char</span> *delimiter);        <span class=3D"hljs-comment">// J=
+oin text strings with delimiter</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> **TextSplit(<span class=3D"hljs-keyword">const</span> <span cla=
+ss=3D"hljs-keyword">char</span> *text, <span class=3D"hljs-keyword">char</s=
+pan> delimiter, <span class=3D"hljs-keyword">int</span> *count);           =
+      <span class=3D"hljs-comment">// Split text into multiple strings</spa=
+n>
+    <span class=3D"hljs-keyword">void</span> TextAppend(<span class=3D"hljs=
+-keyword">char</span> *text, <span class=3D"hljs-keyword">const</span> <spa=
+n class=3D"hljs-keyword">char</span> *append, <span class=3D"hljs-keyword">=
+int</span> *position);                       <span class=3D"hljs-comment">/=
+/ Append text at specific position and move cursor!</span>
+    <span class=3D"hljs-keyword">int</span> TextFindIndex(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text, <s=
+pan class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</=
+span> *find);                                <span class=3D"hljs-comment">/=
+/ Find first text occurrence within a string</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextToUpper(<span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *text);                      <span class=
+=3D"hljs-comment">// Get upper case version of provided string</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextToLower(<span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *text);                      <span class=
+=3D"hljs-comment">// Get lower case version of provided string</span>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextToPascal(<span class=3D"hljs-keyword">const</span> <span c=
+lass=3D"hljs-keyword">char</span> *text);                     <span class=
+=3D"hljs-comment">// Get Pascal case notation version of provided string</s=
+pan>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextToSnake(<span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *text);                      <span class=
+=3D"hljs-comment">// Get Snake case notation version of provided string</sp=
+an>
+    <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">=
+char</span> *TextToCamel(<span class=3D"hljs-keyword">const</span> <span cl=
+ass=3D"hljs-keyword">char</span> *text);                      <span class=
+=3D"hljs-comment">// Get Camel case notation version of provided string</sp=
+an>
+
+    <span class=3D"hljs-keyword">int</span> TextToInteger(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text);  =
+                          <span class=3D"hljs-comment">// Get integer value=
+ from text (negative values not supported)</span>
+    <span class=3D"hljs-keyword">float</span> TextToFloat(<span class=3D"hl=
+js-keyword">const</span> <span class=3D"hljs-keyword">char</span> *text);  =
+                          <span class=3D"hljs-comment">// Get float value f=
+rom text (negative values not supported)</span>
+
+</code></pre></div>
+            <p id=3D"pmodels">module: rmodels <a href=3D"https://www.raylib=
+.com/cheatsheet/cheatsheet.html#pmodels">=E2=86=92</a></p>
+            <div id=3D"models"><pre><code class=3D"cpp hljs ">
+    <span class=3D"hljs-comment">// Basic geometric 3D shapes drawing funct=
+ions</span>
+    <span class=3D"hljs-keyword">void</span> DrawLine3D(Vector3 startPos, V=
+ector3 endPos, Color color);                                    <span class=
+=3D"hljs-comment">// Draw a line in 3D world space</span>
+    <span class=3D"hljs-keyword">void</span> DrawPoint3D(Vector3 position, =
+Color color);                                                   <span class=
+=3D"hljs-comment">// Draw a point in 3D space, actually a small line</span>
+    <span class=3D"hljs-keyword">void</span> DrawCircle3D(Vector3 center, <=
+span class=3D"hljs-keyword">float</span> radius, Vector3 rotationAxis, <spa=
+n class=3D"hljs-keyword">float</span> rotationAngle, Color color); <span cl=
+ass=3D"hljs-comment">// Draw a circle in 3D world space</span>
+    <span class=3D"hljs-keyword">void</span> DrawTriangle3D(Vector3 v1, Vec=
+tor3 v2, Vector3 v3, Color color);                              <span class=
+=3D"hljs-comment">// Draw a color-filled triangle (vertex in counter-clockw=
+ise order!)</span>
+    <span class=3D"hljs-keyword">void</span> DrawTriangleStrip3D(<span clas=
+s=3D"hljs-keyword">const</span> Vector3 *points, <span class=3D"hljs-keywor=
+d">int</span> pointCount, Color color);                      <span class=3D=
+"hljs-comment">// Draw a triangle strip defined by points</span>
+    <span class=3D"hljs-keyword">void</span> DrawCube(Vector3 position, <sp=
+an class=3D"hljs-keyword">float</span> width, <span class=3D"hljs-keyword">=
+float</span> height, <span class=3D"hljs-keyword">float</span> length, Colo=
+r color);             <span class=3D"hljs-comment">// Draw cube</span>
+    <span class=3D"hljs-keyword">void</span> DrawCubeV(Vector3 position, Ve=
+ctor3 size, Color color);                                       <span class=
+=3D"hljs-comment">// Draw cube (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> DrawCubeWires(Vector3 position=
+, <span class=3D"hljs-keyword">float</span> width, <span class=3D"hljs-keyw=
+ord">float</span> height, <span class=3D"hljs-keyword">float</span> length,=
+ Color color);        <span class=3D"hljs-comment">// Draw cube wires</span=
+>
+    <span class=3D"hljs-keyword">void</span> DrawCubeWiresV(Vector3 positio=
+n, Vector3 size, Color color);                                  <span class=
+=3D"hljs-comment">// Draw cube wires (Vector version)</span>
+    <span class=3D"hljs-keyword">void</span> DrawSphere(Vector3 centerPos, =
+<span class=3D"hljs-keyword">float</span> radius, Color color);            =
+                         <span class=3D"hljs-comment">// Draw sphere</span>
+    <span class=3D"hljs-keyword">void</span> DrawSphereEx(Vector3 centerPos=
+, <span class=3D"hljs-keyword">float</span> radius, <span class=3D"hljs-key=
+word">int</span> rings, <span class=3D"hljs-keyword">int</span> slices, Col=
+or color);            <span class=3D"hljs-comment">// Draw sphere with exte=
+nded parameters</span>
+    <span class=3D"hljs-keyword">void</span> DrawSphereWires(Vector3 center=
+Pos, <span class=3D"hljs-keyword">float</span> radius, <span class=3D"hljs-=
+keyword">int</span> rings, <span class=3D"hljs-keyword">int</span> slices, =
+Color color);         <span class=3D"hljs-comment">// Draw sphere wires</sp=
+an>
+    <span class=3D"hljs-keyword">void</span> DrawCylinder(Vector3 position,=
+ <span class=3D"hljs-keyword">float</span> radiusTop, <span class=3D"hljs-k=
+eyword">float</span> radiusBottom, <span class=3D"hljs-keyword">float</span=
+> height, <span class=3D"hljs-keyword">int</span> slices, Color color); <sp=
+an class=3D"hljs-comment">// Draw a cylinder/cone</span>
+    <span class=3D"hljs-keyword">void</span> DrawCylinderEx(Vector3 startPo=
+s, Vector3 endPos, <span class=3D"hljs-keyword">float</span> startRadius, <=
+span class=3D"hljs-keyword">float</span> endRadius, <span class=3D"hljs-key=
+word">int</span> sides, Color color); <span class=3D"hljs-comment">// Draw =
+a cylinder with base at startPos and top at endPos</span>
+    <span class=3D"hljs-keyword">void</span> DrawCylinderWires(Vector3 posi=
+tion, <span class=3D"hljs-keyword">float</span> radiusTop, <span class=3D"h=
+ljs-keyword">float</span> radiusBottom, <span class=3D"hljs-keyword">float<=
+/span> height, <span class=3D"hljs-keyword">int</span> slices, Color color)=
+; <span class=3D"hljs-comment">// Draw a cylinder/cone wires</span>
+    <span class=3D"hljs-keyword">void</span> DrawCylinderWiresEx(Vector3 st=
+artPos, Vector3 endPos, <span class=3D"hljs-keyword">float</span> startRadi=
+us, <span class=3D"hljs-keyword">float</span> endRadius, <span class=3D"hlj=
+s-keyword">int</span> sides, Color color); <span class=3D"hljs-comment">// =
+Draw a cylinder wires with base at startPos and top at endPos</span>
+    <span class=3D"hljs-keyword">void</span> DrawCapsule(Vector3 startPos, =
+Vector3 endPos, <span class=3D"hljs-keyword">float</span> radius, <span cla=
+ss=3D"hljs-keyword">int</span> slices, <span class=3D"hljs-keyword">int</sp=
+an> rings, Color color); <span class=3D"hljs-comment">// Draw a capsule wit=
+h the center of its sphere caps at startPos and endPos</span>
+    <span class=3D"hljs-keyword">void</span> DrawCapsuleWires(Vector3 start=
+Pos, Vector3 endPos, <span class=3D"hljs-keyword">float</span> radius, <spa=
+n class=3D"hljs-keyword">int</span> slices, <span class=3D"hljs-keyword">in=
+t</span> rings, Color color); <span class=3D"hljs-comment">// Draw capsule =
+wireframe with the center of its sphere caps at startPos and endPos</span>
+    <span class=3D"hljs-keyword">void</span> DrawPlane(Vector3 centerPos, V=
+ector2 size, Color color);                                      <span class=
+=3D"hljs-comment">// Draw a plane XZ</span>
+    <span class=3D"hljs-keyword">void</span> DrawRay(Ray ray, Color color);=
+                                                                <span class=
+=3D"hljs-comment">// Draw a ray line</span>
+    <span class=3D"hljs-keyword">void</span> DrawGrid(<span class=3D"hljs-k=
+eyword">int</span> slices, <span class=3D"hljs-keyword">float</span> spacin=
+g);                                                          <span class=3D=
+"hljs-comment">// Draw a grid (centered at (0, 0, 0))</span>
+
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+    <span class=3D"hljs-comment">// Model 3d Loading and Drawing Functions =
+(Module: models)</span>
+    <span class=3D"hljs-comment">//----------------------------------------=
+--------------------------------------------</span>
+
+    <span class=3D"hljs-comment">// Model management functions</span>
+    Model LoadModel(<span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">char</span> *fileName);                                  =
+              <span class=3D"hljs-comment">// Load model from files (meshes=
+ and materials)</span>
+    Model LoadModelFromMesh(Mesh mesh);                                    =
+               <span class=3D"hljs-comment">// Load model from generated me=
+sh (default material)</span>
+    <span class=3D"hljs-keyword">bool</span> IsModelValid(Model model);    =
+                                                   <span class=3D"hljs-comm=
+ent">// Check if a model is valid (loaded in GPU, VAO/VBOs)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadModel(Model model);     =
+                                                   <span class=3D"hljs-comm=
+ent">// Unload model (including meshes) from memory (RAM and/or VRAM)</span=
+>
+    BoundingBox GetModelBoundingBox(Model model);                          =
+               <span class=3D"hljs-comment">// Compute model bounding box l=
+imits (considers all meshes)</span>
+
+    <span class=3D"hljs-comment">// Model drawing functions</span>
+    <span class=3D"hljs-keyword">void</span> DrawModel(Model model, Vector3=
+ position, <span class=3D"hljs-keyword">float</span> scale, Color tint);   =
+            <span class=3D"hljs-comment">// Draw a model (with texture if s=
+et)</span>
+    <span class=3D"hljs-keyword">void</span> DrawModelEx(Model model, Vecto=
+r3 position, Vector3 rotationAxis, <span class=3D"hljs-keyword">float</span=
+> rotationAngle, Vector3 scale, Color tint); <span class=3D"hljs-comment">/=
+/ Draw a model with extended parameters</span>
+    <span class=3D"hljs-keyword">void</span> DrawModelWires(Model model, Ve=
+ctor3 position, <span class=3D"hljs-keyword">float</span> scale, Color tint=
+);          <span class=3D"hljs-comment">// Draw a model wires (with textur=
+e if set)</span>
+    <span class=3D"hljs-keyword">void</span> DrawModelWiresEx(Model model, =
+Vector3 position, Vector3 rotationAxis, <span class=3D"hljs-keyword">float<=
+/span> rotationAngle, Vector3 scale, Color tint); <span class=3D"hljs-comme=
+nt">// Draw a model wires (with texture if set) with extended parameters</s=
+pan>
+    <span class=3D"hljs-keyword">void</span> DrawModelPoints(Model model, V=
+ector3 position, <span class=3D"hljs-keyword">float</span> scale, Color tin=
+t); <span class=3D"hljs-comment">// Draw a model as points</span>
+    <span class=3D"hljs-keyword">void</span> DrawModelPointsEx(Model model,=
+ Vector3 position, Vector3 rotationAxis, <span class=3D"hljs-keyword">float=
+</span> rotationAngle, Vector3 scale, Color tint); <span class=3D"hljs-comm=
+ent">// Draw a model as points with extended parameters</span>
+    <span class=3D"hljs-keyword">void</span> DrawBoundingBox(BoundingBox bo=
+x, Color color);                                   <span class=3D"hljs-comm=
+ent">// Draw bounding box (wires)</span>
+    <span class=3D"hljs-keyword">void</span> DrawBillboard(Camera camera, T=
+exture2D texture, Vector3 position, <span class=3D"hljs-keyword">float</spa=
+n> scale, Color tint);   <span class=3D"hljs-comment">// Draw a billboard t=
+exture</span>
+    <span class=3D"hljs-keyword">void</span> DrawBillboardRec(Camera camera=
+, Texture2D texture, Rectangle source, Vector3 position, Vector2 size, Colo=
+r tint); <span class=3D"hljs-comment">// Draw a billboard texture defined b=
+y source</span>
+    <span class=3D"hljs-keyword">void</span> DrawBillboardPro(Camera camera=
+, Texture2D texture, Rectangle source, Vector3 position, Vector3 up, Vector=
+2 size, Vector2 origin, <span class=3D"hljs-keyword">float</span> rotation,=
+ Color tint); <span class=3D"hljs-comment">// Draw a billboard texture defi=
+ned by source and rotation</span>
+
+    <span class=3D"hljs-comment">// Mesh management functions</span>
+    <span class=3D"hljs-keyword">void</span> UploadMesh(Mesh *mesh, <span c=
+lass=3D"hljs-keyword">bool</span> dynamic);                                =
+            <span class=3D"hljs-comment">// Upload mesh vertex data in GPU =
+and provide VAO/VBO ids</span>
+    <span class=3D"hljs-keyword">void</span> UpdateMeshBuffer(Mesh mesh, <s=
+pan class=3D"hljs-keyword">int</span> index, <span class=3D"hljs-keyword">c=
+onst</span> <span class=3D"hljs-keyword">void</span> *data, <span class=3D"=
+hljs-keyword">int</span> dataSize, <span class=3D"hljs-keyword">int</span> =
+offset); <span class=3D"hljs-comment">// Update mesh vertex data in GPU for=
+ a specific buffer index</span>
+    <span class=3D"hljs-keyword">void</span> UnloadMesh(Mesh mesh);        =
+                                                   <span class=3D"hljs-comm=
+ent">// Unload mesh data from CPU and GPU</span>
+    <span class=3D"hljs-keyword">void</span> DrawMesh(Mesh mesh, Material m=
+aterial, Matrix transform);                        <span class=3D"hljs-comm=
+ent">// Draw a 3d mesh with material and transform</span>
+    <span class=3D"hljs-keyword">void</span> DrawMeshInstanced(Mesh mesh, M=
+aterial material, <span class=3D"hljs-keyword">const</span> Matrix *transfo=
+rms, <span class=3D"hljs-keyword">int</span> instances); <span class=3D"hlj=
+s-comment">// Draw multiple mesh instances with material and different tran=
+sforms</span>
+    BoundingBox GetMeshBoundingBox(Mesh mesh);                             =
+               <span class=3D"hljs-comment">// Compute mesh bounding box li=
+mits</span>
+    <span class=3D"hljs-keyword">void</span> GenMeshTangents(Mesh *mesh);  =
+                                                   <span class=3D"hljs-comm=
+ent">// Compute mesh tangents</span>
+    <span class=3D"hljs-keyword">bool</span> ExportMesh(Mesh mesh, <span cl=
+ass=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> =
+*fileName);                                     <span class=3D"hljs-comment=
+">// Export mesh data to file, returns true on success</span>
+    <span class=3D"hljs-keyword">bool</span> ExportMeshAsCode(Mesh mesh, <s=
+pan class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</=
+span> *fileName);                               <span class=3D"hljs-comment=
+">// Export mesh as code file (.h) defining multiple arrays of vertex attri=
+butes</span>
+
+    <span class=3D"hljs-comment">// Mesh generation functions</span>
+    Mesh GenMeshPoly(<span class=3D"hljs-keyword">int</span> sides, <span c=
+lass=3D"hljs-keyword">float</span> radius);                                =
+            <span class=3D"hljs-comment">// Generate polygonal mesh</span>
+    Mesh GenMeshPlane(<span class=3D"hljs-keyword">float</span> width, <spa=
+n class=3D"hljs-keyword">float</span> length, <span class=3D"hljs-keyword">=
+int</span> resX, <span class=3D"hljs-keyword">int</span> resZ);            =
+         <span class=3D"hljs-comment">// Generate plane mesh (with subdivis=
+ions)</span>
+    Mesh GenMeshCube(<span class=3D"hljs-keyword">float</span> width, <span=
+ class=3D"hljs-keyword">float</span> height, <span class=3D"hljs-keyword">f=
+loat</span> length);                            <span class=3D"hljs-comment=
+">// Generate cuboid mesh</span>
+    Mesh GenMeshSphere(<span class=3D"hljs-keyword">float</span> radius, <s=
+pan class=3D"hljs-keyword">int</span> rings, <span class=3D"hljs-keyword">i=
+nt</span> slices);                              <span class=3D"hljs-comment=
+">// Generate sphere mesh (standard sphere)</span>
+    Mesh GenMeshHemiSphere(<span class=3D"hljs-keyword">float</span> radius=
+, <span class=3D"hljs-keyword">int</span> rings, <span class=3D"hljs-keywor=
+d">int</span> slices);                          <span class=3D"hljs-comment=
+">// Generate half-sphere mesh (no bottom cap)</span>
+    Mesh GenMeshCylinder(<span class=3D"hljs-keyword">float</span> radius, =
+<span class=3D"hljs-keyword">float</span> height, <span class=3D"hljs-keywo=
+rd">int</span> slices);                         <span class=3D"hljs-comment=
+">// Generate cylinder mesh</span>
+    Mesh GenMeshCone(<span class=3D"hljs-keyword">float</span> radius, <spa=
+n class=3D"hljs-keyword">float</span> height, <span class=3D"hljs-keyword">=
+int</span> slices);                             <span class=3D"hljs-comment=
+">// Generate cone/pyramid mesh</span>
+    Mesh GenMeshTorus(<span class=3D"hljs-keyword">float</span> radius, <sp=
+an class=3D"hljs-keyword">float</span> size, <span class=3D"hljs-keyword">i=
+nt</span> radSeg, <span class=3D"hljs-keyword">int</span> sides);          =
+         <span class=3D"hljs-comment">// Generate torus mesh</span>
+    Mesh GenMeshKnot(<span class=3D"hljs-keyword">float</span> radius, <spa=
+n class=3D"hljs-keyword">float</span> size, <span class=3D"hljs-keyword">in=
+t</span> radSeg, <span class=3D"hljs-keyword">int</span> sides);           =
+         <span class=3D"hljs-comment">// Generate trefoil knot mesh</span>
+    Mesh GenMeshHeightmap(Image heightmap, Vector3 size);                  =
+               <span class=3D"hljs-comment">// Generate heightmap mesh from=
+ image data</span>
+    Mesh GenMeshCubicmap(Image cubicmap, Vector3 cubeSize);                =
+               <span class=3D"hljs-comment">// Generate cubes-based map mes=
+h from image data</span>
+
+    <span class=3D"hljs-comment">// Material loading/unloading functions</s=
+pan>
+    Material *LoadMaterials(<span class=3D"hljs-keyword">const</span> <span=
+ class=3D"hljs-keyword">char</span> *fileName, <span class=3D"hljs-keyword"=
+>int</span> *materialCount);                    <span class=3D"hljs-comment=
+">// Load materials from model file</span>
+    Material LoadMaterialDefault(<span class=3D"hljs-keyword">void</span>);=
+                                                   <span class=3D"hljs-comm=
+ent">// Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)</s=
+pan>
+    <span class=3D"hljs-keyword">bool</span> IsMaterialValid(Material mater=
+ial);                                              <span class=3D"hljs-comm=
+ent">// Check if a material is valid (shader assigned, map textures loaded =
+in GPU)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadMaterial(Material materi=
+al);                                               <span class=3D"hljs-comm=
+ent">// Unload material from GPU memory (VRAM)</span>
+    <span class=3D"hljs-keyword">void</span> SetMaterialTexture(Material *m=
+aterial, <span class=3D"hljs-keyword">int</span> mapType, Texture2D texture=
+);          <span class=3D"hljs-comment">// Set texture for a material map =
+type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)</span>
+    <span class=3D"hljs-keyword">void</span> SetModelMeshMaterial(Model *mo=
+del, <span class=3D"hljs-keyword">int</span> meshId, <span class=3D"hljs-ke=
+yword">int</span> materialId);                  <span class=3D"hljs-comment=
+">// Set material for a mesh</span>
+
+    <span class=3D"hljs-comment">// Model animations loading/unloading func=
+tions</span>
+    ModelAnimation *LoadModelAnimations(<span class=3D"hljs-keyword">const<=
+/span> <span class=3D"hljs-keyword">char</span> *fileName, <span class=3D"h=
+ljs-keyword">int</span> *animCount);            <span class=3D"hljs-comment=
+">// Load model animations from file</span>
+    <span class=3D"hljs-keyword">void</span> UpdateModelAnimation(Model mod=
+el, ModelAnimation anim, <span class=3D"hljs-keyword">int</span> frame);   =
+            <span class=3D"hljs-comment">// Update model animation pose (CP=
+U)</span>
+    <span class=3D"hljs-keyword">void</span> UpdateModelAnimationBones(Mode=
+l model, ModelAnimation anim, <span class=3D"hljs-keyword">int</span> frame=
+);          <span class=3D"hljs-comment">// Update model animation mesh bon=
+e matrices (GPU skinning)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadModelAnimation(ModelAnim=
+ation anim);                                       <span class=3D"hljs-comm=
+ent">// Unload animation data</span>
+    <span class=3D"hljs-keyword">void</span> UnloadModelAnimations(ModelAni=
+mation *animations, <span class=3D"hljs-keyword">int</span> animCount);    =
+            <span class=3D"hljs-comment">// Unload animation array data</sp=
+an>
+    <span class=3D"hljs-keyword">bool</span> IsModelAnimationValid(Model mo=
+del, ModelAnimation anim);                         <span class=3D"hljs-comm=
+ent">// Check model animation skeleton match</span>
+
+    <span class=3D"hljs-comment">// Collision detection functions</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionSpheres(Vector3 =
+center1, <span class=3D"hljs-keyword">float</span> radius1, Vector3 center2=
+, <span class=3D"hljs-keyword">float</span> radius2);   <span class=3D"hljs=
+-comment">// Check collision between two spheres</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionBoxes(BoundingBo=
+x box1, BoundingBox box2);                                 <span class=3D"h=
+ljs-comment">// Check collision between two bounding boxes</span>
+    <span class=3D"hljs-keyword">bool</span> CheckCollisionBoxSphere(Boundi=
+ngBox box, Vector3 center, <span class=3D"hljs-keyword">float</span> radius=
+);                  <span class=3D"hljs-comment">// Check collision between=
+ box and sphere</span>
+    RayCollision GetRayCollisionSphere(Ray ray, Vector3 center, <span class=
+=3D"hljs-keyword">float</span> radius);                    <span class=3D"h=
+ljs-comment">// Get collision info between ray and sphere</span>
+    RayCollision GetRayCollisionBox(Ray ray, BoundingBox box);             =
+                       <span class=3D"hljs-comment">// Get collision info b=
+etween ray and box</span>
+    RayCollision GetRayCollisionMesh(Ray ray, Mesh mesh, Matrix transform);=
+                       <span class=3D"hljs-comment">// Get collision info b=
+etween ray and mesh</span>
+    RayCollision GetRayCollisionTriangle(Ray ray, Vector3 p1, Vector3 p2, V=
+ector3 p3);            <span class=3D"hljs-comment">// Get collision info b=
+etween ray and triangle</span>
+    RayCollision GetRayCollisionQuad(Ray ray, Vector3 p1, Vector3 p2, Vecto=
+r3 p3, Vector3 p4);    <span class=3D"hljs-comment">// Get collision info b=
+etween ray and quad</span>
+
+</code></pre></div>
+            <p id=3D"paudio">module: raudio <a href=3D"https://www.raylib.c=
+om/cheatsheet/cheatsheet.html#paudio">=E2=86=92</a></p>
+            <div id=3D"audio"><pre><code class=3D"cpp hljs ">
+    <span class=3D"hljs-comment">// Audio device management functions</span=
+>
+    <span class=3D"hljs-keyword">void</span> InitAudioDevice(<span class=3D=
+"hljs-keyword">void</span>);                                     <span clas=
+s=3D"hljs-comment">// Initialize audio device and context</span>
+    <span class=3D"hljs-keyword">void</span> CloseAudioDevice(<span class=
+=3D"hljs-keyword">void</span>);                                    <span cl=
+ass=3D"hljs-comment">// Close the audio device and context</span>
+    <span class=3D"hljs-keyword">bool</span> IsAudioDeviceReady(<span class=
+=3D"hljs-keyword">void</span>);                                  <span clas=
+s=3D"hljs-comment">// Check if audio device has been initialized successful=
+ly</span>
+    <span class=3D"hljs-keyword">void</span> SetMasterVolume(<span class=3D=
+"hljs-keyword">float</span> volume);                             <span clas=
+s=3D"hljs-comment">// Set master volume (listener)</span>
+    <span class=3D"hljs-keyword">float</span> GetMasterVolume(<span class=
+=3D"hljs-keyword">void</span>);                                    <span cl=
+ass=3D"hljs-comment">// Get master volume (listener)</span>
+
+    <span class=3D"hljs-comment">// Wave/Sound loading/unloading functions<=
+/span>
+    Wave LoadWave(<span class=3D"hljs-keyword">const</span> <span class=3D"=
+hljs-keyword">char</span> *fileName);                            <span clas=
+s=3D"hljs-comment">// Load wave data from file</span>
+    Wave LoadWaveFromMemory(<span class=3D"hljs-keyword">const</span> <span=
+ class=3D"hljs-keyword">char</span> *fileType, <span class=3D"hljs-keyword"=
+>const</span> <span class=3D"hljs-keyword">unsigned</span> <span class=3D"h=
+ljs-keyword">char</span> *fileData, <span class=3D"hljs-keyword">int</span>=
+ dataSize); <span class=3D"hljs-comment">// Load wave from memory buffer, f=
+ileType refers to extension: i.e. '.wav'</span>
+    <span class=3D"hljs-keyword">bool</span> IsWaveValid(Wave wave);       =
+                             <span class=3D"hljs-comment">// Checks if wave=
+ data is valid (data loaded and parameters)</span>
+    Sound LoadSound(<span class=3D"hljs-keyword">const</span> <span class=
+=3D"hljs-keyword">char</span> *fileName);                          <span cl=
+ass=3D"hljs-comment">// Load sound from file</span>
+    Sound LoadSoundFromWave(Wave wave);                             <span c=
+lass=3D"hljs-comment">// Load sound from wave data</span>
+    Sound LoadSoundAlias(Sound source);                             <span c=
+lass=3D"hljs-comment">// Create a new sound that shares the same sample dat=
+a as the source sound, does not own the sound data</span>
+    <span class=3D"hljs-keyword">bool</span> IsSoundValid(Sound sound);    =
+                             <span class=3D"hljs-comment">// Checks if a so=
+und is valid (data loaded and buffers initialized)</span>
+    <span class=3D"hljs-keyword">void</span> UpdateSound(Sound sound, <span=
+ class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">void</spa=
+n> *data, <span class=3D"hljs-keyword">int</span> sampleCount); <span class=
+=3D"hljs-comment">// Update sound buffer with new data</span>
+    <span class=3D"hljs-keyword">void</span> UnloadWave(Wave wave);        =
+                             <span class=3D"hljs-comment">// Unload wave da=
+ta</span>
+    <span class=3D"hljs-keyword">void</span> UnloadSound(Sound sound);     =
+                             <span class=3D"hljs-comment">// Unload sound</=
+span>
+    <span class=3D"hljs-keyword">void</span> UnloadSoundAlias(Sound alias);=
+                             <span class=3D"hljs-comment">// Unload a sound=
+ alias (does not deallocate sample data)</span>
+    <span class=3D"hljs-keyword">bool</span> ExportWave(Wave wave, <span cl=
+ass=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</span> =
+*fileName);               <span class=3D"hljs-comment">// Export wave data =
+to file, returns true on success</span>
+    <span class=3D"hljs-keyword">bool</span> ExportWaveAsCode(Wave wave, <s=
+pan class=3D"hljs-keyword">const</span> <span class=3D"hljs-keyword">char</=
+span> *fileName);         <span class=3D"hljs-comment">// Export wave sampl=
+e data to code (.h), returns true on success</span>
+
+    <span class=3D"hljs-comment">// Wave/Sound management functions</span>
+    <span class=3D"hljs-keyword">void</span> PlaySound(Sound sound);       =
+                             <span class=3D"hljs-comment">// Play a sound</=
+span>
+    <span class=3D"hljs-keyword">void</span> StopSound(Sound sound);       =
+                             <span class=3D"hljs-comment">// Stop playing a=
+ sound</span>
+    <span class=3D"hljs-keyword">void</span> PauseSound(Sound sound);      =
+                             <span class=3D"hljs-comment">// Pause a sound<=
+/span>
+    <span class=3D"hljs-keyword">void</span> ResumeSound(Sound sound);     =
+                             <span class=3D"hljs-comment">// Resume a pause=
+d sound</span>
+    <span class=3D"hljs-keyword">bool</span> IsSoundPlaying(Sound sound);  =
+                             <span class=3D"hljs-comment">// Check if a sou=
+nd is currently playing</span>
+    <span class=3D"hljs-keyword">void</span> SetSoundVolume(Sound sound, <s=
+pan class=3D"hljs-keyword">float</span> volume);                 <span clas=
+s=3D"hljs-comment">// Set volume for a sound (1.0 is max level)</span>
+    <span class=3D"hljs-keyword">void</span> SetSoundPitch(Sound sound, <sp=
+an class=3D"hljs-keyword">float</span> pitch);                   <span clas=
+s=3D"hljs-comment">// Set pitch for a sound (1.0 is base level)</span>
+    <span class=3D"hljs-keyword">void</span> SetSoundPan(Sound sound, <span=
+ class=3D"hljs-keyword">float</span> pan);                       <span clas=
+s=3D"hljs-comment">// Set pan for a sound (0.5 is center)</span>
+    Wave WaveCopy(Wave wave);                                       <span c=
+lass=3D"hljs-comment">// Copy a wave to a new wave</span>
+    <span class=3D"hljs-keyword">void</span> WaveCrop(Wave *wave, <span cla=
+ss=3D"hljs-keyword">int</span> initFrame, <span class=3D"hljs-keyword">int<=
+/span> finalFrame);       <span class=3D"hljs-comment">// Crop a wave to de=
+fined frames range</span>
+    <span class=3D"hljs-keyword">void</span> WaveFormat(Wave *wave, <span c=
+lass=3D"hljs-keyword">int</span> sampleRate, <span class=3D"hljs-keyword">i=
+nt</span> sampleSize, <span class=3D"hljs-keyword">int</span> channels); <s=
+pan class=3D"hljs-comment">// Convert wave data to desired format</span>
+    <span class=3D"hljs-keyword">float</span> *LoadWaveSamples(Wave wave); =
+                             <span class=3D"hljs-comment">// Load samples d=
+ata from wave as a 32bit float data array</span>
+    <span class=3D"hljs-keyword">void</span> UnloadWaveSamples(<span class=
+=3D"hljs-keyword">float</span> *samples);                         <span cla=
+ss=3D"hljs-comment">// Unload samples data loaded with LoadWaveSamples()</s=
+pan>
+
+    <span class=3D"hljs-comment">// Music management functions</span>
+    Music LoadMusicStream(<span class=3D"hljs-keyword">const</span> <span c=
+lass=3D"hljs-keyword">char</span> *fileName);                    <span clas=
+s=3D"hljs-comment">// Load music stream from file</span>
+    Music LoadMusicStreamFromMemory(<span class=3D"hljs-keyword">const</spa=
+n> <span class=3D"hljs-keyword">char</span> *fileType, <span class=3D"hljs-=
+keyword">const</span> <span class=3D"hljs-keyword">unsigned</span> <span cl=
+ass=3D"hljs-keyword">char</span> *data, <span class=3D"hljs-keyword">int</s=
+pan> dataSize); <span class=3D"hljs-comment">// Load music stream from data=
+</span>
+    <span class=3D"hljs-keyword">bool</span> IsMusicValid(Music music);    =
+                             <span class=3D"hljs-comment">// Checks if a mu=
+sic stream is valid (context and buffers initialized)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadMusicStream(Music music)=
+;                            <span class=3D"hljs-comment">// Unload music s=
+tream</span>
+    <span class=3D"hljs-keyword">void</span> PlayMusicStream(Music music); =
+                             <span class=3D"hljs-comment">// Start music pl=
+aying</span>
+    <span class=3D"hljs-keyword">bool</span> IsMusicStreamPlaying(Music mus=
+ic);                         <span class=3D"hljs-comment">// Check if music=
+ is playing</span>
+    <span class=3D"hljs-keyword">void</span> UpdateMusicStream(Music music)=
+;                            <span class=3D"hljs-comment">// Updates buffer=
+s for music streaming</span>
+    <span class=3D"hljs-keyword">void</span> StopMusicStream(Music music); =
+                             <span class=3D"hljs-comment">// Stop music pla=
+ying</span>
+    <span class=3D"hljs-keyword">void</span> PauseMusicStream(Music music);=
+                             <span class=3D"hljs-comment">// Pause music pl=
+aying</span>
+    <span class=3D"hljs-keyword">void</span> ResumeMusicStream(Music music)=
+;                            <span class=3D"hljs-comment">// Resume playing=
+ paused music</span>
+    <span class=3D"hljs-keyword">void</span> SeekMusicStream(Music music, <=
+span class=3D"hljs-keyword">float</span> position);              <span clas=
+s=3D"hljs-comment">// Seek music to a position (in seconds)</span>
+    <span class=3D"hljs-keyword">void</span> SetMusicVolume(Music music, <s=
+pan class=3D"hljs-keyword">float</span> volume);                 <span clas=
+s=3D"hljs-comment">// Set volume for music (1.0 is max level)</span>
+    <span class=3D"hljs-keyword">void</span> SetMusicPitch(Music music, <sp=
+an class=3D"hljs-keyword">float</span> pitch);                   <span clas=
+s=3D"hljs-comment">// Set pitch for a music (1.0 is base level)</span>
+    <span class=3D"hljs-keyword">void</span> SetMusicPan(Music music, <span=
+ class=3D"hljs-keyword">float</span> pan);                       <span clas=
+s=3D"hljs-comment">// Set pan for a music (0.5 is center)</span>
+    <span class=3D"hljs-keyword">float</span> GetMusicTimeLength(Music musi=
+c);                          <span class=3D"hljs-comment">// Get music time=
+ length (in seconds)</span>
+    <span class=3D"hljs-keyword">float</span> GetMusicTimePlayed(Music musi=
+c);                          <span class=3D"hljs-comment">// Get current mu=
+sic time played (in seconds)</span>
+
+    <span class=3D"hljs-comment">// AudioStream management functions</span>
+    AudioStream LoadAudioStream(<span class=3D"hljs-keyword">unsigned</span=
+> <span class=3D"hljs-keyword">int</span> sampleRate, <span class=3D"hljs-k=
+eyword">unsigned</span> <span class=3D"hljs-keyword">int</span> sampleSize,=
+ <span class=3D"hljs-keyword">unsigned</span> <span class=3D"hljs-keyword">=
+int</span> channels); <span class=3D"hljs-comment">// Load audio stream (to=
+ stream raw audio pcm data)</span>
+    <span class=3D"hljs-keyword">bool</span> IsAudioStreamValid(AudioStream=
+ stream);                    <span class=3D"hljs-comment">// Checks if an a=
+udio stream is valid (buffers initialized)</span>
+    <span class=3D"hljs-keyword">void</span> UnloadAudioStream(AudioStream =
+stream);                     <span class=3D"hljs-comment">// Unload audio s=
+tream and free memory</span>
+    <span class=3D"hljs-keyword">void</span> UpdateAudioStream(AudioStream =
+stream, <span class=3D"hljs-keyword">const</span> <span class=3D"hljs-keywo=
+rd">void</span> *data, <span class=3D"hljs-keyword">int</span> frameCount);=
+ <span class=3D"hljs-comment">// Update audio stream buffers with data</spa=
+n>
+    <span class=3D"hljs-keyword">bool</span> IsAudioStreamProcessed(AudioSt=
+ream stream);                <span class=3D"hljs-comment">// Check if any a=
+udio stream buffers requires refill</span>
+    <span class=3D"hljs-keyword">void</span> PlayAudioStream(AudioStream st=
+ream);                       <span class=3D"hljs-comment">// Play audio str=
+eam</span>
+    <span class=3D"hljs-keyword">void</span> PauseAudioStream(AudioStream s=
+tream);                      <span class=3D"hljs-comment">// Pause audio st=
+ream</span>
+    <span class=3D"hljs-keyword">void</span> ResumeAudioStream(AudioStream =
+stream);                     <span class=3D"hljs-comment">// Resume audio s=
+tream</span>
+    <span class=3D"hljs-keyword">bool</span> IsAudioStreamPlaying(AudioStre=
+am stream);                  <span class=3D"hljs-comment">// Check if audio=
+ stream is playing</span>
+    <span class=3D"hljs-keyword">void</span> StopAudioStream(AudioStream st=
+ream);                       <span class=3D"hljs-comment">// Stop audio str=
+eam</span>
+    <span class=3D"hljs-keyword">void</span> SetAudioStreamVolume(AudioStre=
+am stream, <span class=3D"hljs-keyword">float</span> volume);    <span clas=
+s=3D"hljs-comment">// Set volume for audio stream (1.0 is max level)</span>
+    <span class=3D"hljs-keyword">void</span> SetAudioStreamPitch(AudioStrea=
+m stream, <span class=3D"hljs-keyword">float</span> pitch);      <span clas=
+s=3D"hljs-comment">// Set pitch for audio stream (1.0 is base level)</span>
+    <span class=3D"hljs-keyword">void</span> SetAudioStreamPan(AudioStream =
+stream, <span class=3D"hljs-keyword">float</span> pan);          <span clas=
+s=3D"hljs-comment">// Set pan for audio stream (0.5 is centered)</span>
+    <span class=3D"hljs-keyword">void</span> SetAudioStreamBufferSizeDefaul=
+t(<span class=3D"hljs-keyword">int</span> size);                 <span clas=
+s=3D"hljs-comment">// Default size for new audio streams</span>
+    <span class=3D"hljs-keyword">void</span> SetAudioStreamCallback(AudioSt=
+ream stream, AudioCallback callback); <span class=3D"hljs-comment">// Audio=
+ thread callback to request new data</span>
+
+    <span class=3D"hljs-keyword">void</span> AttachAudioStreamProcessor(Aud=
+ioStream stream, AudioCallback processor); <span class=3D"hljs-comment">// =
+Attach audio stream processor to stream, receives the samples as 'float'</s=
+pan>
+    <span class=3D"hljs-keyword">void</span> DetachAudioStreamProcessor(Aud=
+ioStream stream, AudioCallback processor); <span class=3D"hljs-comment">// =
+Detach audio stream processor from stream</span>
+
+    <span class=3D"hljs-keyword">void</span> AttachAudioMixedProcessor(Audi=
+oCallback processor); <span class=3D"hljs-comment">// Attach audio stream p=
+rocessor to the entire audio pipeline, receives the samples as 'float'</spa=
+n>
+    <span class=3D"hljs-keyword">void</span> DetachAudioMixedProcessor(Audi=
+oCallback processor); <span class=3D"hljs-comment">// Detach audio stream p=
+rocessor from the entire audio pipeline</span>
+
+</code></pre></div>
+
+            <div id=3D"fullgroup">
+                <div class=3D"leftgroup">
+                    <p id=3D"pstructs">structs</p>
+                    <div id=3D"structs"><pre><code class=3D"cpp hljs ">    =
+<span class=3D"hljs-keyword">struct</span> Vector2;                <span cl=
+ass=3D"hljs-comment">// Vector2, 2 components</span>
+    <span class=3D"hljs-keyword">struct</span> Vector3;                <spa=
+n class=3D"hljs-comment">// Vector3, 3 components</span>
+    <span class=3D"hljs-keyword">struct</span> Vector4;                <spa=
+n class=3D"hljs-comment">// Vector4, 4 components</span>
+    <span class=3D"hljs-keyword">struct</span> Matrix;                 <spa=
+n class=3D"hljs-comment">// Matrix, 4x4 components, column major, OpenGL st=
+yle, right handed</span>
+    <span class=3D"hljs-keyword">struct</span> Color;                  <spa=
+n class=3D"hljs-comment">// Color, 4 components, R8G8B8A8 (32bit)</span>
+    <span class=3D"hljs-keyword">struct</span> Rectangle;              <spa=
+n class=3D"hljs-comment">// Rectangle, 4 components</span>
+
+    <span class=3D"hljs-keyword">struct</span> Image;                  <spa=
+n class=3D"hljs-comment">// Image, pixel data stored in CPU memory (RAM)</s=
+pan>
+    <span class=3D"hljs-keyword">struct</span> Texture;                <spa=
+n class=3D"hljs-comment">// Texture, tex data stored in GPU memory (VRAM)</=
+span>
+    <span class=3D"hljs-keyword">struct</span> RenderTexture;          <spa=
+n class=3D"hljs-comment">// RenderTexture, fbo for texture rendering</span>
+    <span class=3D"hljs-keyword">struct</span> NPatchInfo;             <spa=
+n class=3D"hljs-comment">// NPatchInfo, n-patch layout info</span>
+    <span class=3D"hljs-keyword">struct</span> GlyphInfo;              <spa=
+n class=3D"hljs-comment">// GlyphInfo, font characters glyphs info</span>
+    <span class=3D"hljs-keyword">struct</span> Font;                   <spa=
+n class=3D"hljs-comment">// Font, font texture and GlyphInfo array data</sp=
+an>
+
+    <span class=3D"hljs-keyword">struct</span> Camera2D;               <spa=
+n class=3D"hljs-comment">// Camera2D, defines position/orientation in 2d sp=
+ace</span>
+    <span class=3D"hljs-keyword">struct</span> Camera3D;               <spa=
+n class=3D"hljs-comment">// Camera, defines position/orientation in 3d spac=
+e</span>
+
+    <span class=3D"hljs-keyword">struct</span> Shader;                 <spa=
+n class=3D"hljs-comment">// Shader</span>
+    <span class=3D"hljs-keyword">struct</span> MaterialMap;            <spa=
+n class=3D"hljs-comment">// MaterialMap</span>
+    <span class=3D"hljs-keyword">struct</span> Material;               <spa=
+n class=3D"hljs-comment">// Material, includes shader and maps</span>
+    <span class=3D"hljs-keyword">struct</span> Mesh;                   <spa=
+n class=3D"hljs-comment">// Mesh, vertex data and vao/vbo</span>
+    <span class=3D"hljs-keyword">struct</span> Model;                  <spa=
+n class=3D"hljs-comment">// Model, meshes, materials and animation data</sp=
+an>
+    <span class=3D"hljs-keyword">struct</span> ModelAnimation;         <spa=
+n class=3D"hljs-comment">// ModelAnimation</span>
+    <span class=3D"hljs-keyword">struct</span> Transform;              <spa=
+n class=3D"hljs-comment">// Transform, vertex transformation data</span>
+    <span class=3D"hljs-keyword">struct</span> BoneInfo;               <spa=
+n class=3D"hljs-comment">// Bone, skeletal animation bone</span>
+    <span class=3D"hljs-keyword">struct</span> Ray;                    <spa=
+n class=3D"hljs-comment">// Ray, ray for raycasting</span>
+    <span class=3D"hljs-keyword">struct</span> RayCollision;           <spa=
+n class=3D"hljs-comment">// RayCollision, ray hit information</span>
+    <span class=3D"hljs-keyword">struct</span> BoundingBox;            <spa=
+n class=3D"hljs-comment">// BoundingBox</span>
+
+    <span class=3D"hljs-keyword">struct</span> Wave;                   <spa=
+n class=3D"hljs-comment">// Wave, audio wave data</span>
+    <span class=3D"hljs-keyword">struct</span> AudioStream;            <spa=
+n class=3D"hljs-comment">// AudioStream, custom audio stream</span>
+    <span class=3D"hljs-keyword">struct</span> Sound;                  <spa=
+n class=3D"hljs-comment">// Sound</span>
+    <span class=3D"hljs-keyword">struct</span> Music;                  <spa=
+n class=3D"hljs-comment">// Music, audio stream, anything longer than ~10 s=
+econds should be streamed</span>
+
+    <span class=3D"hljs-keyword">struct</span> VrDeviceInfo;           <spa=
+n class=3D"hljs-comment">// VrDeviceInfo, Head-Mounted-Display device param=
+eters</span>
+    <span class=3D"hljs-keyword">struct</span> VrStereoConfig;         <spa=
+n class=3D"hljs-comment">// VrStereoConfig, VR stereo rendering configurati=
+on for simulator</span>
+
+    <span class=3D"hljs-keyword">struct</span> FilePathList;           <spa=
+n class=3D"hljs-comment">// File path list</span>
+
+    <span class=3D"hljs-keyword">struct</span> AutomationEvent;        <spa=
+n class=3D"hljs-comment">// Automation event</span>
+    <span class=3D"hljs-keyword">struct</span> AutomationEventList;    <spa=
+n class=3D"hljs-comment">// Automation event list</span>
+</code></pre></div>
+                </div>
+                <div class=3D"rightgroup">
+                    <p id=3D"pcolors">colors</p>
+                    <div id=3D"colors"><pre><code class=3D"cpp hljs ">    <=
+span class=3D"hljs-comment">// Custom raylib color palette for amazing visu=
+als on WHITE background</span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> LIGHTGRAY  (Color){ 200, 200, 200, 255 }   <span class=3D"hljs-comme=
+nt">// Light Gray</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> GRAY       (Color){ 130, 130, 130, 255 }   <span class=3D"hljs-comme=
+nt">// Gray</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> DARKGRAY   (Color){ 80, 80, 80, 255 }      <span class=3D"hljs-comme=
+nt">// Dark Gray</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> YELLOW     (Color){ 253, 249, 0, 255 }     <span class=3D"hljs-comme=
+nt">// Yellow</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> GOLD       (Color){ 255, 203, 0, 255 }     <span class=3D"hljs-comme=
+nt">// Gold</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> ORANGE     (Color){ 255, 161, 0, 255 }     <span class=3D"hljs-comme=
+nt">// Orange</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> PINK       (Color){ 255, 109, 194, 255 }   <span class=3D"hljs-comme=
+nt">// Pink</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> RED        (Color){ 230, 41, 55, 255 }     <span class=3D"hljs-comme=
+nt">// Red</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> MAROON     (Color){ 190, 33, 55, 255 }     <span class=3D"hljs-comme=
+nt">// Maroon</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> GREEN      (Color){ 0, 228, 48, 255 }      <span class=3D"hljs-comme=
+nt">// Green</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> LIME       (Color){ 0, 158, 47, 255 }      <span class=3D"hljs-comme=
+nt">// Lime</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> DARKGREEN  (Color){ 0, 117, 44, 255 }      <span class=3D"hljs-comme=
+nt">// Dark Green</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> SKYBLUE    (Color){ 102, 191, 255, 255 }   <span class=3D"hljs-comme=
+nt">// Sky Blue</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> BLUE       (Color){ 0, 121, 241, 255 }     <span class=3D"hljs-comme=
+nt">// Blue</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> DARKBLUE   (Color){ 0, 82, 172, 255 }      <span class=3D"hljs-comme=
+nt">// Dark Blue</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> PURPLE     (Color){ 200, 122, 255, 255 }   <span class=3D"hljs-comme=
+nt">// Purple</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> VIOLET     (Color){ 135, 60, 190, 255 }    <span class=3D"hljs-comme=
+nt">// Violet</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> DARKPURPLE (Color){ 112, 31, 126, 255 }    <span class=3D"hljs-comme=
+nt">// Dark Purple</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> BEIGE      (Color){ 211, 176, 131, 255 }   <span class=3D"hljs-comme=
+nt">// Beige</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> BROWN      (Color){ 127, 106, 79, 255 }    <span class=3D"hljs-comme=
+nt">// Brown</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> DARKBROWN  (Color){ 76, 63, 47, 255 }      <span class=3D"hljs-comme=
+nt">// Dark Brown</span></span>
+
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> WHITE      (Color){ 255, 255, 255, 255 }   <span class=3D"hljs-comme=
+nt">// White</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> BLACK      (Color){ 0, 0, 0, 255 }         <span class=3D"hljs-comme=
+nt">// Black</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> BLANK      (Color){ 0, 0, 0, 0 }           <span class=3D"hljs-comme=
+nt">// Blank (Transparent)</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> MAGENTA    (Color){ 255, 0, 255, 255 }     <span class=3D"hljs-comme=
+nt">// Magenta</span></span>
+    <span class=3D"hljs-preprocessor">#<span class=3D"hljs-keyword">define<=
+/span> RAYWHITE   (Color){ 245, 245, 245, 255 }   <span class=3D"hljs-comme=
+nt">// My own White (raylib logo)</span></span>
+</code></pre></div>
+                </div>
+            </div>
+
+            <p>Other cheatsheets</p>
+            <ul>
+                <li>
+                    <a href=3D"https://www.raylib.com/cheatsheet/raymath_ch=
+eatsheet.html">raymath cheatsheet</a>
+                </li>
+            </ul>
+
+            <div id=3D"copyright">
+                <p><a href=3D"https://librecounter.org/referer/show" target=
+=3D"_blank"><img src=3D"https://librecounter.org/counter.svg" referrerpolic=
+y=3D"unsafe-url" alt=3D"librecounter" width=3D"20"></a></p>
+                <p>raylib quick reference card - Copyright (c) 2013-2025 Ra=
+mon Santamaria (<a href=3D"https://www.twitter.com/raysan5">@raysan5</a>)</=
+p>
+            </div>
+        </div>
+   =20
+
+</body></html>
+------MultipartBoundary--05HyIzrtu3vJ4PVfBLujf0MYLePcLLGYSLjTBkxkwt----
+Content-Type: image/svg+xml
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://librecounter.org/counter.svg
+
+<svg xmlns=3D"http://www.w3.org/2000/svg" xml:space=3D"preserve" width=3D"6=
+4" height=3D"64" viewBox=3D"0 0 64 64"><path d=3D"M50.2 64H13.8C6.2 64 0 57=
+.8 0 50.2V13.8C0 6.2 6.2 0 13.8 0h36.3C57.8 0 64 6.2 64 13.8v36.3C64 57.8 5=
+7.8 64 50.2 64Z" style=3D"fill:#934147"/><path d=3D"M37.6 43.4c1.4-1.9 2.1-=
+4.3 1.8-6.7-.3-2.4-1.6-4.5-3.5-6s-4.3-2.1-6.7-1.7c-4.9.7-8.4 5.3-7.7 10.2.6=
+ 4.5 4.5 7.8 8.9 7.8.4 0 .8 0 1.2-.1 1.1-.2 2.1-.5 3.1-1 .4-.2.8-.5 1.1-.7l=
+4.9 4.9c.2.2.5.4.9.4.3 0 .6-.1.9-.4.5-.5.5-1.2 0-1.7zm-4 .3c-.7.4-1.4.6-2.2=
+.7-3.6.5-6.9-2-7.4-5.6-.5-3.6 2-6.9 5.6-7.4.3 0 .6-.1.9-.1 1.4 0 2.8.5 4 1.=
+3 1.4 1.1 2.3 2.6 2.6 4.4.2 2.7-1.1 5.4-3.5 6.7z" style=3D"opacity:.6;fill:=
+#fff"/><path fill=3D"#fff" d=3D"M30 35c-1.6.2-2.7 1.7-2.5 3.3.2 1.6 1.7 2.7=
+ 3.3 2.5 1.6-.2 2.7-1.7 2.5-3.3-.2-1.6-1.7-2.7-3.3-2.5Z"/><path fill=3D"#ff=
+f" d=3D"M56.2 36.3c-.1-.7-.8-1.1-1.5-1-1.6.3-4.3.8-5.5 1.1-.2 0-.4-.1-.5-.3=
+-1.3-3.9-7.4-13.6-21.1-11.6-11.5 1.8-18 14.9-19.5 18.3-.2.4.1.8.5.8l1.7-.1c=
+1.2 0 3.4-.2 7.4.7 1.7.3 2.1-.2 2.3-.9.1-1.3-.8-1.4-2.1-1.6-2.2-.4-4.4-.5-5=
+.5-.6-.3 0-.5-.3-.3-.6 2.3-4.3 8.5-12.6 15.8-13.6 12.5-2.1 17.7 8.1 18.4 10=
+.3.1.2 0 .5-.2.6-.9.6-2.7 2-3.7 2.7-.7.5-1.6 1.4-.7 2.3.9 1 2-.1 2.5-.5 1.1=
+-.8 1.3-.9 2.2-1.6 1.3-1 2.2-1.4 3.2-1.7 1.3-.2 3.9-.8 5.5-1.1.8-.3 1.2-.9 =
+1.1-1.6z"/><path fill=3D"#fff" d=3D"M10.5 25.5c.4 0 .7-.1 1-.4.1-.1 7.5-8.1=
+ 18.6-8.1 13.8 0 19.1 6.4 19.2 6.4.5.6 1.3.7 1.9.2.6-.5.7-1.3.2-1.9-.2-.3-6=
+-7.5-21.3-7.5-12.3 0-20.3 8.7-20.6 9-.5.6-.5 1.5.1 2 .3.2.6.3.9.3z"/></svg>=
+=0A
+------MultipartBoundary--05HyIzrtu3vJ4PVfBLujf0MYLePcLLGYSLjTBkxkwt----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/docco.min.css
+
+@charset "utf-8";
+
+.hljs { display: block; overflow-x: auto; padding: 0.5em; color: rgb(0, 0, =
+0); background: rgb(248, 248, 255); }
+
+.hljs-comment, .hljs-template_comment, .diff .hljs-header, .hljs-javadoc { =
+color: rgb(64, 128, 128); font-style: italic; }
+
+.hljs-keyword, .assignment, .hljs-literal, .css .rule .hljs-keyword, .hljs-=
+winutils, .javascript .hljs-title, .lisp .hljs-title, .hljs-subst { color: =
+rgb(149, 65, 33); }
+
+.hljs-number, .hljs-hexcolor { color: rgb(64, 160, 112); }
+
+.hljs-string, .hljs-tag .hljs-value, .hljs-phpdoc, .tex .hljs-formula { col=
+or: rgb(33, 145, 97); }
+
+.hljs-title, .hljs-id { color: rgb(25, 70, 157); }
+
+.hljs-params { color: rgb(0, 0, 255); }
+
+.javascript .hljs-title, .lisp .hljs-title, .hljs-subst { font-weight: norm=
+al; }
+
+.hljs-class .hljs-title, .haskell .hljs-label, .tex .hljs-command { color: =
+rgb(68, 85, 136); font-weight: bold; }
+
+.hljs-tag, .hljs-tag .hljs-title, .hljs-rules .hljs-property, .django .hljs=
+-tag .hljs-keyword { color: rgb(0, 0, 128); font-weight: normal; }
+
+.hljs-attribute, .hljs-variable, .instancevar, .lisp .hljs-body { color: rg=
+b(0, 128, 128); }
+
+.hljs-regexp { color: rgb(187, 102, 136); }
+
+.hljs-class { color: rgb(68, 85, 136); font-weight: bold; }
+
+.hljs-symbol, .ruby .hljs-symbol .hljs-string, .ruby .hljs-symbol .hljs-key=
+word, .ruby .hljs-symbol .keymethods, .lisp .hljs-keyword, .tex .hljs-speci=
+al, .input_number { color: rgb(153, 0, 115); }
+
+.builtin, .constructor, .hljs-built_in, .lisp .hljs-title { color: rgb(0, 1=
+34, 179); }
+
+.hljs-preprocessor, .hljs-pragma, .hljs-pi, .hljs-doctype, .hljs-shebang, .=
+hljs-cdata { color: rgb(153, 153, 153); font-weight: bold; }
+
+.hljs-deletion { background: rgb(255, 221, 221); }
+
+.hljs-addition { background: rgb(221, 255, 221); }
+
+.diff .hljs-change { background: rgb(0, 134, 179); }
+
+.hljs-chunk { color: rgb(170, 170, 170); }
+
+.tex .hljs-formula { opacity: 0.5; }
+------MultipartBoundary--05HyIzrtu3vJ4PVfBLujf0MYLePcLLGYSLjTBkxkwt----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: https://www.raylib.com/common/img/raylib_logo.png
+
+iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAadEVYdFNvZnR3YXJlAFBhaW50Lk5FVCB2My41
+LjExR/NCNwAABrtJREFUeF7tl9FiozoMBdv//9277xeyYzaxET6EQ+RS5mWXWrLkMY2aL5Vv/v00
+al13nEqWFzu/TaBc1y0m68AqaefIKpx1IVnnyDpvXmGRywjMOkiaGBG5v1vgOm4v9vOOLnB4aoF/
+Av7j3x7uOJVR+0Or/qJmiVH5tMC91HXR2hLdCHm7cYsZReBR0KpDXshvE3h0P7TqkJfG6Be3tz+0
+xqhDWGW0N7DmLNERaPUP4avEqbxbF60t6hAe/cBu3HXlN79AXkiWGBX3C3M0Dq065NlFZ4lxs7c/
+tMbcQ/hc0Jo3hLPI6q+ui1Yd8tJxC3S/WGocWnXIC3E3qJIlUCXaD6065KVxlYsrcWiNucoQdtd1
+gdbxvwm7GaUuWluiGyFvIUv06BenxslvfoG8kKwLUXH3dzQOrTrk2QWOJqbmrPOiNea3DWF3XA+0
++oewm0+LOYu6P7TqkLfgFpMlOqu/ewgf5Oh+aNUh7xYYoO5X4tAakzWE3WLcuPpD6/jfhLPiVN6t
+i1Yd8hZGOcincNdFa5/yK0JeyFUEfqo/tOqQl4ZbTNZ+JQ6tMaMPYbdAFVddtI7/TdjNKBeHVh3y
+FtSDuOOycPeH1j73EF7n6DnQqkPerxN4VhxaY9QhnHUQlVH7Q2veEP70gbOpz4FWHfIW3AKzLiSr
+P/nNL5AX4hbjZrSLQ6sOeWmiswS6KXXRGqMOYZWsA7txnQOt/iE8uuis/uq6aNUhb8F9Ie44lay6
+9xA+yNGLQ6sOeWmijx54FEp/aI3JGsJZoj99cWi9zjdhd5ybui5aW6IbIW9hlIN8CnddtOqQF6I2
+OLpAd3/RfmjVIS+NT4mpOasuWmOyhrCKW6A7rgda874Jjx6n8m5dtOqQtzC6GDfu/tDap/yKkBcy
+uujR+kPrQvejiLzhBaq4L2RvHFpjsoawGpeFqz+06rgFjh6n8m5dtLZEn0XkLYx+YDfu88p/ft5D
+eJ2jcWjVIc8u0H1glay6BbTGZA3h0XGdA639Pz8LWW+gyugXXPeHVh3yFtQDZ8WpZPV3D+Fk0LrQ
+vRDyLiMwez+0xmQN4awLVnH1h1b/EM4SnVVXpa6LVh3yFtwHzhKY1R9a+7iHcBZZoqM4tC7cQzjg
+rLpojckawm6yRPdA6/hDOCtO5d26aG2JboS83WSJcePuD6193EM4S/RoddGqQ97wAt39nVUXrTGj
+D+GfIjoCreMPYRX3fm7q/tCqQ95C1oW4RWfVRWsfdQiruA+iknVxEWjVIe8yAlXUunv7Q2vM6ENY
+5SyBR0GrfwiruMWMKrpQ10VrS3Qj5J3GCAK/Czw/8f1VL/G8FqyA1j7qEP5pb+Aas86HaJ6fmH/6
+gOc///HsuoDuRxF5doHuizsSh9EXp8Sx8LTEc/nJ3rpojVGH8JEDr6HGqezZD6ObL/WyH6FHfwOG
+H8Iqjv0wqjklVL2Auj+0triH8JYYTvCgDLkViH6N34DoniPWtPiNIfxKfQ6iG9Daxz2En6HHHkQf
+iJ/+3/bHWhW/fwhvE3lBqw55ll/1wtzgxptfeMTOdXneZNrvET/Dj9aETvuxpsWzsBa8DdELxR9a
+Y9QhrLJ2cfS4KqhHux97aUInWGP15YIfP3mBhac3mmdp8xXQ6h/Ce+LoMe5yBzvf6AnWtHgW3t+8
+9oJWHfIWHBdCj48ulf3mUPUja4bnTUfiR9ZSl2dt8wmeG9DaRx3CKs+i6THusoLoHkS/7t9eMGtB
+fAUL/5Y634RZC1Yn0KpDnvzmK9Bj3OUTc12iN3EPYc7LQhxceWGtLV3i0BqjDmH1Qtbi6LHtMoDo
+IJ61ytHjo4PnV+aFBzxv7s/C93WG8Aw9xl1WEC2fmeeX+H/9sdaJBxa04AnW/q3WXtDaEt0IeVbo
+MThDyxxahuEGRD/tvw3Ra/EsTEvxEN6G6Ab5zVeH8J43v0CPcZcVRPcg+jV+4+KI/hv/GsfCWqs8
+94i8oHWheyHkWZkbfByY5y3mg8yhPab9/iZM8KNVnkQTvRa/vFg8x8HRBRO9UC4ErTH1jZDXoL75
+7jiVeD8M4chdtwda/UNYxX0h++PQ376kp1D3h9aW6EbIW3CLOQME9yB6G/c55De/QF5IpugIBD+I
+PqMniN7H0RcQrTrkpYl+58AI7kH0Zyj9oTVGHcIq7wjc4qfHodU/hNU4lay6bur+0NqSNYRHF+2u
+i1Yd8n4so10cWnXIS8MtUN3vrDi0xow+hLNw9YdW/xDO4qf1h9YW+UZE3PupqHVH7y+NqwhMO8dV
+xKSRdRB33aucQ+YqB0kTeHNzc5PF19f/EY8S4zXJgXsAAAAASUVORK5CYII=
+
+------MultipartBoundary--05HyIzrtu3vJ4PVfBLujf0MYLePcLLGYSLjTBkxkwt----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: cid:css-774bf4ca-370b-43ac-b8fe-c378916e3d47@mhtml.blink
+
+@charset "utf-8";
+
+@font-face { font-family: grixel_acme_7_wide_xtnd; src: url("../common/font=
+/acme_7_wide_xtnd.woff") format("woff"), url("../common/font/acme_7_wide_xt=
+nd.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+body { background-color: rgb(245, 245, 245); }
+
+.eximage img { margin: 0px auto; border: 1px solid black; width: 770px; hei=
+ght: auto; }
+
+p { font-family: grixel_acme_7_wide_xtnd, "Courier New", Verdana, Arial; fo=
+nt-size: 13px; line-height: 24px; }
+
+a { font-family: grixel_acme_7_wide_xtnd, "Courier New", Verdana, Arial; fo=
+nt-size: 13px; line-height: 24px; }
+
+pre code { font-family: "Courier New"; font-size: 12px; border: 1px solid r=
+gb(176, 176, 176); height: auto; width: auto !important; }
+
+.exdownbtn { width: 250px; height: 30px; float: left; position: relative; c=
+ursor: pointer; font-weight: bold; font-size: 10px; line-height: 30px; text=
+-align: center; background-color: rgb(225, 225, 225); color: rgb(92, 90, 90=
+); border: 4px solid rgb(137, 136, 136); font-family: grixel_acme_7_wide_xt=
+nd, "Courier New", Verdana, Arial; }
+
+.exdownbtn:hover { background-color: rgb(240, 214, 214); color: rgb(197, 87=
+, 87); border: 4px solid rgb(230, 102, 102); }
+
+#core pre code { border: 10px solid rgb(136, 136, 136); background-color: r=
+gb(219, 219, 225); }
+
+#shapes pre code { border: 10px solid rgb(230, 102, 102); background-color:=
+ rgb(233, 208, 214); }
+
+#textures pre code { border: 10px solid rgb(117, 160, 109); background-colo=
+r: rgb(195, 228, 191); }
+
+#text pre code { border: 10px solid rgb(82, 178, 150); background-color: rg=
+b(185, 233, 221); }
+
+#models pre code { border: 10px solid rgb(93, 156, 189); background-color: =
+rgb(185, 214, 232); }
+
+#audio pre code { border: 10px solid rgb(211, 177, 87); background-color: r=
+gb(229, 215, 174); }
+
+#structs pre code { border: 10px solid rgb(210, 201, 198); background-color=
+: rgb(248, 248, 255); }
+
+#colors pre code { border: 10px solid rgb(198, 210, 198); background-color:=
+ rgb(233, 241, 242); }
+
+#logo { width: 128px; height: 128px; float: left; position: relative; backg=
+round-image: url("../common/img/raylib_logo.png"); }
+
+#header { position: relative; height: 110px; max-width: 1000px; }
+
+#title, #plinks, #version { position: relative; float: left; margin: 10px 0=
+px 0px 10px; }
+
+#plinks { color: gray; }
+
+#plinks a, #copyright a { color: gray; text-decoration: none; }
+
+#plinks a:hover { color: black; }
+
+#version { margin-top: 23px; max-width: 500px; }
+
+#pcore { margin-bottom: -12px; margin-left: 12px; color: rgb(92, 90, 90); }
+
+#pshapes { margin-bottom: -12px; margin-left: 12px; color: rgb(197, 87, 87)=
+; }
+
+#ptextures { margin-bottom: -12px; margin-left: 12px; color: rgb(96, 129, 9=
+0); }
+
+#ptext { margin-bottom: -12px; margin-left: 12px; color: rgb(55, 119, 100);=
+ }
+
+#pmodels { margin-bottom: -12px; margin-left: 12px; color: rgb(65, 119, 148=
+); }
+
+#paudio { margin-bottom: -12px; margin-left: 12px; color: rgb(140, 117, 57)=
+; }
+
+#pstructs { margin-bottom: -12px; margin-left: 12px; color: rgb(188, 188, 2=
+05); }
+
+#pcolors { margin-bottom: -12px; margin-left: 12px; color: rgb(188, 188, 20=
+5); }
+
+#fullgroup { display: grid; column-gap: 20px; grid-template-columns: auto a=
+uto; }
+
+#copyright { display: flex; align-items: center; text-align: left; flex-wra=
+p: wrap; }
+
+#copyright img { vertical-align: middle; margin-right: 10px; }
+
+#copyright p { color: rgb(139, 139, 139); font-size: 10px; }
+
+#copyright a:hover { color: black; }
+
+#downpdf { text-decoration: none; color: rgb(170, 170, 170); }
+
+#downpdf:hover { color: rgb(68, 68, 68); }
+
+#fulldata p a { color: rgb(14, 239, 255); text-decoration: none; }
+
+.darkmode { background-color: rgb(30, 30, 30); color: rgb(225, 225, 225); }
+
+.darkmode a { color: rgb(225, 225, 225); }
+
+.darkmode #header { background-color: rgb(30, 30, 30); color: rgb(225, 225,=
+ 225); }
+
+.darkmode #title { color: rgb(225, 225, 225); }
+
+.darkmode #plinks { color: rgb(225, 225, 225); }
+
+.darkmode #plinks a { color: rgb(225, 225, 225); }
+
+.darkmode #plinks a:hover { color: rgb(225, 225, 225); }
+
+.darkmode #version { color: rgb(225, 225, 225); }
+
+.darkmode #pcore { color: rgb(225, 225, 225); }
+
+.darkmode #pshapes { color: rgb(225, 225, 225); }
+
+.darkmode #ptextures { color: rgb(225, 225, 225); }
+
+.darkmode #ptext { color: rgb(225, 225, 225); }
+
+.darkmode #pmodels { color: rgb(225, 225, 225); }
+
+.darkmode #paudio { color: rgb(225, 225, 225); }
+
+.darkmode #pstructs { color: rgb(225, 225, 225); }
+
+.darkmode #pcolors { color: rgb(225, 225, 225); }
+
+@media screen and (max-width: 1550px) {
+  #fullgroup { grid-template-columns: auto; }
+  .leftgroup, .rightgroup { overflow-x: auto; }
+}
+------MultipartBoundary--05HyIzrtu3vJ4PVfBLujf0MYLePcLLGYSLjTBkxkwt------
