@@ -1,0 +1,16 @@
+In raylib, the default screen coordinate system places the origin (0, 0) at the top-left corner of the window, with the X-axis increasing to the right and the Y-axis increasing downwards. 
+This standard 2D screen space is used by drawing functions such as DrawText(), DrawRectangle(), and DrawCircle(), provided they are called within the BeginDrawing() and EndDrawing() block and a Camera2D or Camera3D is not active (or the camera has a default identity matrix). 
+Key Screen Coordinate Functions
+Raylib provides several functions to convert between different coordinate spaces, which is essential when working with cameras (world coordinates vs. screen coordinates): 
+Function 	Description
+GetMousePosition()	Returns the current mouse position in screen coordinates (pixels).
+GetScreenWidth()	Returns the current width of the screen in pixels.
+GetScreenHeight()	Returns the current height of the screen in pixels.
+GetScreenToWorld2D(Vector2 screenPosition, Camera2D camera)	Converts a point from screen space (pixels) to world space coordinates using a specific Camera2D.
+GetWorldToScreen2D(Vector2 worldPosition, Camera2D camera)	Converts a point from world space coordinates to screen space (pixels) using a specific Camera2D.
+GetWorldToScreen(Vector3 worldPosition, Camera camera)	Converts a 3D world space position to a 2D screen space position (pixels).
+GetScreenToWorldRay(Vector2 screenPosition, Camera camera)	Generates a ray from the mouse position on the screen into the 3D world, useful for selection/picking in 3D scenes.
+Important Considerations
+UI Elements: For drawing UI elements that should remain fixed regardless of camera movement, ensure you call the Draw... functions after setting up a default camera or without a camera active, or use a separate render texture/canvas if you need complex layering.
+Coordinate Origin for Shapes: When drawing rectangles, the x and y coordinates typically define the top-left corner of the rectangle.
+Flipped Y-axis with Textures: When rendering to a RenderTexture, the coordinate system might behave differently (e.g., a flipped Y-axis) due to the underlying OpenGL context, a common issue that often requires manual adjustment (e.g., screenHeight - y). 
