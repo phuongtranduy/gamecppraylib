@@ -1,0 +1,120 @@
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS Z:\> cd .\workspace\gamecppraylib\
+PS Z:\workspace\gamecppraylib> cd .\shibimfighter\
+PS Z:\workspace\gamecppraylib\shibimfighter> cd .\build\
+PS Z:\workspace\gamecppraylib\shibimfighter\build> rm -r *
+PS Z:\workspace\gamecppraylib\shibimfighter\build> ls
+PS Z:\workspace\gamecppraylib\shibimfighter\build> cmake -G "MinGW Makefiles" ..
+CMake Deprecation Warning at CMakeLists.txt:2 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+
+-- The C compiler identification is GNU 13.1.0
+-- The CXX compiler identification is GNU 13.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/x86_64-13.1.0-release-posix-seh-ucrt-rt_v11-rev1/mingw64/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/x86_64-13.1.0-release-posix-seh-ucrt-rt_v11-rev1/mingw64/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+[ 11%] Creating directories for 'raylibs-populate'
+[ 22%] Performing download step (git clone) for 'raylibs-populate'
+Cloning into 'raylibs-src'...
+fatal: detected dubious ownership in repository at '//10.0.1.1/phuongtran/workspace/gamecppraylib/shibimfighter/build/_deps/raylibs-src'
+'//10.0.1.1/phuongtran/workspace/gamecppraylib/shibimfighter/build/_deps/raylibs-src' is owned by:
+        (inconvertible) (S-1-22-1-1000)
+but the current user is:
+        DESKTOP-RUOUFJ0/tranphuong (S-1-5-21-1776370000-842938546-1311718367-1001)
+To add an exception for this directory, call:
+
+        git config --global --add safe.directory '%(prefix)///10.0.1.1/phuongtran/workspace/gamecppraylib/shibimfighter/build/_deps/raylibs-src'
+CMake Error at raylibs-subbuild/raylibs-populate-prefix/tmp/raylibs-populate-gitclone.cmake:49 (message):
+  Failed to checkout tag: '5.0'
+
+
+mingw32-make.exe[2]: *** [CMakeFiles\raylibs-populate.dir\build.make:101: raylibs-populate-prefix/src/raylibs-populate-stamp/raylibs-populate-download] Error 1
+mingw32-make.exe[1]: *** [CMakeFiles\Makefile2:82: CMakeFiles/raylibs-populate.dir/all] Error 2
+mingw32-make.exe: *** [Makefile:90: all] Error 2
+
+CMake Error at C:/Program Files/cmake-3.27.0-windows-x86_64/cmake-3.27.0-windows-x86_64/share/cmake-3.27/Modules/FetchContent.cmake:1662 (message):
+  Build step for raylibs failed: 2
+Call Stack (most recent call first):
+  C:/Program Files/cmake-3.27.0-windows-x86_64/cmake-3.27.0-windows-x86_64/share/cmake-3.27/Modules/FetchContent.cmake:1802:EVAL:2 (__FetchContent_directPopulate)
+  C:/Program Files/cmake-3.27.0-windows-x86_64/cmake-3.27.0-windows-x86_64/share/cmake-3.27/Modules/FetchContent.cmake:1802 (cmake_language)
+  C:/Program Files/cmake-3.27.0-windows-x86_64/cmake-3.27.0-windows-x86_64/share/cmake-3.27/Modules/FetchContent.cmake:2016 (FetchContent_Populate)
+  CMakeLists.txt:17 (FetchContent_MakeAvailable)
+
+
+-- Configuring incomplete, errors occurred!
+PS Z:\workspace\gamecppraylib\shibimfighter\build>
+
+to fix the above error:
+git config --global --add safe.directory '%(prefix)///10.0.1.1/phuongtran/workspace/gamecppraylib/shibimfighter/build/_deps/raylibs-src'
+then run again.
+
+
+To run:
+Go to your remote share directory from the machine that its installed on.
+
+Right-click on it.
+
+Select properties.
+
+Open security tab.
+
+Click advanced.
+
+Click change permissions.
+
+If you don't see your name in there, click add; if you do, then double-click on your user.
+
+Make sure, if full control and allow are not already checked, that at least the traverse, list, read attrs, read extended attrs, and read permissions are checked for your user.
+
+If you don't have permissions to check off these permissions, then you will need to gain admin access before making these adjustments, or at least gain ownership.
+
+After you have made these adjustments, delete and remap the network drive, put in the credentials that MATCH the credentials of the user account for which you just set the permissions.
+
+You will now have read permission when you share, so long as you are authenticated as that user the first time it asks you for the credentials.
+
+
+
+===============================================================
+another way is  build ok in real folder
+
+PS C:\workspace> git clone https://github.com/phuongtranduy/gamecppraylib.git
+PS C:\workspace\gamecppraylib\shibimfighter\build> cmake -G "MinGW Makefiles" .. ; cmake --build .
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
