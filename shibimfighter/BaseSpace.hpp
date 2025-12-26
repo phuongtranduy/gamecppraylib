@@ -78,7 +78,7 @@ protected:
 	int mIIsAlive{1};//this is a count for the number of lives we are using for Boss
 	float mOffsetX{};
 	float mfRotation{}; ///< float degree ex: -90.0 degree
-	Vector2 mVelocity{};
+	Vector2 mVelocity{}; ///< the vector that have direction and value
 	Vector2 mOrigin{};
 };
 
