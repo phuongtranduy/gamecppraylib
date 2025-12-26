@@ -53,7 +53,7 @@ void Explosion::Tick(float aDeltaTime)
 
    BaseSpace::Tick(aDeltaTime);
    mRunningTime += aDeltaTime;
-   if (mRunningTime >= mUpdateTIme)
+   if (mRunningTime >= mUpdateTIme) //mRunningTime to compare with mUpdateTime this is used to update animation for explosion. With Fighter, we use mRunningTime to choose the time to fire
    {
 	   mFrameX++;//increase this to change the position of frame in texture to get the effect  of the explosion
 	   if(mFrameX >= mNumberofFrameX)
