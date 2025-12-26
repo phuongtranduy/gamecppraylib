@@ -76,6 +76,7 @@ void Fighter::Tick(float aDeltaTime)
 	if(mBouncingTime > 1.0/9.5f ) mSpeed = 500;
 	else mSpeed = mOriginSpeed;
    mScreenPos = Vector2Add(mScreenPos, Vector2Scale(Vector2Normalize(mVelocity), mSpeed * aDeltaTime));
+	//mScreenPos = Vector2Add(mScreenPos, Vector2Scale(Vector2Normalize(mVelocity), 1));
 
    //Checking boundary
    if (mScreenPos.x >= mWindowWidth - mWidth) mScreenPos.x = mWindowWidth - mWidth;
