@@ -72,7 +72,14 @@ void Bullet::Tick(float aDeltaTime)
    Matrix rotMat{};//transformation matrix newV =  Mat*oldV
    rotMat.m0 = cosf(mfRotation); rotMat.m4 = -sinf(mfRotation);
    rotMat.m1 = sinf(mfRotation); rotMat.m5 = cosf(mfRotation);
-   
+   /**
+	* typedef struct Matrix {
+		float m0, m4, m8, m12;  // Matrix first row (4 components)
+		float m1, m5, m9, m13;  // Matrix second row (4 components)
+		float m2, m6, m10, m14; // Matrix third row (4 components)
+		float m3, m7, m11, m15; // Matrix fourth row (4 components)
+	} Matrix;
+    */
    mVelocity = Vector2Transform(mVelocity, rotMat);
    
    mScreenPos = Vector2Add(mScreenPos, Vector2Scale(Vector2Normalize(mVelocity), mSpeed * aDeltaTime));
