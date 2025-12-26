@@ -75,7 +75,7 @@ protected:
 	float mHeight{};
 	float mScale{1.0};
 	bool mIsAlive{true};
-	int mIIsAlive{1};
+	int mIIsAlive{1};//this is a count for the number of lives we are using for Boss
 	float mOffsetX{};
 	float mfRotation{}; ///< float degree ex: -90.0 degree
 	Vector2 mVelocity{};

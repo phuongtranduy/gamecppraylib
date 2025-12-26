@@ -1,0 +1,42 @@
+
+Object
+^
+|
+Enemy --> Boss
+^
+|
+Fighter
+
+BulletF comes from Fighter
+BulletB comes from Boss
+
+
+BulletF x Boss, Enemy, BulletB
+Fighter x Boss, Enemy, BulletB
+
+4 days to refactor
+
+25-Dec-2025
+
+
+26-Dec-2025
+
+
+29-Dec-2025
+
+
+30-Dec-2025
+
+
+============================
+
+void DrawTexturePro(Texture2D texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint)
+Draw a part of a texture defined by a rectangle with 'pro' parameters
+ex: in Tick function of BaseSpace.cpp
+    Rectangle source{mFrameX * mWidth+mOffsetX, mFrameY*mHeight, mWidth, mHeight};
+    Rectangle dest{mScreenPos.x, mScreenPos.y, mScale*mWidth, mScale*mHeight};
+    DrawTexturePro(mImage, source, dest, mOrigin, mfRotation, WHITE);
+Draw an mImage(texture data). with source is a rectangle we get from texture data, and write it to dest. origin is the original point that we will use to rotate the image
+normally, origin(0,0) that to the top left point of destination.
+We can see source with mFrameX is the Frame number in X; mFrameY is frameNumber in y
+we have mScale that allow us to scale that Frame in destination rectangle
