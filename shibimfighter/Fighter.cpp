@@ -73,6 +73,7 @@ void Fighter::Tick(float aDeltaTime)
 	}
 
 	if (IsKeyReleased(KEY_LEFT) || IsKeyReleased(KEY_RIGHT) || IsKeyReleased(KEY_UP) ||IsKeyReleased(KEY_DOWN)) mBouncingTime=0;
+	//the following code will increase speed  because in main we set it to just 100. when we press key long enough => will increase it more than normal
 	if(mBouncingTime > 1.0/9.5f ) mSpeed = 500;
 	else mSpeed = mOriginSpeed;
    mScreenPos = Vector2Add(mScreenPos, Vector2Scale(Vector2Normalize(mVelocity), mSpeed * aDeltaTime));
