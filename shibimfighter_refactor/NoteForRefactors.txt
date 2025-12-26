@@ -43,3 +43,12 @@ we have mScale that allow us to scale that Frame in destination rectangle
 mOffsetX is an xOffset in the pixel to get the frame in the right center
 
 Dest will be the rectangle in screen, and mOrgigin will be the position where we rotate the frame
+
+
+we can see in Tick(dT), we have a concept delta time that is the time the computer used to draw the last time.
+we can scale with speed(number pixels/s)
+ mScreenPos = Vector2Add(mScreenPos, Vector2Scale(Vector2Normalize(mVelocity), mSpeed * aDeltaTime));
+
+ By Sacle Velocity vector with speed * aDeltaTime we can avoid the situation where objects lag
+ if CPU took time to draw a frame. I mean the time amounts for drawing frames are not the same
+
