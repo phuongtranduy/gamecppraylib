@@ -55,7 +55,7 @@ void Explosion::Tick(float aDeltaTime)
    mRunningTime += aDeltaTime;
    if (mRunningTime >= mUpdateTIme)
    {
-	   mFrameX++;
+	   mFrameX++;//increase this to change the position of frame in texture to get the effect  of the explosion
 	   if(mFrameX >= mNumberofFrameX)
 		   setAlive(false);
 	   mRunningTime = 0;

@@ -41,3 +41,5 @@ normally, origin(0,0) that to the top left point of destination.
 We can see source with mFrameX is the Frame number in X; mFrameY is frameNumber in y
 we have mScale that allow us to scale that Frame in destination rectangle
 mOffsetX is an xOffset in the pixel to get the frame in the right center
+
+Dest will be the rectangle in screen, and mOrgigin will be the position where we rotate the frame
