@@ -71,8 +71,8 @@ protected:
     Vector2 mScreenPos{};
     float mWindowWidth{};
     float mWindowHeight{};
-	float mWidth{}; ///< Width of character
-	float mHeight{};
+	float mWidth{}; ///< the width of character
+	float mHeight{}; ///< the height of character
 	float mScale{1.0};
 	bool mIsAlive{true};
 	int mIIsAlive{1};

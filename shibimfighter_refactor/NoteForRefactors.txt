@@ -2,13 +2,13 @@
 Object
 ^
 |
-Enemy --> Boss
+Enemy(1 life) --> Boss(Has many lives)
 ^
 |
-Fighter
+Fighter(1 life)
 
-BulletF comes from Fighter
-BulletB comes from Boss
+BulletF(1life) comes from Fighter
+BulletB(1life) comes from Boss
 
 
 BulletF x Boss, Enemy, BulletB
@@ -40,3 +40,4 @@ Draw an mImage(texture data). with source is a rectangle we get from texture dat
 normally, origin(0,0) that to the top left point of destination.
 We can see source with mFrameX is the Frame number in X; mFrameY is frameNumber in y
 we have mScale that allow us to scale that Frame in destination rectangle
+mOffsetX is an xOffset in the pixel to get the frame in the right center
