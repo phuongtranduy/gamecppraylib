@@ -64,7 +64,7 @@ protected:
     float mRunningTime{0}; ///< Counting for the time      
     float mSpeed{500.0f};
 	float mOriginSpeed{500.0f};
-    float mFrameX{};
+    float mFrameX{}; ///< the coordinates of Fram we get from image texture. An image can have multiple frame wiht X horizontal and Y vertical.
 	float mFrameY{};
     float mNumberofFrameX{};
     float mNumberofFrameY{};
