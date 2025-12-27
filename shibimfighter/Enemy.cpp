@@ -137,7 +137,9 @@ void Enemy::Tick(float aDeltaTime)
 							//std::cout << "BOSSPPP: x=" << temp.x << " y=" << temp.y << "width= " << temp.width << " height=" << temp.height << " bulletsize=" << mTarget->mWeapon.size()<< std::endl;
 							//std::cout << "BOSSHPP cast x=" << static_cast<int>(temp.width)<< " cast y=" << static_cast<int>(temp.height) << std::endl;
 							Vector2 collisionRectCoor{temp.x, temp.y};
-							
+							//For Boss and Target, we calculate collision based on pixel to avoid transparent region of image
+							//Get the coordinate of pixel in texture by subtract 2 vector. Screen Pos is the top left of the rectangle of image.
+							//CollisionREctCoor is the coordinates of topleft of it compared to the origin of screen (the top left of screen)
 							Vector2 startpointBoss = Vector2Subtract(collisionRectCoor, mScreenPos);
 							Vector2 startpointTarget = Vector2Subtract(collisionRectCoor, it1->getScreenPos());
 							pbossColor += static_cast<int>(mWidth) * static_cast<int>(startpointBoss.y) + static_cast<int>(startpointBoss.x);
