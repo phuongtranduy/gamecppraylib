@@ -53,3 +53,14 @@ we can scale with speed(number pixels/s)
  if CPU took time to draw a frame. I mean the time amounts for drawing frames are not the same
  If we don't use dT, and allow object to move numberofpixel(speed) each Frame we drew => sometimes a frame took more time => object moved a same distance with diffrent amount of time => lag
 
+
+2 points:
+In Tick function of Fighter.cpp
+    if(mBouncingTime > 1.0/9.5f ) mSpeed = 500;
+	else mSpeed = mOriginSpeed;
+   mScreenPos = Vector2Add(mScreenPos, Vector2Scale(Vector2Normalize(mVelocity), mSpeed * aDeltaTime));
+
+-mBouncingTime is not something related to bouncingTime issue; It is just the way we handle when we press a direction key long enough, we will increase the speed.
+-Velocity is just the normalized velocity vector to help to define the moving direction of object. To get the value of velocity, we will scale Vector2Normalize(mVelocity) with speed*aDeltaTime to get the distance object will move and its direction also
+  then we just use Vector2Add to get the final position of object in screen.
+
