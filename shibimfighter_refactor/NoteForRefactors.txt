@@ -74,3 +74,31 @@ typedef struct Vector2 {
 } Vector2;
 
 
+==========================
+BaseSpace:
+    const float mUpdateTIme{1.0/12.0}; ///< time to update animation 
+    float mRunningTime{0}; ///< Counting for the time      
+    float mSpeed{500.0f};
+	float mOriginSpeed{500.0f};
+    float mFrameX{}; // which frame  on X axis: the first , second, .etc frame on X axis
+	float mFrameY{}; // which frame  on Y axis: the first , second, .etc frame on Y axis
+    float mNumberofFrameX{};
+    float mNumberofFrameY{};
+    Vector2 mScreenPos{}; ///< the position of object in the screen
+    //float mWindowWidth{}; // the window width? while don't we use Singleton to get that?
+    //float mWindowHeight{};// the window height?
+	float mWidth{}; ///< the width of character
+	float mHeight{}; ///< the height of character
+	float mScale{1.0}; ///< the scale factor of object
+	//bool mIsAlive{true}; ///remove this, redundant. when mNumberofLives = 0 => it dies
+	uint16_t mNumberofLives{1}; // the number of lives that it can use
+	float mOffsetX{};
+	float mfRotation{}; ///< float degree ex: -90.0 degree
+	Vector2 mVelocity{}; ///< the direction of moving
+	Vector2 mOrigin{}; ///< the absolute position of the top left position start with 0,0 
+
+    bool CheckCollision(const BaseSpace& obj);
+
+window: Singleton class
+  int32_t m_windowWidth;
+  int32_t m_windowHeight;
