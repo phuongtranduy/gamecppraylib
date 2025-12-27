@@ -99,6 +99,6 @@ BaseSpace:
 
     bool CheckCollision(const BaseSpace& obj);
 
-window: Singleton class
+window: Singleton class// we don't need that because we have GetScreenWidth(0 and GetScreenHeight functions)
   int32_t m_windowWidth;
   int32_t m_windowHeight;
