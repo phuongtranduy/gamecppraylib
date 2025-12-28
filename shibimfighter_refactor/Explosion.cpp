@@ -37,7 +37,8 @@ Explosion::Explosion(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFra
 	BaseSpace::mNumberofFrameY = aNumberOfFrameY;
 	BaseSpace::mWidth = BaseSpace::mImage.width/BaseSpace::mNumberofFrameX;
 	BaseSpace::mHeight = BaseSpace::mImage.height/BaseSpace::mNumberofFrameY;
-	setScreenPos(Vector2{aScreenPos.x - mWidth/2, aScreenPos.y});
+	//setScreenPos(Vector2{aScreenPos.x - mWidth/2, aScreenPos.y});
+    setScreenPos(Vector2{aScreenPos.x - mWidth/2, aScreenPos.y - mHeight/2 });
 }
 
 Explosion::~Explosion()
