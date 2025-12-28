@@ -53,16 +53,6 @@ public:
    void setRotation(float aRotation) { mfRotation = aRotation;}
    void setOrigin(Vector2 aOrigin) {mOrigin = aOrigin;}
    void setAnimation(bool abAnimation){mbAnimation = abAnimation;}
-   bool outOfScreen(){
-     if((mScreenPos.y > mWindowHeight + mHeight)
-        || (mScreenPos.y < -mHeight)
-    )
-     {
-        return true;
-     }
-
-     return false;
-   }
    Rectangle getCollisionRec();
    Texture2D mImage;
    Color * mpColorData{nullptr};

@@ -230,7 +230,7 @@ int main(void)
 				if(!item.getAlive())
 				{
 					//Add explosion to list of explosion
-					if(!item.outOfScreen() && !item.getBeRemoved())
+					if(!item.getBeRemoved())
 					{
 						listOfBossExplosion.emplace_back(explosionTex, 8, 1, screenWidth, screenHeight, Vector2{item.getScreenPos()});
 					}
