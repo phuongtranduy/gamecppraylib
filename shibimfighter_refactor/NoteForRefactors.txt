@@ -8,11 +8,12 @@ Enemy(1 life) --> Boss(Has many lives)
 Fighter(1 life)
 
 BulletF(1life) comes from Fighter
-BulletB(1life) comes from Boss
 
 
-BulletF x Boss, Enemy, BulletB
-Fighter x Boss, Enemy, BulletB
+BulletF x Boss, Enemy
+Fighter x Boss, Enemy
+
+//Boss will use enemy as weapon. Fighter will use Bullet as Weapon
 
 we have 2 groups(Fighter, BulletF) vs (Enemy, Boss, BulletB)
 Then we will draw them again
