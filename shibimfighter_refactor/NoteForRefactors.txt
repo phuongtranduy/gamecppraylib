@@ -17,17 +17,16 @@ Fighter x Boss, Enemy, BulletB
 we have 2 groups(Fighter, BulletF) vs (Enemy, Boss, BulletB)
 Then we will draw them again
 
+Only Fighter and BulletF should have explosion effect when they hit the opposite object(Enemy, Boss, BulletB)
 
 4 days to refactor
 
 25-Dec-2025
-
-
 26-Dec-2025
-
+Understanding
 
 29-Dec-2025
-
+Refactor Logic for checking collision
 
 30-Dec-2025
 
