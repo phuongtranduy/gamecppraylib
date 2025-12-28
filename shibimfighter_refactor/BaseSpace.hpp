@@ -59,8 +59,8 @@ public:
 private:
 	bool mbAnimation{false};
 protected:
-    
-    const float mUpdateTIme{1.0/12.0}; ///< time to update animation 
+    //const float mUpdateTIme{1.0/12.0}; ///< time to update animation //remove_if in eneymy use error: use of deleted function ‘BaseSpace& BaseSpace::operator=(const BaseSpace&)’
+    float mUpdateTIme{1.0/12.0}; ///< time to update animation 
     float mRunningTime{0}; ///< Counting for the time      
     float mSpeed{500.0f};
 	float mOriginSpeed{500.0f};

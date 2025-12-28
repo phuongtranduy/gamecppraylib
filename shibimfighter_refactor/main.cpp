@@ -29,6 +29,7 @@ Phuong Tran Duy         26-Aug-2022                   Init version
 #include "PowerDrug.hpp"
 #include <utility>
 #include <chrono>
+#include <algorithm>
 //#include "mingw.thread.h"
 // g++ -Wall -std=c++14  main.cpp  -o main -I /home/s32v/raylib/raylib/build/raylib/include -L /home/s32v/raylib/raylib/build/raylib/ -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 // gcc  main.cpp  -o main -I /home/s32v/raylib/raylib/build/raylib/include -L /home/s32v/raylib/raylib/build/raylib/ -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
@@ -184,65 +185,103 @@ int main(void)
 			//BOSS go
 			//if(totalOfEnemyOut >= 0 /*numberOfEnemyBeforeBoss*/) eBoss.Tick(dT);
 			if(totalOfEnemyOut >= numberOfEnemyBeforeBoss) {
-				eBoss.Tick(dT);			
+				eBoss.Tick(dT);	//Boss with Target and Bullet of Boss with Target will check here		
 				if (fighter.getAlive()) BossLife =  eBoss.getIAlive();
 				sprintf (buffBossLife, "BossLife: %d", BossLife);
 				DrawText(buffBossLife, 0, 30, 20, YELLOW);
 			}
-			
-			//
-			for ( auto it = listOfEnemy.begin() ; it != listOfEnemy.end(); it)
-			{
-				it->Tick(dT);
-				if (it->getScreenPos().y >= screenHeight + it->getHeight())
+
+			//refactor
+			auto newEnd = std::remove_if(listOfEnemy.begin(), listOfEnemy.end(), [&](Enemy& item){
+				// enemy item false
+				if (!item.getAlive())
 			    {
-					//Erase enemy object when it goes out of screen
-					it=listOfEnemy.erase(it);//return the next it
-					continue;//to avoid nonexisting mem;
-			    } 
-				
-				//Interate to check collision with bullet. Iterate all bullets
-				for ( auto it1 = fighter.mWeapon.begin(); it1 != fighter.mWeapon.end() && fighter.getAlive(); it1)
+					return true;
+			    }
+
+				for ( auto it1 = fighter.mWeapon.begin(); it1 != fighter.mWeapon.end() && fighter.getAlive(); it1++)
 				{
-					if (CheckCollisionRecs(it->getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
+					if (CheckCollisionRecs(item.getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
 					{
 						//Kill enemy
 						totalOfKilledEnemy++;
 						totalOfKilledEnemyForCountToSpawnPowerDrug++;
-						it->setAlive(false);
+						item.setAlive(false);
 						it1->setAlive(false);
 						//Remove enemy
 						PlaySound(hit);
-						it=listOfEnemy.erase(it);
-						std::cout << "Enemy is Killed...\n";
-						goto NEXTELEMENT_IT;
-						//fighter.mWeapon.erase(it1);//Do not remove bullet to make explosion happen
+						return true;
 					}
-					
-					//Check to remove bullet of Target
-					if(it1->getAlive() == false){
-						
-						if (it1->mpExplosion != nullptr) {
-							if (it1->mpExplosion->getAlive() == false){ 
-								//std::cout << "Can remove bullet" << std::endl;
-								it1 = fighter.mWeapon.erase(it1);
-								goto NEXT_ELEMENT_IT1;
-							}
-						}
-						if (it1->getBeRemoved()){//Remove bullet when it is locked
-							it1 = fighter.mWeapon.erase(it1);
-							goto NEXT_ELEMENT_IT1;
-						}
-						
-					}
-						
-					it1++;	
-					NEXT_ELEMENT_IT1: ;
-				}//for it1
-				it++;
-				NEXTELEMENT_IT: ; //need semi-colon here for 1 empty command
+				}
+				return false;
+			});
+
+			//remove enemy
+			listOfEnemy.erase(newEnd, listOfEnemy.end());
+
+			//draw enemy again
+			for ( auto it = listOfEnemy.begin() ; it != listOfEnemy.end(); it++)
+			{
+				it->Tick(dT);//this also check target fighter with enemy
 			}
-			fighter.Tick(dT);
+			
+			
+
+			//////////////////////
+			//Iternale through all enemy => the purpose is to remove enemy
+			// for ( auto it = listOfEnemy.begin() ; it != listOfEnemy.end(); it)
+			// {
+			// 	it->Tick(dT);//this also check target firhter with enemy
+			// 	if (it->getScreenPos().y >= screenHeight + it->getHeight())
+			//     {
+			// 		//Erase enemy object when it goes out of screen
+			// 		it=listOfEnemy.erase(it);//return the next it
+			// 		continue;//to avoid nonexisting mem;
+			//     } 
+				
+			// 	//Interate to check collision with bullets of target. Iterate all bullets
+			// 	for ( auto it1 = fighter.mWeapon.begin(); it1 != fighter.mWeapon.end() && fighter.getAlive(); it1)
+			// 	{
+			// 		if (CheckCollisionRecs(it->getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
+			// 		{
+			// 			//Kill enemy
+			// 			totalOfKilledEnemy++;
+			// 			totalOfKilledEnemyForCountToSpawnPowerDrug++;
+			// 			it->setAlive(false);
+			// 			it1->setAlive(false);
+			// 			//Remove enemy
+			// 			PlaySound(hit);
+			// 			it=listOfEnemy.erase(it);
+			// 			std::cout << "Enemy is Killed...\n";
+			// 			goto NEXTELEMENT_IT;
+			// 			//fighter.mWeapon.erase(it1);//Do not remove bullet to make explosion happen
+			// 		}
+					
+			// 		//Check to remove bullet of Target
+			// 		if(it1->getAlive() == false){
+						
+			// 			if (it1->mpExplosion != nullptr) {
+			// 				if (it1->mpExplosion->getAlive() == false){ 
+			// 					//std::cout << "Can remove bullet" << std::endl;
+			// 					it1 = fighter.mWeapon.erase(it1);
+			// 					goto NEXT_ELEMENT_IT1;
+			// 				}
+			// 			}
+			// 			if (it1->getBeRemoved()){//Remove bullet when it is locked
+			// 				it1 = fighter.mWeapon.erase(it1);
+			// 				goto NEXT_ELEMENT_IT1;
+			// 			}
+						
+			// 		}
+						
+			// 		it1++;	
+			// 		NEXT_ELEMENT_IT1: ;
+			// 	}//for it1
+			// 	it++;
+			// 	NEXTELEMENT_IT: ; //need semi-colon here for 1 empty command
+			// }
+
+			fighter.Tick(dT);//will check weapon and draw on it
 			
 			if (fighter.getAlive() == false){
 				DrawText("GAME OVER!!!", screenWidth/4, screenHeight/2, 50, RED);

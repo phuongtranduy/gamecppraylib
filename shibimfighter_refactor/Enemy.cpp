@@ -16,6 +16,7 @@ Author                  Date D/M/Y         Number     Description of Changes
 Phuong Tran Duy         26-Aug-2022                   Init version
 =============================================================================*/
 #include "Enemy.hpp"
+#include <algorithm>
 
 Enemy::Enemy(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, float aWindowWidth, float aWindowHeight, bool aIsBoss)
 {
@@ -204,32 +205,53 @@ void Enemy::Tick(float aDeltaTime)
 				speedOfFiring = 0;
 			}
 
+			//Refactoring. Note weapon of Boss i enemy. Weapon of fighter is Bullet
+			auto newEnd = std::remove_if(mWeapon.begin(), mWeapon.end(), [&](Enemy& item){
+				for ( auto it1 = mTarget->mWeapon.begin(); it1 != mTarget->mWeapon.end() && mTarget->getAlive(); it1++)
+				{
+					if (CheckCollisionRecs(item.getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
+					{
+						item.setAlive(false);
+						it1->setAlive(false);
+						return true;
+					}
+				}	
+			});
+
+			mWeapon.erase(newEnd, mWeapon.end());
 			
-			
-			for ( auto it = mWeapon.begin() ; it != mWeapon.end(); it)
+			//draw weapon again
+			for ( auto it = mWeapon.begin() ; it != mWeapon.end(); it++)
 			{
 				it->Tick(aDeltaTime);
-				for ( auto it1 = mTarget->mWeapon.begin(); it1 != mTarget->mWeapon.end() && mTarget->getAlive(); it1)
-				{
-					if (CheckCollisionRecs(it->getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
-					{
-						it->setAlive(false);
-						it1->setAlive(false);
-						//Remove enemy
-						it=mWeapon.erase(it);
-						std::cout << "Weapon Enemy is Killed...\n";
-						goto NEXTWEAPONENEMY_IT;
-						//fighter.mWeapon.erase(it1);//Do not remove bullet to make explosion happen
-					}
-					it1++;
-				}	
-				it++;
-				NEXTWEAPONENEMY_IT:;
 			}
+
+			//refactoring this
+			// for ( auto it = mWeapon.begin() ; it != mWeapon.end(); it)
+			// {
+			// 	it->Tick(aDeltaTime);
+			// 	for ( auto it1 = mTarget->mWeapon.begin(); it1 != mTarget->mWeapon.end() && mTarget->getAlive(); it1)
+			// 	{
+			// 		if (CheckCollisionRecs(it->getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
+			// 		{
+			// 			it->setAlive(false);
+			// 			it1->setAlive(false);
+			// 			//Remove enemy
+			// 			it=mWeapon.erase(it);
+			// 			std::cout << "Weapon Enemy is Killed...\n";
+			// 			goto NEXTWEAPONENEMY_IT;
+			// 			//fighter.mWeapon.erase(it1);//Do not remove bullet to make explosion happen
+			// 		}
+			// 		it1++;
+			// 	}	
+			// 	it++;
+			// 	NEXTWEAPONENEMY_IT:;
+			// }
+
 	}
 	
 	
-	   BaseSpace::Tick(aDeltaTime);
+	BaseSpace::Tick(aDeltaTime);
    //END OF TICK function
 }
 Vector2 Enemy::getScreenPos()
