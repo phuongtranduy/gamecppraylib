@@ -207,7 +207,7 @@ int main(void)
 						totalOfKilledEnemy++;
 						totalOfKilledEnemyForCountToSpawnPowerDrug++;
 						item.setAlive(false);
-						it1->setAlive(false);
+						it1->setAlive(false);//weapon
 						//Remove enemy
 						PlaySound(hit);
 						return true;
@@ -224,9 +224,26 @@ int main(void)
 			{
 				it->Tick(dT);//this also check target fighter with enemy
 			}
-			
-			
 
+			//remove bullet that is false
+			auto newWeaponFighterEnd = std::remove_if(fighter.mWeapon.begin(), fighter.mWeapon.end(), [&](Bullet& item){
+				if(!item.getAlive())
+				{
+					//Add explosion to list of explosion
+					if(!item.outOfScreen())
+					listOfBossExplosion.emplace_back(explosionTex, 8, 1, screenWidth, screenHeight, Vector2{item.getScreenPos()});
+					return true;
+				}
+				else
+				{
+					return false;
+				}
+			});
+			//remove bullet of fighter not alive
+			fighter.mWeapon.erase(newWeaponFighterEnd, fighter.mWeapon.end());
+			
+			
+		
 			//////////////////////
 			//Iternale through all enemy => the purpose is to remove enemy
 			// for ( auto it = listOfEnemy.begin() ; it != listOfEnemy.end(); it)
@@ -319,6 +336,12 @@ int main(void)
 			{
 				ex->Tick(dT);
 			}
+
+			auto newExplosionEnd = std::remove_if(listOfBossExplosion.begin(), listOfBossExplosion.end(), [&](auto& item){
+				return !item.getAlive();
+			}); 
+			listOfBossExplosion.erase(newExplosionEnd, listOfBossExplosion.end());
+			//std::cout << "Size of listBossExplosion:" << listOfBossExplosion.size() << std::endl;
 			sprintf (buffString, "Killed Total: %d ", totalOfKilledEnemy);
 			DrawText(buffString, 0, 0, 20, WHITE);
 			//enemyFire.Tick(dT);

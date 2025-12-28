@@ -56,12 +56,12 @@ void Bullet::Tick(float aDeltaTime)
 	   
 	   if(mScreenPos.y > -mHeight && mScreenPos.x > -mWidth && mScreenPos.x < mWindowWidth) // >=0 means that there is a collision with enemy in the screen
 	   {	   
-		   if(mpExplosion == nullptr) 
-		   /*mpExplosion = new Explosion(LoadTexture("texture/medium_explosion.png"), 8, 1, 
-		   mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y});*/
-		   mpExplosion = new Explosion(mExplosion, 8, 1, 
-		   mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y - mHeight});
-		   else mpExplosion->Tick(aDeltaTime);
+		//    if(mpExplosion == nullptr) 
+		//    /*mpExplosion = new Explosion(LoadTexture("texture/medium_explosion.png"), 8, 1, 
+		//    mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y});*/
+		//    mpExplosion = new Explosion(mExplosion, 8, 1, 
+		//    mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y - mHeight});
+		//    else mpExplosion->Tick(aDeltaTime);
 	   }
 
 	   return;

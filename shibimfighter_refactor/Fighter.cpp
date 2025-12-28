@@ -43,10 +43,10 @@ void Fighter::Tick(float aDeltaTime)
 	//std::cout << "mSpeed=" << mSpeed << std::endl;
    // draw the fighter
 	if (!getAlive()) {
-		   if(mpExplosion == nullptr) 
-			mpExplosion = new Explosion(mBigExplosion, 8, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y});
-		   else 
-			   mpExplosion->Tick(aDeltaTime);
+		//    if(mpExplosion == nullptr) 
+		// 	mpExplosion = new Explosion(mBigExplosion, 8, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y});
+		//    else 
+		// 	   mpExplosion->Tick(aDeltaTime);
 		
 		return;
 	}
