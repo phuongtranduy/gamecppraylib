@@ -28,9 +28,11 @@ Understanding
 
 29-Dec-2025
 Refactor Logic for checking collision
+Refactor Bullet of fighter
 
 30-Dec-2025
-
+Refactor the collision between enemy and Target
+Refactor Bullet of Boss to not call constructor too much
 
 ============================
 
