@@ -20,6 +20,7 @@ Phuong Tran Duy         26-Aug-2022                   Init version
 #include "BaseSpace.hpp"
 #include "Bullet.hpp"
 #include <list>
+#include <algorithm>
 
 /**
  * @class Fighter
@@ -37,6 +38,28 @@ private:
 	Explosion *mpExplosion{nullptr};
 	int mFightingLevel{0};
 	float mBouncingTime{0};
+
+	void addBullet(Texture2D aImage, Texture2D aExplosion, float aNumberOfFrameX, float aNumberOfFrameY, float aWindowWidth, float aWindowHeight, Vector2 aScreenPos, float aRotationAngle = 0)
+	{
+		auto availableBullet = std::find_if(mWeapon.begin(), mWeapon.end(), [&](Bullet& item){
+			return !item.getAlive();//check if have item available
+		});
+
+		if (availableBullet != mWeapon.end())
+		{
+			availableBullet->setScreenPos(aScreenPos);
+			availableBullet->setRotation(aRotationAngle);
+			availableBullet->setAlive(true);
+			availableBullet->setBeRemoved(false);
+		}
+		else
+		{
+			//create new
+			mWeapon.emplace_back(mBullet, aExplosion, aNumberOfFrameX, aNumberOfFrameY, aWindowWidth, aWindowHeight, aScreenPos);
+			mWeapon.back().setRotation(aRotationAngle);
+		}
+	}
+
 public:
     Fighter(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, float aOffsetX, float aWindowWidth, float aWindowHeight);
     ~Fighter();

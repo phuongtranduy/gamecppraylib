@@ -41,6 +41,7 @@ public:
     virtual Vector2 getScreenPos() ;
 	Explosion *mpExplosion{nullptr};
 	bool getBeRemoved() {return mBeRemoved;}
+	void setBeRemoved(const bool& beRemoved) {mBeRemoved = beRemoved;}
 };
 
 

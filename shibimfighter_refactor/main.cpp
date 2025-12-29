@@ -241,8 +241,12 @@ int main(void)
 			{
 				it->Tick(dT);//this also check target fighter with enemy
 			}
+
+			//Optimize it by not removing
 			//std::cout << "PPPPP size enemy =" << listOfEnemy.size() << std::endl;
 			//remove bullet that is false
+
+			#if 0
 			auto newWeaponFighterEnd = std::remove_if(fighter.mWeapon.begin(), fighter.mWeapon.end(), [&](Bullet& item){
 				if(!item.getAlive())
 				{
@@ -260,7 +264,21 @@ int main(void)
 			});
 			//remove bullet of fighter not alive
 			fighter.mWeapon.erase(newWeaponFighterEnd, fighter.mWeapon.end());
-			
+			#endif
+
+			std::for_each(fighter.mWeapon.begin(), fighter.mWeapon.end(), [&](Bullet& item){
+				if(!item.getAlive())
+				{
+					//Add explosion to list of explosion
+					if(!item.getBeRemoved())
+					{
+						listOfBossExplosion.emplace_back(explosionTex, 8, 1, screenWidth, screenHeight, Vector2{item.getScreenPos()});
+						item.setBeRemoved(true);//Avoid add explosion again
+					}
+					return;
+				}
+			});
+		
 			
 		
 			//////////////////////
@@ -325,6 +343,7 @@ int main(void)
 					std::cout << "Play sound end game\n";
 					PlaySound(failsound);
 					Fighterlife = false;// if the sound is played too many time continuosly => it will stuck
+					listOfBossExplosion.emplace_back(explosionTex, 8, 1, screenWidth, screenHeight, Vector2{fighter.getScreenPos()});
 				}
 
 			}

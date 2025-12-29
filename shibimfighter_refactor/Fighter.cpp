@@ -92,24 +92,25 @@ void Fighter::Tick(float aDeltaTime)
 	   //Push back create temp object then copy and delete temp => Texture is deleted
 		//mWeapon.push_back(Bullet(LoadTexture("texture/bullet.png"), 4, 1, mWindowWidth, mWindowHeight, mScreenPos));
 	    if(mFightingLevel >= 0)
-			mWeapon.emplace_back(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x + mWidth/2, mScreenPos.y});
+			addBullet(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x + mWidth/2, mScreenPos.y});
 		
 		if(mFightingLevel >= 1)
 		{
-			mWeapon.emplace_back(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y + mHeight/2});
-			mWeapon.emplace_back(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x + mWidth, mScreenPos.y + mHeight/2});
+			addBullet(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y + mHeight/2});
+			addBullet(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x + mWidth, mScreenPos.y + mHeight/2});
 		}
 		
 		if(mFightingLevel >= 2)
 		{
 			//fighting 45 degree to left
-			mWeapon.emplace_back(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y + mHeight/2});
-			mWeapon.back().setRotation(-45.0f);
+			addBullet(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x, mScreenPos.y + mHeight/2}, -45.0f);
+			
 			//fighting 45 degree to right
-			mWeapon.emplace_back(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x + mWidth, mScreenPos.y+ mHeight/2});
-			mWeapon.back().setRotation(45.0f);			
+			addBullet(mBullet, mExplosion, 4, 1, mWindowWidth, mWindowHeight, Vector2{mScreenPos.x + mWidth, mScreenPos.y+ mHeight/2}, 45.0f);			
 		}
 		mRunningTime = 0;
+
+		//std::cout << "size of weapon=" << mWeapon.size() << std::endl;
    }
 
    

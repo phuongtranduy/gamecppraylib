@@ -46,6 +46,7 @@ Bullet::Bullet(Texture2D aImage, Texture2D aExplosion, float aNumberOfFrameX, fl
 Bullet::~Bullet()
 {
 	//UnloadTexture(mImage);
+	std::cout << "Calling destructor for bullet\n";
 	if (mpExplosion != nullptr) delete mpExplosion;
 }
 
