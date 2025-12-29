@@ -202,22 +202,7 @@ int main(void)
 				totalOfEnemyOut++;
 				std::cout << "Total = " << listOfEnemy.size() << std::endl;
 			}
-			// if (runningTimeofEnemy >= speedOfSpawningEnemy && !bStopped)
-			// {
-			// 	//Add enemy into it 
-			// 	listOfEnemy.emplace_back(enemyText, 4, 4, screenWidth, screenHeight);
-			// 	fPosXRand = (rand() % 10)*50;
-			// 	listOfEnemy.back().setScreenPos(Vector2{fPosXRand, -50});
-			// 	listOfEnemy.back().setFrameX(rand() % 4);
-			// 	listOfEnemy.back().setFrameY(rand() % 4);
-			// 	listOfEnemy.back().setRotation(180.0f);
-			// 	listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
-			// 	listOfEnemy.back().setTarget(&fighter);
-			// 	runningTimeofEnemy = 0;
-			// 	totalOfEnemyOut++;
-			// 	std::cout << "Total = " << listOfEnemy.size() << std::endl;
-			// }
-			
+		
 			//BOSS go
 			//if(totalOfEnemyOut >= 0 /*numberOfEnemyBeforeBoss*/) eBoss.Tick(dT);
 			if(totalOfEnemyOut >= numberOfEnemyBeforeBoss) {
@@ -232,7 +217,7 @@ int main(void)
 				// enemy item false
 				if (!item.getAlive())
 			    {
-					return true;
+					return;
 			    }
 
 				for ( auto it1 = fighter.mWeapon.begin(); it1 != fighter.mWeapon.end() && fighter.getAlive(); it1++)
@@ -246,14 +231,10 @@ int main(void)
 						it1->setAlive(false);//weapon
 						//Remove enemy
 						PlaySound(hit);
-						return true;
 					}
 				}
-				return false;
 			});
 
-			//remove enemy. Object Pool can be applied here. we can setup a pool of 10 enemies here
-			//listOfEnemy.erase(newEnd, listOfEnemy.end());
 
 			//draw enemy again
 			for ( auto it = listOfEnemy.begin() ; it != listOfEnemy.end(); it++)
