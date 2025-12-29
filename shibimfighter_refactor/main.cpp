@@ -168,19 +168,55 @@ int main(void)
 			
 			if (runningTimeofEnemy >= speedOfSpawningEnemy && !bStopped)
 			{
-				//Add enemy into it 
-				listOfEnemy.emplace_back(enemyText, 4, 4, screenWidth, screenHeight);
-				fPosXRand = (rand() % 10)*50;
-				listOfEnemy.back().setScreenPos(Vector2{fPosXRand, -50});
-				listOfEnemy.back().setFrameX(rand() % 4);
-				listOfEnemy.back().setFrameY(rand() % 4);
-				listOfEnemy.back().setRotation(180.0f);
-				listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
-				listOfEnemy.back().setTarget(&fighter);
+				//Add enemy into it
+				auto availableEnemy = std::find_if(listOfEnemy.begin(), listOfEnemy.end(), [&](Enemy& item){
+					return !item.getAlive();
+				});
+
+				if(availableEnemy != listOfEnemy.end())
+				{
+					//std::cout << "Utilize an existing enemy\n";
+					availableEnemy->setAlive(true);
+					fPosXRand = (rand() % 10)*50;
+					availableEnemy->setScreenPos(Vector2{fPosXRand, -50});
+					availableEnemy->setFrameX(rand() % 4);
+					availableEnemy->setFrameY(rand() % 4);
+					availableEnemy->setRotation(180.0f);
+					availableEnemy->setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
+					availableEnemy->setTarget(&fighter);
+				}
+				else
+				{
+					//create new
+					//std::cout << "Create new enemy\n";
+					listOfEnemy.emplace_back(enemyText, 4, 4, screenWidth, screenHeight);
+					fPosXRand = (rand() % 10)*50;
+					listOfEnemy.back().setScreenPos(Vector2{fPosXRand, -50});
+					listOfEnemy.back().setFrameX(rand() % 4);
+					listOfEnemy.back().setFrameY(rand() % 4);
+					listOfEnemy.back().setRotation(180.0f);
+					listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
+					listOfEnemy.back().setTarget(&fighter);
+				}
 				runningTimeofEnemy = 0;
 				totalOfEnemyOut++;
 				std::cout << "Total = " << listOfEnemy.size() << std::endl;
 			}
+			// if (runningTimeofEnemy >= speedOfSpawningEnemy && !bStopped)
+			// {
+			// 	//Add enemy into it 
+			// 	listOfEnemy.emplace_back(enemyText, 4, 4, screenWidth, screenHeight);
+			// 	fPosXRand = (rand() % 10)*50;
+			// 	listOfEnemy.back().setScreenPos(Vector2{fPosXRand, -50});
+			// 	listOfEnemy.back().setFrameX(rand() % 4);
+			// 	listOfEnemy.back().setFrameY(rand() % 4);
+			// 	listOfEnemy.back().setRotation(180.0f);
+			// 	listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
+			// 	listOfEnemy.back().setTarget(&fighter);
+			// 	runningTimeofEnemy = 0;
+			// 	totalOfEnemyOut++;
+			// 	std::cout << "Total = " << listOfEnemy.size() << std::endl;
+			// }
 			
 			//BOSS go
 			//if(totalOfEnemyOut >= 0 /*numberOfEnemyBeforeBoss*/) eBoss.Tick(dT);
@@ -192,7 +228,7 @@ int main(void)
 			}
 
 			//refactor
-			auto newEnd = std::remove_if(listOfEnemy.begin(), listOfEnemy.end(), [&](Enemy& item){
+			std::for_each(listOfEnemy.begin(), listOfEnemy.end(), [&](Enemy& item){
 				// enemy item false
 				if (!item.getAlive())
 			    {
@@ -216,15 +252,15 @@ int main(void)
 				return false;
 			});
 
-			//remove enemy
-			listOfEnemy.erase(newEnd, listOfEnemy.end());
+			//remove enemy. Object Pool can be applied here. we can setup a pool of 10 enemies here
+			//listOfEnemy.erase(newEnd, listOfEnemy.end());
 
 			//draw enemy again
 			for ( auto it = listOfEnemy.begin() ; it != listOfEnemy.end(); it++)
 			{
 				it->Tick(dT);//this also check target fighter with enemy
 			}
-
+			//std::cout << "PPPPP size enemy =" << listOfEnemy.size() << std::endl;
 			//remove bullet that is false
 			auto newWeaponFighterEnd = std::remove_if(fighter.mWeapon.begin(), fighter.mWeapon.end(), [&](Bullet& item){
 				if(!item.getAlive())

@@ -222,6 +222,7 @@ void Enemy::Tick(float aDeltaTime)
 						return true;
 					}
 				}	
+				return false;
 			});
 
 			mWeapon.erase(newEnd, mWeapon.end());
@@ -254,6 +255,14 @@ void Enemy::Tick(float aDeltaTime)
 			// 	NEXTWEAPONENEMY_IT:;
 			// }
 
+	}
+
+	//check boundary
+	//Checking boundary
+   	if (mScreenPos.y >= mWindowHeight + mHeight) 
+   	{
+		//std::cout << "out of screen\n";
+		setAlive(false);
 	}
 	
 	
