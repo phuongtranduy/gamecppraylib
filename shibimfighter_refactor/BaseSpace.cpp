@@ -16,12 +16,17 @@ Author                  Date D/M/Y         Number     Description of Changes
 Phuong Tran Duy         26-Aug-2022                   Init version
 =============================================================================*/
 #include "BaseSpace.hpp"
+BaseSpace::BaseSpace(std::shared_ptr<LoadedImage> loadedImage)
+: m_loadedImage(loadedImage)
+{}
+
 void BaseSpace::Tick(float aDeltaTime) {
 	
     // draw the character	
     Rectangle source{mFrameX * mWidth+mOffsetX, mFrameY*mHeight, mWidth, mHeight};
     Rectangle dest{mScreenPos.x, mScreenPos.y, mScale*mWidth, mScale*mHeight};
     DrawTexturePro(mImage, source, dest, mOrigin, mfRotation, WHITE);
+	//DrawTexturePro(m_loadedImage->GetImageTex2D(), source, dest, mOrigin, mfRotation, WHITE);
 	//Show all rectangles bounding to objects
 	//DrawRectangleLines(mScreenPos.x, mScreenPos.y, mScale*mWidth, mScale*mHeight,RED);
 

@@ -43,6 +43,7 @@ private:
 	Texture2D mFireTargetTex;
 	Color * mpBossColor{nullptr};
 	Color * mpBulletColor{nullptr};
+	Color * mpTargetColor{nullptr};
 	float speedOfFiring{};
 	
 public:

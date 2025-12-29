@@ -33,6 +33,8 @@ Enemy::Enemy(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, flo
 	if(mIsBoss)
 	{
 			mTargetBulletTex=LoadTexture("texture/bullet.png");
+			Image targetBulletImage = LoadImage("texture/bullet.png");
+			mpBulletColor = LoadImageColors(targetBulletImage);
 			mFireTargetTex=LoadTexture("texture/firetarget.png");
 	        //mBossTex =LoadTexture("texture/boss.png");
 			//Image bossImage =GetTextureData(mBossTex);//
@@ -40,8 +42,8 @@ Enemy::Enemy(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, flo
 			mpBossColor = LoadImageColors(bossImage);
 							
 			//Image targetImage =GetTextureData(mTargetBulletTex);//LoadImage("texture/boss.png");
-			Image targetImage = LoadImage("texture/boss.png");
-			mpBulletColor = LoadImageColors(targetImage);
+			Image targetImage = LoadImage("texture/terrorist_small.png");
+			mpTargetColor = LoadImageColors(targetImage);
 			mFireTargetTex=LoadTexture("texture/firetarget.png");
 	}
 	
@@ -77,13 +79,17 @@ void Enemy::Tick(float aDeltaTime)
 		    //Pixel checking data
 		    //std::cout << "starting checking Boss with Target " << std::endl; //Avoid load texture too many times
 		   	//Image bossImage = GetTextureData(mImage);//LoadImage("texture/boss.png");
-			Image bossImage = LoadImage("texture/boss.png");
-			Color *bossColor = LoadImageColors(bossImage);
-			Color *pbossColor = bossColor;
+			// Image bossImage = LoadImage("texture/boss.png");
+			// Color *bossColor = LoadImageColors(bossImage);
+			// Color *pbossColor = bossColor;
+			Color *pbossColor = mpBossColor;
+
 			//Image targetImage = GetTextureData(mTarget->mImage);//LoadImage("texture/boss.png");
-			Image targetImage = LoadImage("texture/boss.png");
-			Color *targetColor = LoadImageColors(targetImage);
-			Color *ptargetColor = targetColor;
+			// Image targetImage = LoadImage("texture/terrorist_small.png");
+			// Color *targetColor = LoadImageColors(targetImage);
+			// Color *ptargetColor = targetColor;
+			Color* ptargetColor = mpTargetColor;
+			
 			
 			Rectangle temp = GetCollisionRec(getCollisionRec(),mTarget->getCollisionRec());
 			//std::cout << "BOSSPPP: x=" << temp.x << " y=" << temp.y << "width= " << temp.width << " height=" << temp.height <<std::endl;

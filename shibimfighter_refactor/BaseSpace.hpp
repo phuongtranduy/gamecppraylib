@@ -18,9 +18,11 @@ Phuong Tran Duy         26-Aug-2022                   Init version
 
 #ifndef BASE_SPACE_HPP
 #define BASE_SPACE_HPP
+#include "LoadedImage.hpp"
 #include <iostream>
 #include "raylib.h"
 #include "raymath.h"
+#include <memory>
 
 /**
  * @class BaseSpace
@@ -34,6 +36,7 @@ class BaseSpace{
 
 public:
     BaseSpace()=default; ///< Default Constructor
+    BaseSpace(std::shared_ptr<LoadedImage> loadedImage);
     virtual void Tick(float aDeltaTime); ///< function for it's acitivty on each frame
    virtual Vector2 getScreenPos() {
        return mScreenPos;
@@ -59,6 +62,7 @@ public:
 private:
 	bool mbAnimation{false};
 protected:
+    std::shared_ptr<LoadedImage> m_loadedImage;
     //const float mUpdateTIme{1.0/12.0}; ///< time to update animation //remove_if in eneymy use error: use of deleted function ‘BaseSpace& BaseSpace::operator=(const BaseSpace&)’
     float mUpdateTIme{1.0/12.0}; ///< time to update animation 
     float mRunningTime{0}; ///< Counting for the time      

@@ -6,11 +6,20 @@
 #include <string>
 #include <cstdint>
 
-class LoadedImage
+class LoadedImage /*RAII object */
 {
     public:
         LoadedImage(const std::string& imagePath, const uint32_t& numberOfFrameX = 1, const uint32_t& numberOfFrameY = 1);
         ~LoadedImage();
+        const Texture2D& GetImageTex2D() const
+        {
+            return m_imageTex2D;
+        }
+
+        const Color* GetImageColorPointer() const
+        {
+            return m_imageColor;
+        }
 
     private:
         std::string m_imagePath;    
@@ -19,5 +28,4 @@ class LoadedImage
         Texture2D m_imageTex2D;
         Image m_image;
         Color* m_imageColor;
-
 };

@@ -1,0 +1,902 @@
+phuongtran@phuongtranvbox:~/workingasensus/gamecppraylib/build<>$./fightergame 
+==========================
+INFO: Initializing raylib 5.0
+INFO: Platform backend: DESKTOP (GLFW)
+INFO: Supported raylib modules:
+INFO:     > rcore:..... loaded (mandatory)
+INFO:     > rlgl:...... loaded (mandatory)
+INFO:     > rshapes:... loaded (optional)
+INFO:     > rtextures:. loaded (optional)
+INFO:     > rtext:..... loaded (optional)
+INFO:     > rmodels:... loaded (optional)
+INFO:     > raudio:.... loaded (optional)
+INFO: DISPLAY: Device initialized successfully
+INFO:     > Display size: 1920 x 1080
+INFO:     > Screen size:  560 x 660
+INFO:     > Render size:  560 x 660
+INFO:     > Viewport offsets: 0, 0
+INFO: GLAD: OpenGL extensions loaded successfully
+INFO: GL: Supported extensions count: 233
+INFO: GL: OpenGL device information:
+INFO:     > Vendor:   AMD
+INFO:     > Renderer: RENOIR (renoir, LLVM 15.0.7, DRM 3.57, 6.8.0-84-generic)
+INFO:     > Version:  4.6 (Core Profile) Mesa 23.2.1-1ubuntu3.1~22.04.3
+INFO:     > GLSL:     4.60
+INFO: GL: VAO extension detected, VAO functions loaded successfully
+INFO: GL: NPOT textures extension detected, full NPOT textures supported
+INFO: GL: DXT compressed textures supported
+INFO: GL: ETC2/EAC compressed textures supported
+INFO: PLATFORM: DESKTOP (GLFW): Initialized successfully
+INFO: TEXTURE: [ID 1] Texture loaded successfully (1x1 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 1] Default texture loaded successfully
+INFO: SHADER: [ID 1] Vertex shader compiled successfully
+INFO: SHADER: [ID 2] Fragment shader compiled successfully
+INFO: SHADER: [ID 3] Program shader loaded successfully
+INFO: SHADER: [ID 3] Default shader loaded successfully
+INFO: RLGL: Render batch vertex buffers loaded successfully in RAM (CPU)
+INFO: RLGL: Render batch vertex buffers loaded successfully in VRAM (GPU)
+INFO: RLGL: Default OpenGL state initialized successfully
+INFO: TEXTURE: [ID 2] Texture loaded successfully (128x128 | GRAY_ALPHA | 1 mipmaps)
+INFO: FONT: Default font loaded successfully (224 glyphs)
+INFO: TIMER: Target time per frame: 16.667 milliseconds
+INFO: FILEIO: [texture/modern_rival_space_s.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (160x160 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 3] Texture loaded successfully (160x160 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/terrorist_small.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (150x74 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 4] Texture loaded successfully (150x74 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/bullet.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (60x38 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 5] Texture loaded successfully (60x38 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/medium_explosion.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (1125x140 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 6] Texture loaded successfully (1125x140 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/explosion.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (1414x176 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 7] Texture loaded successfully (1414x176 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/universe.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (546x800 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 8] Texture loaded successfully (546x800 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/shield.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (40x39 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 9] Texture loaded successfully (40x39 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/explosion.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (1414x176 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 10] Texture loaded successfully (1414x176 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 11] Texture loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/firetarget.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (182x90 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 12] Texture loaded successfully (182x90 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/bullet.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (60x38 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 13] Texture loaded successfully (60x38 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/firetarget.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (182x90 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 14] Texture loaded successfully (182x90 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/firetarget.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (182x90 | R8G8B8A8 | 1 mipmaps)
+INFO: TEXTURE: [ID 15] Texture loaded successfully (182x90 | R8G8B8A8 | 1 mipmaps)
+INFO: AUDIO: Device initialized successfully
+INFO:     > Backend:       miniaudio / PulseAudio
+INFO:     > Format:        32-bit IEEE Floating Point -> 16-bit Signed Integer
+INFO:     > Channels:      2 -> 2
+INFO:     > Sample rate:   44100 -> 44100
+INFO:     > Periods size:  3304
+INFO: FILEIO: [audio/audio_background.wav] File loaded successfully
+INFO: WAVE: Data loaded successfully (44100 Hz, 16 bit, 2 channels)
+INFO: FILEIO: [audio/hit_enemy.mp3] File loaded successfully
+INFO: WAVE: Data loaded successfully (24000 Hz, 32 bit, 2 channels)
+INFO: FILEIO: [audio/explosion.mp3] File loaded successfully
+INFO: WAVE: Data loaded successfully (24000 Hz, 32 bit, 2 channels)
+Playing background sound
+Total = 1
+Total = 2
+Total = 3
+Calling Destructor for Enemy
+Total = 3
+Calling Destructor for Enemy
+Total = 3
+Calling Destructor for Enemy
+Total = 3
+Total = 4
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 1
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 1
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 1
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Total = 3
+Total = 4
+Total = 5
+Calling Destructor for Enemy
+INFO: FILEIO: [audio/hitlevel.mp3] File loaded successfully
+INFO: WAVE: Data loaded successfully (24000 Hz, 32 bit, 2 channels)
+PowerDrug comes up
+Total = 5
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 4
+Total = 5
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 4
+Total = 5
+Calling Destructor for Enemy
+Total = 5
+Total = 6
+Calling Destructor for Enemy
+Total = 6
+Total = 7
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 6
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 4
+Calling Destructor for Enemy
+Total = 4
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 1
+Total = 2
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 1
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+INFO: FILEIO: [audio/hitlevel.mp3] File loaded successfully
+INFO: WAVE: Data loaded successfully (24000 Hz, 32 bit, 2 channels)
+PowerDrug comes up
+Total = 1
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 1
+Total = 2
+Total = 3
+Total = 4
+Total = 5
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 4
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 3
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 1
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 3
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 2
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 2
+Total = 3
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 4
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 5
+Calling Destructor for Enemy
+Total = 6
+Calling Destructor for Enemy
+Total = 7
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+Total = 8
+Calling Destructor for Enemy
+Calling Destructor for Enemy
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Total = 9
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Calling Destructor for Enemy
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Total = 10
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Calling Destructor for Enemy
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Calling Destructor for Enemy
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Total = 10
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Calling Destructor for Enemy
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Total = 11
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+INFO: FILEIO: [texture/boss.png] File loaded successfully
+INFO: IMAGE: Data loaded successfully (500x271 | R8G8B8A8 | 1 mipmaps)
+Play sound end game
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
+Background Sound ended
+Calling Destructor for Enemy
+Total = 12
+Calling Destructor for Enemy
+Total = 12
