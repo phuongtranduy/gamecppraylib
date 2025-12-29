@@ -38,6 +38,9 @@ FetchContent_Declare(raylibs
                      )
 FetchContent_MakeAvailable(raylibs)
 
+add_executable(cropdemo cropdemo.cpp)
+target_include_directories(cropdemo PRIVATE .)
+target_link_libraries(cropdemo  raylib )
 add_executable(fightergame BaseSpace.cpp  Bullet.cpp  Enemy.cpp  Explosion.cpp  Fighter.cpp  main.cpp  PowerDrug.cpp LoadedImage.cpp)
 target_include_directories(fightergame PRIVATE .)
 target_link_libraries(fightergame  raylib )
