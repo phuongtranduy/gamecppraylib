@@ -66,6 +66,7 @@ int main(void)
 	
 	Fighter fighter(LoadTexture("texture/terrorist_small.png"), 1, 1, 50, screenWidth, screenHeight);
 	fighter.setSpeed(100);
+	fighter.setScreenPos(Vector2{0, screenHeight});
 	
 	Texture2D backgroundTex {LoadTexture("texture/universe.png")};
 	Texture2D powerDrugTex {LoadTexture("texture/shield.png")};
@@ -190,12 +191,23 @@ int main(void)
 					//create new
 					//std::cout << "Create new enemy\n";
 					listOfEnemy.emplace_back(enemyText, 4, 4, screenWidth, screenHeight);
-					fPosXRand = (rand() % 10)*50;
-					listOfEnemy.back().setScreenPos(Vector2{fPosXRand, -50});
-					listOfEnemy.back().setFrameX(rand() % 4);
-					listOfEnemy.back().setFrameY(rand() % 4);
-					listOfEnemy.back().setRotation(180.0f);
-					listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
+					//fPosXRand = (rand() % 10)*50;
+					listOfEnemy.back().setScreenPos(Vector2{screenWidth/2, -50});
+					listOfEnemy.back().setFrameX(0);
+					listOfEnemy.back().setFrameY(0);
+					listOfEnemy.back().setRotation(0.0f);
+					listOfEnemy.back().setOrigin(Vector2{0,0});
+					//listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
+					listOfEnemy.back().setTarget(&fighter);
+
+					listOfEnemy.emplace_back(enemyText, 4, 4, screenWidth, screenHeight);
+					//fPosXRand = (rand() % 10)*50;
+					listOfEnemy.back().setScreenPos(Vector2{screenWidth/2, -50});
+					listOfEnemy.back().setFrameX(0);
+					listOfEnemy.back().setFrameY(0);
+					listOfEnemy.back().setRotation(90.0f);
+					listOfEnemy.back().setOrigin(Vector2{0,0});
+					//listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
 					listOfEnemy.back().setTarget(&fighter);
 				}
 				runningTimeofEnemy = 0;

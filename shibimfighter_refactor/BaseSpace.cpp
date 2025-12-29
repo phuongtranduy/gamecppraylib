@@ -28,7 +28,7 @@ void BaseSpace::Tick(float aDeltaTime) {
     DrawTexturePro(mImage, source, dest, mOrigin, mfRotation, WHITE);
 	//DrawTexturePro(m_loadedImage->GetImageTex2D(), source, dest, mOrigin, mfRotation, WHITE);
 	//Show all rectangles bounding to objects
-	//DrawRectangleLines(mScreenPos.x, mScreenPos.y, mScale*mWidth, mScale*mHeight,RED);
+	DrawRectangleLines(mScreenPos.x, mScreenPos.y, mScale*mWidth, mScale*mHeight,RED);
 
 	if(mbAnimation)
 	{
