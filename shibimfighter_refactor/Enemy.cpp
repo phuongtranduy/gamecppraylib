@@ -131,7 +131,7 @@ void Enemy::Tick(float aDeltaTime)
 			}
 	   }
 	   else
-	   { //THis is Boss
+	   { //THis is Boss// check collision between Boss and Target
 		    //Pixel checking data
 		    //std::cout << "starting checking Boss with Target " << std::endl; //Avoid load texture too many times
 		   	//Image bossImage = GetTextureData(mImage);//LoadImage("texture/boss.png");
@@ -257,20 +257,20 @@ void Enemy::Tick(float aDeltaTime)
 			}
 
 			//Refactoring. Note weapon of Boss i enemy. Weapon of fighter is Bullet
-			auto newEnd = std::remove_if(mWeapon.begin(), mWeapon.end(), [&](Enemy& item){
+			//Collision between bullet of target and weapon of Boss
+			std::for_each(mWeapon.begin(), mWeapon.end(), [&](Enemy& item){
 				for ( auto it1 = mTarget->mWeapon.begin(); it1 != mTarget->mWeapon.end() && mTarget->getAlive(); it1++)
 				{
+					//just use normal check rectangle because the width of bullets  is not too big
 					if (CheckCollisionRecs(item.getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
 					{
 						item.setAlive(false);
 						it1->setAlive(false);
-						return true;
 					}
 				}	
-				return false;
 			});
 
-			mWeapon.erase(newEnd, mWeapon.end());
+			//mWeapon.erase(newEnd, mWeapon.end());
 			
 			//draw weapon again
 			for ( auto it = mWeapon.begin() ; it != mWeapon.end(); it++)
