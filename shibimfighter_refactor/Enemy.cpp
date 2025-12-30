@@ -43,8 +43,8 @@ Enemy::Enemy(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, flo
 							
 			//Image targetImage =GetTextureData(mTargetBulletTex);//LoadImage("texture/boss.png");
 	}
-	Image targetImage = LoadImage("texture/terrorist_small.png");
-	mpTargetColor = LoadImageColors(targetImage);
+	// Image targetImage = LoadImage("texture/terrorist_small.png");
+	// mpTargetColor = LoadImageColors(targetImage);
 }
 
 Enemy::~Enemy()

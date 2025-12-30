@@ -36,6 +36,7 @@ private:
 	Texture2D mExplosion{LoadTexture("texture/medium_explosion.png")};
 	Texture2D mBigExplosion{LoadTexture("texture/explosion.png")};
 	Explosion *mpExplosion{nullptr};
+	
 	int mFightingLevel{0};
 	float mBouncingTime{0};
 
@@ -61,6 +62,7 @@ private:
 	}
 
 public:
+	Color *mpTargetColor{nullptr};
     Fighter(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, float aOffsetX, float aWindowWidth, float aWindowHeight);
     ~Fighter();
     virtual void Tick(float aDeltaTime) override;

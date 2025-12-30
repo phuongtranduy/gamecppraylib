@@ -55,7 +55,7 @@ public:
     ~Enemy();
     virtual void Tick(float aDeltaTime) override;
     virtual Vector2 getScreenPos() override;
-	void setTarget(Fighter * aTarget) {mTarget = aTarget;}
+	void setTarget(Fighter * aTarget) {mTarget = aTarget; mpTargetColor = mTarget->mpTargetColor;}
 	void setIsBoss(bool aIsBoss) {mIsBoss = aIsBoss;}
 	virtual void setRotation(float aRotation) override;
 	std::list<Enemy> mWeapon;
