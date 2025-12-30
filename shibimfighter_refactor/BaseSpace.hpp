@@ -53,7 +53,7 @@ public:
    void setSpeed(float aSpeed) {mSpeed =mOriginSpeed= aSpeed;}
    void setFrameX(float aFrameX) { mFrameX = aFrameX;}
    void setFrameY(float aFrameY) { mFrameY = aFrameY;}
-   void setRotation(float aRotation) { mfRotation = aRotation;}
+   virtual void setRotation(float aRotation) { mfRotation = aRotation;}
    void setOrigin(Vector2 aOrigin) {mOrigin = aOrigin;}
    void setAnimation(bool abAnimation){mbAnimation = abAnimation;}
    Rectangle getCollisionRec();

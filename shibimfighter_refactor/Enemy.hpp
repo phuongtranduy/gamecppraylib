@@ -57,7 +57,7 @@ public:
     virtual Vector2 getScreenPos() override;
 	void setTarget(Fighter * aTarget) {mTarget = aTarget;}
 	void setIsBoss(bool aIsBoss) {mIsBoss = aIsBoss;}
-	
+	virtual void setRotation(float aRotation) override;
 	std::list<Enemy> mWeapon;
 };
 

@@ -42,16 +42,33 @@ Enemy::Enemy(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, flo
 			mpBossColor = LoadImageColors(bossImage);
 							
 			//Image targetImage =GetTextureData(mTargetBulletTex);//LoadImage("texture/boss.png");
-			Image targetImage = LoadImage("texture/terrorist_small.png");
-			mpTargetColor = LoadImageColors(targetImage);
-			mFireTargetTex=LoadTexture("texture/firetarget.png");
 	}
-	
+	Image targetImage = LoadImage("texture/terrorist_small.png");
+	mpTargetColor = LoadImageColors(targetImage);
 }
 
 Enemy::~Enemy()
 {
 	std::cout << "Calling Destructor for Enemy" << std::endl;
+}
+
+void Enemy::setRotation(float aRotation)
+{
+	BaseSpace::setRotation(aRotation);
+	Image tempImage = LoadImageFromTexture(mImage);
+	float x = mImage.width/mNumberofFrameX * (mFrameX);
+	float y =  mImage.height/mNumberofFrameY * (mFrameY);
+	std::cout << "PPPPP x=" << x << " y=" << y << std::endl;
+	Rectangle cropArea = {x, y, mWidth, mHeight};
+    ImageCrop(&tempImage, cropArea);
+    ImageRotate(&tempImage, aRotation);
+	BaseSpace::mImage = LoadTextureFromImage(tempImage);
+	mFrameX = mFrameY = 0;
+	BaseSpace::setOrigin(Vector2{0,0});
+	//setOrigin(Vector2{mWidth, mHeight});
+	BaseSpace::mfRotation = (0.0f);
+	mpBossColor = LoadImageColors(tempImage);
+	//BaseSpace::mImage = tempImage;
 }
 
 void Enemy::Tick(float aDeltaTime)
@@ -73,7 +90,37 @@ void Enemy::Tick(float aDeltaTime)
    //Check collision with enemy space and target
    if (CheckCollisionRecs(getCollisionRec(), mTarget->getCollisionRec()) && mTarget->getAlive())
    {
-	   if(mIsBoss == false) mTarget->setAlive(false);
+	   if(mIsBoss == false)
+	   {
+		//this case normal enemy is considered as a small Boss
+			Color *pbossColor = mpBossColor;
+			Color* ptargetColor = mpTargetColor;
+			Rectangle temp = GetCollisionRec(getCollisionRec(),mTarget->getCollisionRec());
+			//std::cout << "BOSSPPP: x=" << temp.x << " y=" << temp.y << "width= " << temp.width << " height=" << temp.height <<std::endl;
+			//std::cout << "BOSSHPP cast x=" << static_cast<int>(temp.width)<< " cast y=" << static_cast<int>(temp.height) << std::endl;
+			Vector2 collisionRectCoor{temp.x, temp.y};
+			
+			Vector2 startpointBoss = Vector2Subtract(collisionRectCoor, mScreenPos);
+			Vector2 startpointTarget = Vector2Subtract(collisionRectCoor, mTarget->getScreenPos());
+			pbossColor += static_cast<int>(mWidth) * static_cast<int>(startpointBoss.y) + static_cast<int>(startpointBoss.x);
+			ptargetColor += static_cast<int>(mTarget->getWidth()) * static_cast<int>(startpointTarget.y) + static_cast<int>(startpointTarget.x);
+			bool hit{false};
+			int total{0};
+			Color* backupBossPointer =pbossColor;
+			Color* backupTargetPointer= ptargetColor;
+			for (int i = 0; i < static_cast<int>(temp.width); i++)
+				for(int j=0; j < static_cast<int>(temp.height); j++)
+				{
+						pbossColor=backupBossPointer + static_cast<int>(mWidth)*j + i;
+						ptargetColor=backupTargetPointer+ static_cast<int>(mTarget->getWidth())*j + i;
+						total+= pbossColor->r & ptargetColor->r + pbossColor->g & ptargetColor->g + pbossColor->b & ptargetColor->b+pbossColor->a & ptargetColor->a;
+				}
+			if (total) hit = true;
+			if (hit) {
+				//std::cout << "HIT TARGET__________" << std::endl;
+				mTarget->setAlive(false);
+			}
+	   }
 	   else
 	   { //THis is Boss
 		    //Pixel checking data

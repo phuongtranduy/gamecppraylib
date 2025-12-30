@@ -179,11 +179,11 @@ int main(void)
 					availableEnemy->setAlive(true);
 					fPosXRand = (rand() % 10)*50;
 					availableEnemy->setScreenPos(Vector2{fPosXRand, -50});
-					availableEnemy->setFrameX(rand() % 4);
-					availableEnemy->setFrameY(rand() % 4);
-					availableEnemy->setRotation(180.0f);
-					availableEnemy->setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
-					availableEnemy->setTarget(&fighter);
+					// availableEnemy->setFrameX(rand() % 4);
+					// availableEnemy->setFrameY(rand() % 4);
+					// availableEnemy->setRotation(180.0f);
+					// availableEnemy->setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
+					// availableEnemy->setTarget(&fighter);
 				}
 				else
 				{
@@ -194,9 +194,9 @@ int main(void)
 					listOfEnemy.back().setScreenPos(Vector2{fPosXRand, -50});
 					listOfEnemy.back().setFrameX(rand() % 4);
 					listOfEnemy.back().setFrameY(rand() % 4);
-					listOfEnemy.back().setRotation(180.0f);
 					listOfEnemy.back().setOrigin(Vector2{listOfEnemy.back().getWidth(), listOfEnemy.back().getHeight()});
 					listOfEnemy.back().setTarget(&fighter);
+					listOfEnemy.back().setRotation(180.0f);
 				}
 				runningTimeofEnemy = 0;
 				totalOfEnemyOut++;
@@ -219,7 +219,7 @@ int main(void)
 			    {
 					return;
 			    }
-
+				//Check colllision between enemy and bullet from fighter
 				for ( auto it1 = fighter.mWeapon.begin(); it1 != fighter.mWeapon.end() && fighter.getAlive(); it1++)
 				{
 					if (CheckCollisionRecs(item.getCollisionRec(), it1->getCollisionRec()) && it1->getAlive())
