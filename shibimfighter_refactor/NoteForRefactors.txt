@@ -104,3 +104,17 @@ BaseSpace:
 window: Singleton class// we don't need that because we have GetScreenWidth(0 and GetScreenHeight functions)
   int32_t m_windowWidth;
   int32_t m_windowHeight;
+
+
+  ====================
+DrawTexturePro(mImage, source, dest, mOrigin, mfRotation, WHITE);
+
+  In raylib's DrawTextPro function, the origin parameter defines the pivot point for rotation, specified as an offset relative to the text's top-left corner. The position parameter determines where this calculated pivot point will be placed on the screen. 
+How the parameters work together:
+position: This Vector2 specifies the screen coordinates where the text will be drawn. Crucially, the final rotated text is positioned such that its origin point aligns with this position.
+origin: This Vector2 is an offset relative to the default top-left corner of the text's bounding box (which is (0, 0) by default). This offset is subtracted from the position to determine the actual top-left corner before drawing, and it also serves as the center of rotation.
+rotation: This float value (in degrees) is the angle by which the text will be rotated around the specified origin point. 
+Common Use Cases for origin:
+Default Behavior (Top-Left Rotation): If you want the text to rotate around its top-left corner, set the origin to (0, 0). The position will then refer to the top-left corner of the unrotated text.
+Center Rotation: To make the text rotate around its geometric center, you set the origin to half the width and half the height of the text's calculated size. The position will then refer to the center of the text.
+... => origin we will move it to the position that we subtract from the default. 
