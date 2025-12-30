@@ -59,6 +59,30 @@ public:
 	void setIsBoss(bool aIsBoss) {mIsBoss = aIsBoss;}
 	virtual void setRotation(float aRotation) override;
 	std::list<Enemy> mWeapon;
+
+	//for Boss add Rocket
+	void addRocket(Texture2D aImage, float aNumberOfFrameX, float aNumberOfFrameY, float aWindowWidth, float aWindowHeight,bool aIsBoss=false, Vector2 startingPos = Vector2{0.0f, 0.0f})
+	{
+		auto availableBullet = std::find_if(mWeapon.begin(), mWeapon.end(), [&](Enemy& item){
+			return !item.getAlive();//check if have item available
+		});
+
+		if (availableBullet != mWeapon.end())
+		{
+			availableBullet->setAlive(true);
+			availableBullet->setScreenPos(startingPos);
+		}
+		else
+		{
+			//create new
+			mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight, aIsBoss);
+			mWeapon.back().setScreenPos(startingPos);
+			mWeapon.back().setTarget(mTarget);
+			mWeapon.back().setAnimation(true);
+			mWeapon.back().setSpeed(200);
+			mWeapon.back().setRotation(0.0f);
+		}
+	}
 };
 
 #endif // ENEMY_HPP

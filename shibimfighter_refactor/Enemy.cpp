@@ -58,7 +58,7 @@ void Enemy::setRotation(float aRotation)
 	Image tempImage = LoadImageFromTexture(mImage);
 	float x = mImage.width/mNumberofFrameX * (mFrameX);
 	float y =  mImage.height/mNumberofFrameY * (mFrameY);
-	std::cout << "PPPPP x=" << x << " y=" << y << std::endl;
+	//std::cout << "PPPPP x=" << x << " y=" << y << std::endl;
 	Rectangle cropArea = {x, y, mWidth, mHeight};
     ImageCrop(&tempImage, cropArea);
     ImageRotate(&tempImage, aRotation);
@@ -240,44 +240,19 @@ void Enemy::Tick(float aDeltaTime)
 			if(speedOfFiring >= 2.0f)
 			{
 				//Center
-				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
-				mWeapon.back().setScreenPos(Vector2{mScreenPos.x+mWidth/2-15, mScreenPos.y+ mHeight - mWeapon.back().getHeight()});
-				mWeapon.back().setTarget(mTarget);
-				mWeapon.back().setAnimation(true);
-				mWeapon.back().setSpeed(200);
-				mWeapon.back().setRotation(0.0f);
+				
+				addRocket(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight, false, Vector2{mScreenPos.x+mWidth/2-15, mScreenPos.y+ mHeight - mFireTargetTex.height});
 				//If we do not set rotation for weapon => mpBossColor is not updated for weapon of Boss like an enemy => segement fault wehen checking
 				//Because animation for weapon is  changed like an effect => hard to check it??
 				//Left
-				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
-				mWeapon.back().setScreenPos(Vector2{mScreenPos.x+mWidth/4-6, mScreenPos.y});
-				mWeapon.back().setTarget(mTarget);
-				mWeapon.back().setAnimation(true);
-				mWeapon.back().setSpeed(200);
-				mWeapon.back().setRotation(0.0f);
-				
-				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
-				mWeapon.back().setScreenPos(Vector2{mScreenPos.x+mWidth/8, mScreenPos.y - 5});
-				mWeapon.back().setTarget(mTarget);
-				mWeapon.back().setAnimation(true);
-				mWeapon.back().setSpeed(200);
-				mWeapon.back().setRotation(0.0f);	
+				addRocket(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight, false, Vector2{mScreenPos.x+mWidth/4-6, mScreenPos.y});
+				addRocket(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight, false, Vector2{mScreenPos.x+mWidth/8, mScreenPos.y - 5});
+			
 				
 				//Right
-				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
-				mWeapon.back().setScreenPos(Vector2{mScreenPos.x+3*mWidth/4-21, mScreenPos.y});
-				mWeapon.back().setTarget(mTarget);
-				mWeapon.back().setAnimation(true);
-				mWeapon.back().setSpeed(200);
-				mWeapon.back().setRotation(0.0f);
-				speedOfFiring = 0;
-				
-				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
-				mWeapon.back().setScreenPos(Vector2{mScreenPos.x+7*mWidth/8-31, mScreenPos.y -5});
-				mWeapon.back().setTarget(mTarget);
-				mWeapon.back().setAnimation(true);
-				mWeapon.back().setSpeed(200);
-				mWeapon.back().setRotation(0.0f);
+				addRocket(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight, false, Vector2{mScreenPos.x+3*mWidth/4-21, mScreenPos.y});
+				addRocket(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight, false, Vector2{mScreenPos.x+7*mWidth/8-31, mScreenPos.y -5});
+
 				speedOfFiring = 0;
 			}
 
