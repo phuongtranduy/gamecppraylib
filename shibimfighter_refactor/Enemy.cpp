@@ -95,6 +95,15 @@ void Enemy::Tick(float aDeltaTime)
 		//this case normal enemy is considered as a small Boss
 			Color *pbossColor = mpBossColor;
 			Color* ptargetColor = mpTargetColor;
+			if(pbossColor == nullptr)
+			{
+				std::cout << "Enemy pbossColor null";
+			}
+			if(ptargetColor == nullptr)
+			{
+				std::cout << "Enemy ptargetColor null";
+			}
+
 			Rectangle temp = GetCollisionRec(getCollisionRec(),mTarget->getCollisionRec());
 			//std::cout << "BOSSPPP: x=" << temp.x << " y=" << temp.y << "width= " << temp.width << " height=" << temp.height <<std::endl;
 			//std::cout << "BOSSHPP cast x=" << static_cast<int>(temp.width)<< " cast y=" << static_cast<int>(temp.height) << std::endl;
@@ -137,7 +146,14 @@ void Enemy::Tick(float aDeltaTime)
 			// Color *ptargetColor = targetColor;
 			Color* ptargetColor = mpTargetColor;
 			
-			
+			if(pbossColor == nullptr)
+			{
+				std::cout << "Boss pbossColor null";
+			}
+			if(ptargetColor == nullptr)
+			{
+				std::cout << "Boss ptargetColor null";
+			}
 			Rectangle temp = GetCollisionRec(getCollisionRec(),mTarget->getCollisionRec());
 			//std::cout << "BOSSPPP: x=" << temp.x << " y=" << temp.y << "width= " << temp.width << " height=" << temp.height <<std::endl;
 			//std::cout << "BOSSHPP cast x=" << static_cast<int>(temp.width)<< " cast y=" << static_cast<int>(temp.height) << std::endl;
@@ -229,18 +245,23 @@ void Enemy::Tick(float aDeltaTime)
 				mWeapon.back().setTarget(mTarget);
 				mWeapon.back().setAnimation(true);
 				mWeapon.back().setSpeed(200);
+				mWeapon.back().setRotation(0.0f);
+				//If we do not set rotation for weapon => mpBossColor is not updated for weapon of Boss like an enemy => segement fault wehen checking
+				//Because animation for weapon is  changed like an effect => hard to check it??
 				//Left
 				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
 				mWeapon.back().setScreenPos(Vector2{mScreenPos.x+mWidth/4-6, mScreenPos.y});
 				mWeapon.back().setTarget(mTarget);
 				mWeapon.back().setAnimation(true);
 				mWeapon.back().setSpeed(200);
+				mWeapon.back().setRotation(0.0f);
 				
 				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
 				mWeapon.back().setScreenPos(Vector2{mScreenPos.x+mWidth/8, mScreenPos.y - 5});
 				mWeapon.back().setTarget(mTarget);
 				mWeapon.back().setAnimation(true);
-				mWeapon.back().setSpeed(200);	
+				mWeapon.back().setSpeed(200);
+				mWeapon.back().setRotation(0.0f);	
 				
 				//Right
 				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
@@ -248,6 +269,7 @@ void Enemy::Tick(float aDeltaTime)
 				mWeapon.back().setTarget(mTarget);
 				mWeapon.back().setAnimation(true);
 				mWeapon.back().setSpeed(200);
+				mWeapon.back().setRotation(0.0f);
 				speedOfFiring = 0;
 				
 				mWeapon.emplace_back(mFireTargetTex, 8, 1, mWindowWidth, mWindowHeight);
@@ -255,6 +277,7 @@ void Enemy::Tick(float aDeltaTime)
 				mWeapon.back().setTarget(mTarget);
 				mWeapon.back().setAnimation(true);
 				mWeapon.back().setSpeed(200);
+				mWeapon.back().setRotation(0.0f);
 				speedOfFiring = 0;
 			}
 
